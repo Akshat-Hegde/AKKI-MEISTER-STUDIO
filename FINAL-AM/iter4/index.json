@@ -1,0 +1,1 @@
+[["00-current", "Current (7 rows)"], ["01-tight-a", "Tighter to the A"], ["02-tight-cols", "Tighter columns"], ["03-tight-all", "Tight rows + columns"], ["04-touching", "Squares touch at corners"], ["05-wide-squares", "Wider squares, tight"], ["06-equal-squares", "Equal squares, tight"], ["07-touching-equal", "Equal + touching (true flag)"]]

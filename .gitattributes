@@ -1,0 +1,6 @@
+media/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
+media/**/*.mov filter=lfs diff=lfs merge=lfs -text
+media/**/*.MOV filter=lfs diff=lfs merge=lfs -text
+media/**/*.m4v filter=lfs diff=lfs merge=lfs -text
+media/**/*.wav filter=lfs diff=lfs merge=lfs -text
+media/**/*.HEIC filter=lfs diff=lfs merge=lfs -text

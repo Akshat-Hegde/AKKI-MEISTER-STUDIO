@@ -1,0 +1,15 @@
+# renders and intermediates (regenerate them instead of committing)
+*.mp4
+*.wav
+reel/frames.mp4
+reel/stills/
+email-motion/stills/
+reel/music/
+**/node_modules/
+__pycache__/
+*.bak.html
+*.bak.js
+*.bak.py
+
+# ...but keep the source media Akki uploads (videos go through Git LFS, see .gitattributes)
+!media/**

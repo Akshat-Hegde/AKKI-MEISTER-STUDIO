@@ -1,0 +1,167 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+@font-face{font-family:ClashD;src:url(assets/clash-display.woff2) format('woff2');font-weight:600}
+@font-face{font-family:Clash;src:url(assets/clash-grotesk.woff2) format('woff2');font-weight:600}
+@font-face{font-family:JBM;src:url(assets/jetbrains-mono-latin-wght-normal.woff2) format('woff2');font-weight:100 800}
+:root{--night:#07080C;--blue:#2440FF;--sky:#5B7BFF;--ice:#F3F4F6;--steel:#8C93A3}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#222;display:flex;gap:40px;padding:40px;width:max-content}
+.st{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--night);color:var(--ice)}
+.abs{position:absolute}
+.h{font-family:ClashD;font-weight:600;text-transform:uppercase;line-height:.9;letter-spacing:-.005em}
+.k{font-family:Clash;font-weight:600;text-transform:uppercase;letter-spacing:.3em}
+.m{font-family:JBM;font-weight:500;letter-spacing:.08em}
+.b{font-family:Clash;font-weight:600;letter-spacing:.005em}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.045;z-index:40;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.glow{position:absolute;inset:0;pointer-events:none;z-index:30;
+ background:radial-gradient(ellipse 75% 32% at 100% 100%,rgba(36,64,255,.24),transparent 72%),radial-gradient(ellipse 55% 22% at 0% 0%,rgba(91,123,255,.09),transparent 70%)}
+.vig{position:absolute;inset:0;pointer-events:none;z-index:29;background:radial-gradient(ellipse at 50% 45%,transparent 60%,rgba(0,0,0,.38))}
+.pat{position:absolute;inset:0;background-size:cover;background-position:center}
+.wm{position:absolute;left:72px;top:96px;display:flex;align-items:center;gap:22px;z-index:20}
+.pg{position:absolute;right:72px;top:108px;z-index:20;font-family:JBM;font-size:20px;letter-spacing:.2em;color:var(--steel)}
+.dec{position:absolute;left:0;top:0;pointer-events:none}
+.foot{position:absolute;left:0;right:0;bottom:86px;text-align:center;z-index:20}
+.lines{position:absolute;inset:0;background:repeating-linear-gradient(102deg,rgba(243,244,246,.055) 0 1px,transparent 1px 26px)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(243,244,246,.11) 1.3px,transparent 1.6px);background-size:30px 30px;background-position:15px 15px}
+.chq{position:absolute;left:50%;bottom:136px;width:168px;height:12px;transform:translateX(-50%) skewX(-12deg);z-index:20;opacity:.55;background:repeating-conic-gradient(#F3F4F6 0 25%,transparent 0 50%) 0 0/12px 12px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent);mask-image:linear-gradient(90deg,transparent,#000 30%,#000 70%,transparent)}
+/* story 1 */
+.row{display:grid;grid-template-columns:150px 1fr;column-gap:20px;padding:22px 0;border-top:1px solid rgba(243,244,246,.14)}
+.row .lab{font-family:JBM;font-size:20px;letter-spacing:.18em;color:var(--sky);padding-top:9px}
+.row .txt{font-family:Clash;font-weight:600;font-size:32px;line-height:1.22;color:var(--ice)}
+.row .txt i{font-style:normal;color:var(--steel)}
+/* story 2 */
+.bub{position:absolute;display:flex;align-items:center;gap:18px;padding:18px 28px 18px 18px;border-radius:999px;
+ background:rgba(14,17,27,.8);backdrop-filter:blur(12px);border:1px solid rgba(243,244,246,.16);box-shadow:0 18px 50px rgba(0,0,0,.55);white-space:nowrap}
+.bub .av{width:58px;height:58px;border-radius:50%;flex:none;position:relative;overflow:hidden}
+.bub .tx{font-family:Clash;font-weight:600;font-size:31px;color:var(--ice)}
+.bub .tm{font-family:JBM;font-size:17px;color:var(--steel);margin-left:4px}
+.chip{display:flex;flex-direction:column;gap:8px;padding:22px 26px;background:rgba(10,12,19,.9);border:1px solid rgba(243,244,246,.12)}
+.chip b{font-family:ClashD;font-weight:600;font-size:64px;line-height:.9}
+.chip span{font-family:JBM;font-size:17px;letter-spacing:.2em;color:var(--steel)}
+</style></head><body>
+
+<!-- ================= STORY 1 · THE DEBRIEF ================= -->
+<div class="st" id="s1">
+  <svg class="dec" id="d1" width="1080" height="1920" style="z-index:3"></svg>
+  <!-- hero photo, slanted bottom edge -->
+  <div class="abs" style="left:0;top:0;width:1080px;height:1100px;overflow:hidden">
+    <img src="assets/venue.jpg" style="position:absolute;left:0;top:-40px;width:1080px;height:1440px;object-fit:cover;object-position:50% 40%;filter:grayscale(.08) contrast(1.06) brightness(.84) saturate(.95)">
+    <div class="abs" style="inset:0;background:#2440FF;mix-blend-mode:soft-light;opacity:.12"></div>
+    <div class="abs" style="inset:0;background:repeating-linear-gradient(0deg,rgba(7,8,12,.22) 0 1px,transparent 1px 5px)"></div>
+    <div class="abs" style="inset:0;background:linear-gradient(180deg,rgba(7,8,12,.7) 0%,rgba(7,8,12,0) 20%,rgba(7,8,12,0) 48%,rgba(7,8,12,.6) 70%,rgba(7,8,12,.92) 86%,#07080C 100%)"></div>
+  </div>
+  <div class="abs k" style="left:72px;top:800px;font-size:20px;color:var(--sky);z-index:5">F1 Sim Racing India Open · Mumbai</div>
+  <div class="abs h" style="left:72px;top:846px;font-size:132px;z-index:5">THE<br><span style="color:var(--blue)">DEBRIEF.</span></div>
+
+  <!-- funnel stat -->
+  <div class="abs" style="left:72px;top:1112px;width:936px;display:flex;align-items:stretch;gap:0;z-index:5">
+    <div class="chip" style="flex:1"><b>33K+</b><span>ON THE LEADERBOARD</span></div>
+    <div style="width:70px;display:flex;align-items:center;justify-content:center;background:rgba(10,12,19,.9);border-top:1px solid rgba(243,244,246,.12);border-bottom:1px solid rgba(243,244,246,.12)">
+      <svg width="40" height="24" viewBox="0 0 40 24"><path d="M0 12h34M24 2l10 10-10 10" stroke="#5B7BFF" stroke-width="3" fill="none"/></svg></div>
+    <div class="chip" style="flex:1;background:var(--blue);border-color:var(--blue)"><b>TOP 40</b><span style="color:#dfe4ff">IN THE ROOM IN MUMBAI</span></div>
+  </div>
+
+  <!-- the debrief, as a quote -->
+  <!-- brand pinstripe, only behind the quote -->
+  <div class="abs" style="left:0;right:0;top:1250px;height:380px;background:url(assets/02-pinstripe-overlay.png) center/1300px auto;opacity:.22;z-index:1;
+       -webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent)"></div>
+  <div class="abs" style="left:72px;top:1268px;width:936px;z-index:5">
+    <div class="h" style="position:absolute;left:-6px;top:-34px;font-size:150px;color:var(--blue);line-height:1">“</div>
+    <div class="b" style="padding-left:84px;font-size:29px;line-height:1.34;color:var(--ice)">
+      Came in underprepared on F1 26 and underestimated the impact of ERS and battery management under the new regs. It cost me race pace. Got impeded in quali, and it snowballed from there. Races ranged from decent to sub-par. <span style="color:var(--steel)">Might sound like a driver excuse, but it is what it is.</span>
+      <div style="height:18px"></div>
+      It was a privilege to race India's best F1 sim racers. A real eye‑opener, and I had the time of my life over those two days.
+      <div class="m" style="margin-top:16px;font-size:19px;color:var(--sky);letter-spacing:.22em">— AKKI</div>
+    </div>
+  </div>
+  <div class="abs" style="left:72px;right:72px;top:1626px;z-index:5;display:flex;align-items:center;justify-content:space-between;
+       padding:26px 30px;background:rgba(10,12,19,.88);border:1px solid rgba(243,244,246,.12);border-left:5px solid var(--blue)">
+    <div>
+      <div class="m" style="font-size:17px;color:var(--steel);letter-spacing:.22em">RESULT</div>
+      <div class="b" style="font-size:27px;color:var(--ice);margin-top:8px">Unfortunately, not a top 20 finish this time.</div></div>
+    <div class="h" style="font-size:54px;color:var(--blue);white-space:nowrap">NEXT TIME.</div>
+  </div>
+  <div class="chq"></div>
+  <div class="foot m" style="font-size:22px;color:var(--steel);bottom:80px">@akki_meister</div>
+  <div class="wm"><svg class="mk" width="132" height="50"></svg></div>
+  <div class="pg">DEBRIEF · 01 / 02</div>
+  <div class="vig"></div><div class="grain"></div>
+</div>
+
+<!-- ================= STORY 2 · THANK YOU ================= -->
+<div class="st" id="s2">
+  <svg class="dec" id="d2" width="1080" height="1920" style="z-index:5"></svg>
+  <div class="abs k" style="left:72px;top:212px;font-size:20px;color:var(--sky);z-index:5">To everyone who showed up</div>
+  <div class="abs h" style="left:72px;top:256px;font-size:120px;z-index:5">EVERY<br>MESSAGE<br><span style="color:var(--blue)">COUNTED.</span></div>
+  <!-- hero: the cockpit, slanted panel -->
+  <div class="abs" style="left:0;top:620px;width:1080px;height:520px;overflow:hidden;z-index:4">
+    <img src="assets/room.jpg" style="position:absolute;left:0;top:0;width:1080px;height:520px;object-fit:cover;object-position:50% 56%;filter:contrast(1.06) brightness(.82) saturate(.95)">
+    <div class="abs" style="inset:0;background:#2440FF;mix-blend-mode:soft-light;opacity:.35"></div>
+    <div class="abs" style="inset:0;background:repeating-linear-gradient(0deg,rgba(7,8,12,.2) 0 1px,transparent 1px 5px)"></div>
+    <div class="abs" style="inset:0;background:linear-gradient(180deg,#07080C 0%,rgba(7,8,12,0) 22%,rgba(7,8,12,0) 62%,rgba(7,8,12,.8) 88%,#07080C 100%)"></div>
+  </div>
+  <div id="bubbles" class="abs" style="inset:0;z-index:6"></div>
+
+  <div class="abs b" style="left:72px;top:1514px;width:936px;font-size:35px;line-height:1.24;z-index:7">
+    Every compliment, every <span style="color:var(--sky)">“best of luck”</span>, every like on the story boosted my confidence. Grateful for you all.</div>
+  <div class="abs h" style="left:72px;top:1640px;font-size:64px;z-index:7">COMING BACK <span style="color:var(--blue)">STRONGER.</span></div>
+  <div class="chq"></div>
+  <div class="foot m" style="font-size:22px;color:var(--steel);bottom:80px">@akki_meister</div>
+  <div class="wm"><svg class="mk" width="132" height="50"></svg></div>
+  <div class="pg">THANK YOU · 02 / 02</div>
+  <div class="vig"></div><div class="grain"></div>
+</div>
+
+<script src="logo.js"></script>
+<script>
+/* watermark: the ///AM mark only (no wordmark) */
+const mark=LOGO.lockup.slice(0,LOGO.lockup.indexOf("<g transform"));
+document.querySelectorAll(".mk").forEach(s=>{s.setAttribute("viewBox","0 0 262 100");s.innerHTML=mark});
+
+/* replies compilation: paraphrased, no names, abstract avatars */
+/* scattered: [text, x, y, rotate, scale, blur] — small + blurred ones sit "further back" */
+const MSG=[
+ ["All the best bro 🔥🔥",-30,600,-5,1,0],["Congrats man",640,640,6,.85,0],["❤️❤️",400,712,-8,.72,1.6],
+ ["Wow, congrats bro",560,800,4,.8,1],["Good luck bro! Kill it! 👍",-50,868,-3,.95,0],
+ ["Congo brotha 🎉🎉",280,985,5,.76,1.2],["Very proud of you 🙌",500,1045,-4,1,0],
+ ["All the bezt 🫶",-60,1110,7,.8,0],["Big notyyy boyyy",110,1205,-2,.92,0],
+ ["Have a safe journey ✨",510,1262,3,.9,0],["Congrats Akki 🥳",-40,1318,4,1,0],
+ ["All the best mate",320,1405,-5,.78,1],["Alll the bestt brovvv",600,1395,2,.8,.6]];
+const AV=["linear-gradient(135deg,#2440FF,#5B7BFF)","linear-gradient(135deg,#5B7BFF,#8C93A3)","linear-gradient(135deg,#1b2350,#2440FF)","linear-gradient(135deg,#8C93A3,#F3F4F6)"];
+const B=document.getElementById("bubbles");
+MSG.forEach(([t,x,y,r,sc,bl],i)=>{const d=document.createElement("div");d.className="bub";
+ d.style.cssText=`left:${x+72}px;top:${y}px;transform-origin:0 50%;transform:rotate(${r}deg) scale(${sc});${bl?`filter:blur(${bl}px);opacity:.72;`:""}z-index:${bl?1:2}`;
+ d.innerHTML=`<div class="av" style="background:${AV[i%4]}"><svg viewBox="0 0 262 100" style="position:absolute;left:8px;top:18px;width:42px;opacity:.55">${mark}</svg></div><div class="tx">${t}</div><div class="tm">${[6,14,9,11,12,3,7,8,4,5,2,11,6][i]}h</div>`;
+ B.appendChild(d)});
+
+/* ---- livery decals: speed stripes + breaking chequered flag, all at the brand's 12° ---- */
+const NS="http://www.w3.org/2000/svg",TK=Math.tan(12*Math.PI/180);
+const el=(t,a,p)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);p.appendChild(e);return e};
+const para=(x,y,w,h)=>`${x+h*TK},${y} ${x+w+h*TK},${y} ${x+w},${y+h} ${x},${y+h}`;
+/* livery stripe: three slanted blocks (13:8:5 widths) then hairline speed lines running off-frame */
+function stripe(g,x,y,{h=46,len=900,fill="#2440FF",op=1,lines=3}={}){
+  const W=[h*1.6,h*1.0,h*.62];let cx=x;
+  W.forEach((w,i)=>{el("polygon",{points:para(cx,y,w,h),fill,"fill-opacity":op*(1-i*.22)},g);cx+=w+h*.28});
+  for(let i=0;i<lines;i++){const ly=y+i*(h/lines)+1,lx=x+(h-i*(h/lines))*TK+W[0]*.5+i*h*.5;
+    el("rect",{x:lx,y:ly,width:len-i*120,height:Math.max(2,h*.07),fill,"fill-opacity":op*(.9-i*.18)},g)}
+}
+/* chequered flag that breaks apart: columns shrink, drift apart and fade */
+function flag(g,x,y,{cols=14,rows=4,sq=34,fill="#F3F4F6",op=.9}={}){
+  let cx=x;
+  for(let c=0;c<cols;c++){const k=c/(cols-1),s2=sq*(1-.62*k),gap=sq*.06+k*sq*.55;
+    for(let r=0;r<rows;r++){if((r+c)%2)continue;if(k>.45&&((c*7+r*3)%5===0))continue;
+      const yy=y+r*sq+(sq-s2)/2+(r-rows/2)*k*sq*.25;
+      el("polygon",{points:para(cx,yy,s2,s2),fill,"fill-opacity":op*(1-.75*k)},g)}
+    cx+=s2+gap}
+}
+{ /* story 1 */
+  const g=document.getElementById("d1");
+  flag(g,700,200,{cols:12,rows:4,sq:20,op:.55});               // breaking flag in the top-right of the photo
+}
+{ /* story 2 */
+  const g=document.getElementById("d2");
+  flag(g,720,240,{cols:12,rows:4,sq:20,op:.5});                // breaking flag beside the headline
+}
+window.ready=document.fonts.ready.then(()=>Promise.all([...document.images].map(i=>i.complete?0:new Promise(r=>i.onload=i.onerror=r))));
+</script></body></html>

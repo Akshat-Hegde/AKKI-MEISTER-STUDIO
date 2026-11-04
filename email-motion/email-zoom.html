@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#fff}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#fff;font-family:"Segoe UI",system-ui,sans-serif;color:#1f1f1f}
+#cam{position:absolute;inset:0}
+.abs{position:absolute}
+.top{position:absolute;left:0;right:0;top:70px;height:120px;display:flex;align-items:center;justify-content:space-between;padding:0 60px}
+.subj{position:absolute;left:60px;right:60px;top:230px;font-size:58px;line-height:1.26;font-weight:500;color:#1f1f1f}
+.tag{display:inline-block;font-size:28px;color:#444746;background:#e8eaed;border-radius:10px;padding:2px 14px;margin-left:12px;vertical-align:middle}
+.from{position:absolute;left:60px;right:60px;top:560px;display:flex;gap:30px;align-items:center}
+.av{width:104px;height:104px;border-radius:50%;background:#7b4fd6;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:600;color:#fff;flex:none}
+.body{position:absolute;left:60px;right:60px;top:740px;font-size:40px;line-height:1.55;color:#1f1f1f}
+.body p{margin-bottom:44px}
+#hl{background-image:linear-gradient(#2440FF,#2440FF);background-repeat:no-repeat;background-size:0% 100%;border-radius:8px;padding:3px 6px;margin:0 -6px;transition:none}
+.chips{display:flex;gap:16px;margin-top:6px}
+.chip{border:1px solid #dadce0;border-radius:34px;padding:10px 24px;font-size:28px;color:#444746;display:flex;gap:12px;align-items:center}
+.pdf{width:26px;height:32px;border-radius:5px;background:#e2463b}
+#vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,transparent 60%,rgba(0,0,0,.06))}
+#grain{position:absolute;inset:-80px;pointer-events:none;opacity:.04;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+</style></head><body>
+<div id="stage"><div id="cam">
+  <div class="top">
+    <svg width="56" height="56" viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8" stroke="#444746" stroke-width="2.4" fill="none"/></svg>
+    <span style="display:flex;gap:56px"><svg width="50" height="50" viewBox="0 0 24 24"><path d="M5 4h14v16l-7-4-7 4z" stroke="#444746" stroke-width="2" fill="none"/></svg>
+    <svg width="50" height="50" viewBox="0 0 24 24"><path d="M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13" stroke="#444746" stroke-width="2" fill="none"/></svg>
+    <svg width="50" height="50" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2" fill="#444746"/><circle cx="12" cy="12" r="2" fill="#444746"/><circle cx="12" cy="19" r="2" fill="#444746"/></svg></span>
+  </div>
+  <div class="subj">F1® Sim Racing India Open 2026 | Qualification Schedule &amp; Competition Regulations <span class="tag">Inbox</span></div>
+  <div class="from"><div class="av">C</div>
+    <div><div style="font-size:40px;font-weight:600;color:#1f1f1f">Competition MFRL <span style="font-size:30px;color:#5f6368;font-weight:400;margin-left:12px">23 Oct</span></div>
+    <div style="font-size:31px;color:#5f6368;margin-top:6px">to me ⌄</div></div></div>
+  <div class="body">
+    <p>Dear Participant,</p>
+    <p><span id="hl">Congratulations on qualifying for the next stage of the <b>F1® Sim Racing India Open 2026</b>.</span></p>
+    <p>We are pleased to share the official qualification information and competition regulations for the upcoming qualifier stage.</p>
+    <p>Attached to this email, you will find:</p>
+    <p style="padding-left:40px">1. <b>Official Qualification Schedule</b> detailing the dates, timings and circuit allocations for both Junior and Senior categories.</p>
+    <div class="chips"><div class="chip"><span class="pdf"></span>Official Qualification Schedule.pdf</div></div>
+  </div>
+</div><div id="vig"></div><div id="grain"></div></div>
+<script>
+const $=s=>document.querySelector(s),cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),P=(t,a,b)=>cl((t-a)/(b-a));
+const oC=x=>1-Math.pow(1-x,3),ioC=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2,lerp=(a,b,p)=>a+(b-a)*p;
+let TX=540,TY=960;
+window.render=function(t){
+  $("#stage").style.opacity=cl(t/.25);
+  // slow push-in that lands on the sentence, then keeps drifting gently
+  const z=ioC(P(t,.2,1.6)),drift=oC(P(t,1.6,3));
+  // whole email centred and pulled back -> sentence centred, filling the width
+  const S0=.86,S1=1.0+drift*.025,S=lerp(S0,S1,z);
+  const D0x=540-S0*540,D0y=960-S0*820,D1x=540-S1*540,D1y=960-S1*TY;
+  $("#cam").style.transformOrigin="0 0";
+  $("#cam").style.transform=`translate(${lerp(D0x,D1x,z)}px,${lerp(D0y,D1y,z)}px) scale(${S})`;
+  $("#hl").style.backgroundSize=`${oC(P(t,1.15,1.8))*100}% 100%`;
+  $("#hl").style.color=t>1.4?"#fff":"";if(t>1.4)$("#hl").querySelector("b").style.color="#fff";else $("#hl").querySelector("b").style.color="";
+  // everything except the sentence dims slightly once it is highlighted
+  const dim=P(t,1.5,2.1);
+  document.querySelectorAll(".body p:not(:nth-child(2)),.subj,.from,.top,.chips").forEach(e=>e.style.opacity=1-dim*.45);
+};
+window.END=3;
+window.ready=(async()=>{await document.fonts.ready;
+  const r=$("#hl").getBoundingClientRect();TX=540;TY=r.top+r.height/2;window.render(0);return true})();
+</script></body></html>
