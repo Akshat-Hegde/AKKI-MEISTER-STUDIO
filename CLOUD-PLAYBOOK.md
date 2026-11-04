@@ -48,7 +48,7 @@ Read CLAUDE.md (especially "The mission"), research/creator-landscape.md, resear
 
 My end goal (repeat it back in one paragraph before you start, so I know you've got it): become a popular, valuable sim racing / motorsport / lifestyle creator who gets invited to sim expos, earns F1 paddock access and team invitations, lands partnerships and ambassador roles through content, and delivers real knowledge — built the way Jimmy Broadbent, Super GT, Jardier and Adi Plays built theirs, but in my own lane.
 
-My real assets: competed at F1 Sim Racing India Open 2026 (top 40 of 33k+), sim racing podiums, karting, Formula Student (engineering + driving), I coach sim racing (incl. kids), I understand data/telemetry, I have a finished brand (AKKI MEISTER).
+My real assets: competed at F1 Sim Racing India Open 2026 (top 80 of 33k+ registered), sim racing podiums, karting, Formula Student (engineering + driving), I coach sim racing (incl. kids), I understand data/telemetry, I have a finished brand (AKKI MEISTER).
 
 Build my strategy:
 1. Positioning: one-line "why follow me" that no one else in India owns (e.g. the sim-to-real engineer-driver who teaches). Give 3 options, recommend one.
