@@ -1,0 +1,64 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../infographics/_kit/kit.css">
+<style>
+body{display:flex;gap:40px;padding:40px;width:max-content}
+.st{width:1080px;height:1920px;flex:none}
+.zone{position:absolute;z-index:12}
+.zone i{position:absolute;width:44px;height:44px;border-color:rgba(243,244,246,.55);border-style:solid;border-width:0}
+.zone i:nth-child(1){left:0;top:0;border-left-width:3px;border-top-width:3px}.zone i:nth-child(2){right:0;top:0;border-right-width:3px;border-top-width:3px}
+.zone i:nth-child(3){left:0;bottom:0;border-left-width:3px;border-bottom-width:3px}.zone i:nth-child(4){right:0;bottom:0;border-right-width:3px;border-bottom-width:3px}
+.zone .zl{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;font-family:JBM;font-size:20px;letter-spacing:.3em;color:rgba(243,244,246,.35)}
+.fitw{white-space:nowrap}
+</style></head><body>
+<div id="root"></div>
+<script src="../../infographics/_kit/logo.js"></script>
+<script src="../../infographics/_kit/kit.js"></script>
+<script>
+/* window.build(spec): spec.stories = [{type:"announcement"|"result"|"quote"|"question"|"poll", ...}] (see templates/README.md) */
+const {C,esc,rich,headline,photo,lean,flag,chrome,K}=AM;
+function fitText(el,min=40){let fs=parseFloat(getComputedStyle(el).fontSize);while(el.scrollWidth>el.clientWidth+1&&fs>min){fs-=2;el.style.fontSize=fs+"px"}}
+const chips=(items)=>`<div style="display:flex;gap:0">${items.map((c,i)=>`<div class="chip${c.hot?" hot":""}" style="flex:${c.flex||1}"><b style="font-size:${c.size||60}px">${esc(c.value)}</b><span>${esc(c.label)}</span></div>`).join("")}</div>`;
+const zone=(x,y,w,h,label)=>`<div class="zone" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px"><i></i><i></i><i></i><i></i><div class="zl">${esc(label)}</div></div>`;
+const R={
+  announcement(s){const ph=s.photoHeight||1120;
+    return (s.photo?photo({src:s.photo,pos:s.pos,x:0,y:0,w:1080,h:ph,fade:"bottom",tint:.32,clip:`polygon(0 0,100% 0,100% ${ph-230}px,0 100%)`,zoom:s.zoom||1}):"")+
+    `<div class="abs k" style="left:72px;top:${ph-150}px;font-size:22px;z-index:5">${esc(s.kicker)}</div>
+     <div class="abs h fitw" style="left:72px;right:72px;top:${ph-100}px;font-size:${s.size||136}px;z-index:5">${headline(s.title)}</div>
+     ${s.body?`<div class="abs b" style="left:72px;right:72px;top:${s.bodyTop||ph+250}px;font-size:36px;z-index:5">${rich(s.body)}</div>`:""}
+     ${s.chips?`<div class="abs" style="left:72px;right:72px;top:${s.chipsTop||1540}px;z-index:5">${chips(s.chips)}</div>`:""}`},
+  result(s){const ph=s.photoHeight||980;
+    return (s.photo?photo({src:s.photo,pos:s.pos,x:0,y:0,w:1080,h:ph,fade:"bottom",tint:.3,zoom:s.zoom||1}):"")+
+    `<div class="abs k" style="left:72px;top:${ph-250}px;font-size:21px;z-index:5;right:72px;white-space:normal;line-height:1.5">${esc(s.kicker)}</div>
+     <div class="abs h fitw" style="left:72px;right:72px;top:${ph-170}px;font-size:${s.size||150}px;z-index:5">${headline(s.title)}</div>
+     <div class="abs" style="left:72px;right:72px;top:${ph+150}px;z-index:5">${chips(s.chips||[])}</div>
+     ${s.rows?`<div class="abs" style="left:72px;right:72px;top:${ph+330}px;z-index:5"><table class="t">${s.rows.map(r=>`<tr class="${r.hl?"hl":""}"><td class="n" style="width:110px;color:${r.hl?C.ice:C.steel}">${esc(r.pos)}</td><td>${esc(r.name)}</td><td class="n" style="text-align:right">${esc(r.pts)}</td></tr>`).join("")}</table></div>`:""}
+     ${s.body?`<div class="abs b" style="left:72px;right:72px;top:${s.bodyTop||ph+340}px;font-size:34px;z-index:5;color:${C.steel}">${rich(s.body)}</div>`:""}`},
+  quote(s){
+    return (s.photo?photo({src:s.photo,pos:s.pos,x:0,y:0,w:1080,h:1920,fade:"linear-gradient(180deg,rgba(7,8,12,.55),rgba(7,8,12,.25) 30%,rgba(7,8,12,.7) 55%,#07080C 85%)",tint:.36,bright:.75,zoom:s.zoom||1}):"")+
+    `<div class="abs k" style="left:72px;top:${s.top||1010}px;font-size:21px;z-index:5">${esc(s.kicker)}</div>
+     <div class="abs h" style="left:60px;top:${(s.top||1010)+40}px;font-size:200px;color:${C.blue};line-height:1;z-index:5">“</div>
+     <div class="abs b" style="left:72px;right:72px;top:${(s.top||1010)+190}px;font-size:${s.size||58}px;line-height:1.18;z-index:5">${rich(s.quote)}</div>
+     <div class="abs m" style="left:72px;top:${s.byTop||1660}px;font-size:22px;color:${C.sky};letter-spacing:.24em;z-index:5">— ${esc(s.by||"AKKI")}</div>`},
+  question(s,poll){const zy=s.zoneTop||(poll?820:760),zh=poll?300:420;const py=s.photoTop||1300;
+    return (s.photo?`<div class="abs" style="left:0;top:${py}px;width:1080px;height:${1920-py}px;z-index:2">${photo({src:s.photo,pos:s.pos,x:0,y:0,w:1080,h:1920-py,fade:"linear-gradient(180deg,#07080C 0%,rgba(7,8,12,0) 30%,rgba(7,8,12,.15) 70%,rgba(7,8,12,.85))",tint:.34,clip:`polygon(0 ${1080*K}px,100% 0,100% 100%,0 100%)`,zoom:s.zoom||1})}</div>`:"")+
+    `<div class="abs k" style="left:72px;top:250px;font-size:22px;z-index:5">${esc(s.kicker)}</div>
+     <div class="abs h fitw" style="left:72px;right:72px;top:300px;font-size:${s.size||128}px;z-index:5">${headline(s.title)}</div>
+     ${s.body?`<div class="abs b" style="left:72px;right:72px;top:${s.bodyTop||(zy-130)}px;font-size:34px;color:${C.steel};z-index:5">${rich(s.body)}</div>`:""}
+     ${zone(110,zy,860,zh,s.zoneLabel??(poll?"POLL STICKER":"QUESTION STICKER"))}`},
+};
+window.build=function(spec){
+  const root=document.getElementById("root");root.innerHTML="";const N=spec.stories.length;
+  spec.stories.forEach((s,i)=>{const el=document.createElement("div");el.className="st frame";el.id="story-"+(i+1);root.appendChild(el);
+    el.innerHTML=(s.pattern?`<div class="pat" style="background-image:url(${s.pattern});opacity:${s.patternOp??.14};z-index:0"></div>`:"")+R[s.type==="poll"?"question":s.type](s,s.type==="poll");
+    if(s.cta)el.insertAdjacentHTML("beforeend",`<div class="abs" style="left:0;right:0;bottom:${s.ctaBottom||190}px;text-align:center;z-index:6"><span class="m" style="display:inline-block;font-size:21px;letter-spacing:.24em;color:${C.ice};padding:14px 24px;background:${C.blue}">${esc(s.cta)}</span></div>`);
+    chrome(el,{w:1080,h:1920,counter:s.counter||`${(s.label||s.type).toUpperCase()} · ${String(i+1).padStart(2,"0")} / ${String(N).padStart(2,"0")}`,handle:"",pad:72,markW:132,flagAt:s.flag===false?null:(s.flagAt||[700,200]),demo:spec.demo});
+    el.insertAdjacentHTML("beforeend",`<div class="chq" style="left:456px;bottom:136px"></div><div class="handle" style="left:0;right:0;bottom:80px;text-align:center;font-size:22px">@akki_meister</div>`);
+    el.querySelectorAll(".fitw").forEach(e=>fitText(e));
+  });
+  return AM.ready();
+};
+window.audit=function(){const out=[];document.querySelectorAll(".st").forEach(st=>{const R=st.getBoundingClientRect();
+  st.querySelectorAll(".h,.b,.k,table,.chip").forEach(e=>{const r=e.getBoundingClientRect();if(r.right>R.right-40||r.left<R.left+40||r.bottom>R.bottom-170)out.push(`${st.id}: ${e.className||e.tagName} reaches the edge/footer (${Math.round(r.left-R.left)},${Math.round(r.top-R.top)} ${Math.round(r.width)}x${Math.round(r.height)})`)});
+  const z=st.querySelector(".zone");if(z){const zr=z.getBoundingClientRect();st.querySelectorAll(".h,.b").forEach(e=>{const r=e.getBoundingClientRect();if(r.bottom>zr.top&&r.top<zr.bottom)out.push(`${st.id}: text overlaps the sticker zone`)})}});return out};
+</script></body></html>

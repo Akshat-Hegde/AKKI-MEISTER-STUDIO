@@ -1,0 +1,136 @@
+{
+  "template": "apex-notes",
+  "series": "APEX NOTES",
+  "number": 2,
+  "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/02-pinstripe-overlay.png",
+  "slides": [
+    {
+      "type": "hook",
+      "photo": "library/sim-rig/img-9148.jpg",
+      "pos": "50% 30%",
+      "photoHeight": 940,
+      "kicker": "APEX NOTES · #2 · Trail braking",
+      "title": ["You're braking", "in a straight line.", "That's why you're slow."],
+      "size": 92,
+      "sub": "Trail braking, explained in 8 slides. ~~Save it for your next session.~~"
+    },
+    {
+      "type": "content",
+      "kicker": "01 · The idea",
+      "title": ["Release the brake", "as you turn in."],
+      "visual": {
+        "type": "chart",
+        "illustrative": true,
+        "yLabel": "BRAKE PRESSURE",
+        "xLabel": "DISTANCE →",
+        "xDomain": [0, 100], "yDomain": [0, 108],
+        "marks": [{ "x": 40, "label": "TURN-IN" }, { "x": 78, "label": "APEX" }],
+        "series": [
+          { "label": "Straight-line braking", "color": "#8C93A3", "dash": "12 10", "points": [[0,0],[8,0],[11,100],[38,100],[40,0],[100,0]] },
+          { "label": "Trail braking", "color": "#2440FF", "width": 6, "points": [[0,0],[8,0],[11,100],[30,96],[40,70],[50,45],[60,26],[70,11],[78,0],[100,0]] }
+        ]
+      },
+      "visualHeight": 520,
+      "body": "Hit peak pressure in a straight line, then **bleed it off as you add steering**. You're fully off the brake around the apex, ~~not at the turn-in point.~~",
+      "note": "Illustrative shape · not real data"
+    },
+    {
+      "type": "content",
+      "kicker": "02 · Why it works",
+      "title": ["Braking loads", "the front tyres."],
+      "visual": {
+        "type": "car-load",
+        "cars": [
+          { "front": 1, "rear": 1, "frontText": "NORMAL", "rearText": "NORMAL", "label": "OFF THE BRAKE" },
+          { "front": 1.8, "rear": 0.7, "frontText": "MORE GRIP", "rearText": "LIGHTER", "label": "TRAILING THE BRAKE" }
+        ]
+      },
+      "visualHeight": 600,
+      "body": "Braking shifts weight forward. A loaded front tyre has more grip, so the car **turns in sharper**. Release too early and that grip leaves with it.",
+      "note": "Concept diagram · not to scale"
+    },
+    {
+      "type": "content",
+      "kicker": "03 · Where it happens",
+      "title": ["Thick line =", "more brake."],
+      "visual": {
+        "type": "corner",
+        "turns": [{ "angle": 90, "radius": 300, "dir": "R" }],
+        "straight": [300, 230],
+        "trackWidth": 170,
+        "line": { "apex": 0.55, "width": 0.8 },
+        "brake": { "from": 0.06, "to": 0.66, "peak": 0.25 },
+        "markers": [
+          { "at": 0.06, "label": "BRAKE", "side": 1 },
+          { "at": "turnin", "label": "TURN-IN", "side": 1 },
+          { "at": "apex", "label": "APEX · OFF BRAKE", "side": -1 },
+          { "at": 0.93, "label": "EXIT · THROTTLE", "side": -1, "dy": -34 }
+        ]
+      },
+      "visualHeight": 640,
+      "body": "Peak pressure on the straight, a **steady taper** from turn-in to the apex. Brake and steering overlap. That overlap is the trail.",
+      "note": "Corner sketch · not a real track"
+    },
+    {
+      "type": "content",
+      "kicker": "04 · The common mistake",
+      "title": ["Ramp,", "not a cliff."],
+      "visual": {
+        "type": "before-after",
+        "before": {
+          "label": "Before · snap release",
+          "visual": { "type": "chart", "illustrative": true, "h": 330, "xDomain": [0,100], "yDomain": [0,108], "marks": [{ "x": 40, "label": "TURN-IN" }],
+            "series": [{ "label": "brake", "color": "#8C93A3", "points": [[0,0],[10,0],[13,100],[38,100],[41,0],[100,0]] }] },
+          "body": "The front unloads right at turn-in. ~~Understeer, a late apex, a slow exit.~~"
+        },
+        "after": {
+          "label": "After · smooth taper",
+          "visual": { "type": "chart", "illustrative": true, "h": 330, "xDomain": [0,100], "yDomain": [0,108], "marks": [{ "x": 40, "label": "TURN-IN" }],
+            "series": [{ "label": "brake", "color": "#2440FF", "width": 6, "points": [[0,0],[10,0],[13,100],[30,96],[45,62],[60,28],[75,0],[100,0]] }] },
+          "body": "The front stays loaded while you steer. **The car rotates**, so you can get back on the throttle sooner."
+        }
+      },
+      "visualHeight": 640,
+      "note": "Illustrative traces"
+    },
+    {
+      "type": "content",
+      "kicker": "05 · Troubleshoot it",
+      "title": ["Read the", "symptom."],
+      "visual": {
+        "type": "table",
+        "columns": ["Symptom", "Likely cause", "Try"],
+        "rows": [
+          ["Understeer on turn-in", "Released too early or too fast", "Hold a little pressure longer"],
+          ["Front locks mid-corner", "Too much pressure with lock on", "Release more as steering goes in"],
+          ["Rear steps out on entry", "Too much brake and steering together", "Taper earlier, less overlap"]
+        ],
+        "highlight": [0]
+      },
+      "visualHeight": 600,
+      "note": "General guide · every car is different"
+    },
+    {
+      "type": "content",
+      "kicker": "06 · The drill",
+      "title": ["One corner.", "Ten laps."],
+      "visual": {
+        "type": "flow",
+        "steps": [
+          { "title": "Pick one slow corner", "body": "A hairpin or a tight 90° is easiest to feel." },
+          { "title": "Brake at your usual marker", "body": "Same point every lap. Change one thing at a time." },
+          { "title": "Bleed the pressure off as you steer", "body": "Aim to reach zero around the apex." },
+          { "title": "Watch your brake trace", "body": "If your sim shows inputs: **a ramp, not a cliff**." }
+        ]
+      },
+      "visualHeight": 660
+    },
+    {
+      "type": "close",
+      "title": ["Smooth in.", "Fast out."],
+      "body": "Trail braking is the biggest single jump in pace for most sim racers I coach. **Try the drill tonight**, then tell me which corner you picked.",
+      "cta": "FOLLOW FOR MORE · SAVE THIS"
+    }
+  ],
+  "caption": "Trail braking is the biggest single jump in pace for most sim racers I coach. 🛞\nThe idea in 8 slides, plus the drill I give my drivers. Save it, try it tonight.\n@akki_meister\n\n#simracing #simracer #f126 #racecraft #trailbraking #racingline #drivercoaching #simracingtips #simracingindia #akkimeister\n\n---\nAlternatives:\n- You're braking in a straight line. That's why you're slow. 🏁 Save this before your next session. @akki_meister\n- Ramp, not a cliff. One drill that makes most drivers faster. 🏎️ @akki_meister\n"
+}

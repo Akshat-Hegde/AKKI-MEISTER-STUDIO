@@ -1,0 +1,214 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../infographics/_kit/kit.css">
+<style>
+/* transparent overlay drawn over the ffmpeg-built footage; frames are screenshotted with alpha */
+html,body{width:1080px;height:1920px;overflow:hidden;background:transparent!important}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden}
+.layer{position:absolute;inset:0;display:none}
+.line{display:block;overflow:hidden;padding:.06em 0 .1em}
+.ch{display:inline-block;white-space:pre}
+.h{white-space:nowrap}
+.timer{font-family:JBM;font-weight:600;letter-spacing:.02em;font-variant-numeric:tabular-nums}
+.split{display:grid;grid-template-columns:70px 1fr auto;align-items:baseline;gap:16px;padding:12px 0;border-top:1px solid rgba(243,244,246,.16)}
+.split .n{font-family:JBM;font-size:22px;letter-spacing:.14em;color:var(--sky)}
+.split .v{font-family:JBM;font-weight:600;font-size:34px;font-variant-numeric:tabular-nums}
+.split .d{font-family:JBM;font-size:24px}
+.note{position:absolute;max-width:820px;padding:22px 30px 24px 30px;background:rgba(10,12,19,.92);border-left:6px solid var(--blue);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.note .nk{font-family:JBM;font-size:19px;letter-spacing:.2em;color:var(--sky);margin-bottom:8px;text-transform:uppercase}
+.note .nt{font-family:Clash;font-weight:600;font-size:40px;line-height:1.15}
+.note em,.b em{font-style:normal;color:var(--sky)}
+.tagc{position:absolute;font-family:JBM;font-size:21px;letter-spacing:.22em;padding:9px 16px;background:var(--blue);color:var(--ice);text-transform:uppercase}
+.tagc.ghost{background:rgba(10,12,19,.85);border:1px solid rgba(243,244,246,.2)}
+.scrim{position:absolute;inset:0;pointer-events:none}
+.layer .k,.layer .h,#stage>.abs .k{text-shadow:0 2px 22px rgba(0,0,0,.6)}
+</style></head><body>
+<div id="stage"></div>
+<script src="../../infographics/_kit/logo.js"></script>
+<script src="../../infographics/_kit/kit.js"></script>
+<script>
+/* window.setup(spec, TL) builds the overlay; window.render(t) draws frame t (seconds). TL comes from templates/lib/reel.js:
+   TL = {dur, segs:[{type, t0, t1, fit, band:{y,h}, lap:bool, clipIn, ...spec segment}], title, end, lap, notes, header, inputs, demo} */
+const {C,esc,rich,headline,markSvg,lockupSvg,flag,lean,K}=AM;
+const cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),P=(t,a,b)=>cl((t-a)/(b-a));
+const oE=x=>x>=1?1:1-Math.pow(2,-10*x),oC=x=>1-Math.pow(1-x,3),iC=x=>x*x*x,ioC=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const $s=document.getElementById("stage");
+const div=(par,cls,css,html="")=>{const d=document.createElement("div");if(cls)d.className=cls;d.style.cssText=css;d.innerHTML=html;par.appendChild(d);return d};
+const UP=[],EV=[];window.EVENTS=EV;
+const cue=(kind,t,gain=1)=>EV.push({kind,t:+t.toFixed(3),gain});
+function splitChars(el){el.querySelectorAll(".line").forEach(l=>{const t=l.textContent;l.textContent="";for(const c of t){const s=document.createElement("span");s.className="ch";s.textContent=c;l.appendChild(s)}})}
+function rise(el,t,st,sg=.03,d=.5){el.querySelectorAll(".ch").forEach((c,i)=>{const p=oE(P(t,st+i*sg,st+i*sg+d));c.style.transform=`translateY(${(1-p)*115}%)`})}
+const lines=(arr,lastBlue=true)=>{const a=Array.isArray(arr)?arr:String(arr).split(/\s*\/\s*/);return a.map((l,i)=>`<span class="line" style="${lastBlue&&i===a.length-1&&a.length>1?`color:${C.blue}`:""}">${esc(l)}</span>`).join("")};
+const fmtT=s=>{if(s<0)s=0;const m=Math.floor(s/60),r=s-m*60;return `${m}:${r.toFixed(3).padStart(6,"0")}`};
+/* shrink a headline until its widest line fits; deferred until fonts are loaded (FITS) */
+const FITS=[];
+function fit(el,max){FITS.push(()=>{const d=el.style.display,w=el.style.width;el.style.width="max-content";el.style.display="inline-block";
+  const anc=el.closest(".layer")||el.closest("#stage>div");const ad=anc?anc.style.display:null;if(anc)anc.style.display="block";
+  let fs=parseFloat(el.style.fontSize||getComputedStyle(el).fontSize);while(el.getBoundingClientRect().width>max&&fs>30){fs-=2;el.style.fontSize=fs+"px"}
+  el.style.width=w;el.style.display=d;if(anc)anc.style.display=ad})}
+
+window.setup=function(TL){
+  window.END=TL.dur;
+  const segs=TL.segs;
+  const segAt=t=>segs.find(s=>t>=s.t0&&t<s.t1)||segs[segs.length-1];
+
+  /* ---- scrims: darken top/bottom of full-bleed footage so type reads; band layout gets solid midnight around the band ---- */
+  const scrim=div($s,"scrim","z-index:1");
+  /* ---- persistent header for band segments ---- */
+  const hd=TL.header||{};
+  const head=div($s,"abs","left:64px;right:64px;top:0;z-index:5");
+  const hk=div(head,"k","position:absolute;left:0;top:0;font-size:21px",esc(hd.kicker||""));
+  const ht=div(head,"h","position:absolute;left:0;top:0;font-size:86px",lines(hd.title||""));splitChars(ht);
+  const hs=div(head,"m","position:absolute;left:0;top:0;font-size:22px;color:"+C.steel+";white-space:nowrap",esc(hd.sub||""));
+
+  /* ---- lap timer + splits + best ---- */
+  const L=TL.lap;
+  const tw=div($s,"abs","left:64px;z-index:6;width:560px");
+  const tl=div(tw,"m","font-size:19px;letter-spacing:.22em;color:"+C.steel,"LAP TIME");
+  const tv=div(tw,"timer","font-size:104px;line-height:1;margin-top:6px");
+  const sp=div(tw,"","margin-top:18px");
+  const splitRows=(L?.splits||[]).map(s=>{const r=div(sp,"split","",`<span class="n">${esc(s.name)}</span><span class="v">—</span><span class="d"></span>`);return {s,r,v:r.querySelector(".v"),d:r.querySelector(".d")}});
+  const best=L?.best?div($s,"abs","z-index:6",`<div class="tagc ghost" style="position:relative;display:inline-block">${esc(L.best)}</div>`):null;
+
+  /* ---- input widget (only with an inputs CSV): throttle + brake bars and a steering arc ---- */
+  const IN=TL.inputs;let inW=null;
+  if(IN){inW=div($s,"abs","z-index:6;width:250px;height:250px",`
+    <svg width="250" height="250" viewBox="0 0 250 250">
+      <rect x="18" y="20" width="44" height="190" fill="rgba(243,244,246,.08)"/><rect id="ib" x="18" y="210" width="44" height="0" fill="${C.ice}"/>
+      <rect x="78" y="20" width="44" height="190" fill="rgba(243,244,246,.08)"/><rect id="it" x="78" y="210" width="44" height="0" fill="${C.blue}"/>
+      <text x="40" y="240" fill="${C.steel}" font-family="JBM" font-size="16" text-anchor="middle">BRK</text><text x="100" y="240" fill="${C.steel}" font-family="JBM" font-size="16" text-anchor="middle">THR</text>
+      <circle cx="190" cy="110" r="46" fill="none" stroke="rgba(243,244,246,.2)" stroke-width="10"/>
+      <g id="iw"><circle cx="190" cy="110" r="46" fill="none" stroke="${C.sky}" stroke-width="10" stroke-dasharray="40 249" stroke-dashoffset="20" transform="rotate(-90 190 110)"/><rect x="186" y="58" width="8" height="22" fill="${C.ice}"/></g>
+      <text x="190" y="190" fill="${C.steel}" font-family="JBM" font-size="16" text-anchor="middle">STEER</text></svg>`);}
+  const inAt=(lt)=>{const a=IN.t;let lo=0,hi=a.length-1;if(lt<=a[0])return 0;if(lt>=a[hi])return hi;while(hi-lo>1){const m=(lo+hi)>>1;if(a[m]<=lt)lo=m;else hi=m}return lo};
+
+  /* ---- per-segment layers: tag chips, kinetic lines, split divider, cards ---- */
+  segs.forEach((s,si)=>{
+    const ly=div($s,"layer","z-index:8");s.ly=ly;
+    if(s.tag)s.tagEl=div(ly,"tagc"+(s.tagStyle==="ghost"?" ghost":""),`left:64px;top:${s.fit==="band"?s.band.y+24:200}px`,esc(s.tag));
+    if(s.type==="split"){
+      ly.innerHTML+=`<div class="abs" style="left:-40px;right:-40px;top:${960-14}px;height:28px;background:${C.blue};transform:skewY(-${s.divAngle??4}deg)"></div>`;
+      (s.tags||[]).forEach((tg,i)=>div(ly,"tagc"+(i?"":" ghost"),i?`left:64px;top:${960+56}px`:`left:64px;top:${960-104}px`,esc(tg)));
+    }
+    if(s.lines){
+      const y=s.linesY??(s.type==="split"?(s.linesPos==="top"?300:1290):s.fit==="band"?s.band.y+s.band.h+60:1250);
+      s.kEl=s.kicker?div(ly,"k",`position:absolute;left:64px;top:${y-50}px;font-size:22px`,esc(s.kicker)):null;
+      s.lEl=div(ly,"h",`position:absolute;left:64px;top:${y}px;font-size:${s.size||118}px`,lines(s.lines,s.lastBlue!==false));splitChars(s.lEl);fit(s.lEl,952);
+      cue("tick",s.t0+.18,.35);
+    }
+    if(s.type==="card"){
+      ly.style.zIndex=20;
+      const bgop=s.bgOpacity??(s.src?.86:1);
+      ly.innerHTML=`<div class="abs" style="inset:0;background:rgba(7,8,12,${bgop})"></div>${s.pattern?`<div class="pat" style="background-image:url(${s.pattern});opacity:.14"></div>`:""}`;
+      s.cEl=div(ly,"abs","left:64px;right:64px;top:"+(s.top||420)+"px");
+      s.cEl.innerHTML=`<div class="k" style="font-size:22px;margin-bottom:24px">${esc(s.kicker||"")}</div><div class="h cl" style="font-size:${s.size||112}px">${lines(s.lines||"")}</div>`+
+        (s.steps?`<div style="margin-top:64px">${AM.flow({w:952,steps:s.steps})}</div>`:"")+(s.body?`<div class="b" style="font-size:40px;margin-top:48px;color:${C.ice}">${rich(s.body)}</div>`:"")+
+        (s.chart?`<div style="margin-top:60px" class="chw">${AM.legend(s.chart.series)}<div style="height:20px"></div>${AM.lineChart({...s.chart,w:952,h:s.chart.h||560})}</div>`:"");
+      splitChars(s.cEl.querySelector(".cl"));fit(s.cEl.querySelector(".cl"),952);
+      if(s.demo)div(ly,"demo","right:64px;top:210px","DEMO DATA · NOT A REAL LAP");
+      cue("knock",s.t0,.7);
+    }
+  });
+
+  /* ---- notes (sector notes / coaching cards) ---- */
+  const notes=(TL.notes||[]).map(n=>{const el=div($s,"note",`left:64px;z-index:9;opacity:0`,`<div class="nk">${esc(n.kicker||"")}</div><div class="nt">${rich(n.text)}</div>`);cue("tick",n.t0,.45);return {...n,el}});
+
+  /* ---- title card (over the first footage) ---- */
+  const T=TL.title;let tEl,tK,tS;
+  if(T){
+    tEl=div($s,"abs","inset:0;z-index:15");
+    tEl.innerHTML=`<div class="abs" style="inset:0;background:linear-gradient(180deg,rgba(7,8,12,.5),rgba(7,8,12,.72) 40%,rgba(7,8,12,.96) 70%,#07080C)"></div>`;
+    tK=div(tEl,"k","position:absolute;left:64px;top:1010px;font-size:24px",esc(T.kicker||""));
+    T.el=div(tEl,"h",`position:absolute;left:64px;top:1062px;font-size:${T.size||150}px`,lines(T.lines));splitChars(T.el);fit(T.el,952);
+    tS=div(tEl,"m",`position:absolute;left:64px;top:0;font-size:24px;color:${C.ice};white-space:nowrap`,esc(T.sub||""));
+    tEl.insertAdjacentHTML("beforeend",`<svg class="abs" width="1080" height="1920" style="left:0;top:0">${flag(700,330,{cols:12,rows:4,sq:22,op:.5})}</svg>`);
+    cue("knock",.05,.55);
+  }
+
+  /* ---- end card ---- */
+  const E=TL.end;let eEl;
+  if(E){
+    eEl=div($s,"abs","inset:0;z-index:25;background:"+C.night);
+    eEl.innerHTML=`<div class="pat" style="background-image:url(${E.pattern||""});opacity:.16"></div>
+      <div class="glow"></div><div class="vig"></div><div class="grain"></div>
+      <div class="abs" style="left:0;right:0;top:500px;display:flex;justify-content:center" id="elk">${lockupSvg(640)}</div>
+      <div class="abs k" style="left:64px;right:64px;top:930px;text-align:center;font-size:22px">${esc(E.kicker||"")}</div>
+      <div class="abs h" id="eh" style="left:64px;right:64px;top:980px;text-align:center;font-size:${E.size||104}px">${lines(E.lines||"")}</div>
+      <div class="abs b" style="left:110px;right:110px;top:${E.bodyTop||1290}px;text-align:center;font-size:36px;color:${C.steel}">${rich(E.body||"")}</div>
+      <div class="abs m" style="left:0;right:0;top:1500px;text-align:center;font-size:24px;color:${C.ice};letter-spacing:.14em">@akki_meister</div>
+      <div class="abs m" style="left:0;right:0;top:1544px;text-align:center;font-size:19px;color:${C.sky};letter-spacing:.3em">${esc(E.cta||"SIM · TRACK · PADDOCK")}</div>
+      <div class="chq" style="left:456px;top:1610px"></div>
+      <svg class="abs" width="1080" height="1920" style="left:0;top:0">${flag(720,250,{cols:12,rows:4,sq:20,op:.45})}</svg>`;
+    E.h=eEl.querySelector("#eh");splitChars(E.h);fit(E.h,952);
+    cue("knock",E.t0,.8);
+  }
+
+  /* ---- chrome: mark (always), demo tag ---- */
+  const mk=div($s,"wm","left:64px;top:96px",markSvg(118));
+  if(TL.demo)div($s,"demo","right:64px;top:110px",typeof TL.demo==="string"?TL.demo:"DEMO DATA");
+  /* cut wipe: a 12° cobalt parallelogram that covers the frame exactly at the cut */
+  const wipe=div($s,"abs","left:0;top:0;width:2400px;height:1920px;z-index:30;display:none",`<div style="position:absolute;inset:0;background:${C.blue};clip-path:polygon(${1920*K}px 0,100% 0,calc(100% - ${1920*K}px) 100%,0 100%)"></div><div style="position:absolute;top:0;bottom:0;right:-60px;width:60px;background:${C.sky};opacity:.6"></div>`);
+  const cuts=segs.slice(1).filter(s=>s.wipe).map(s=>s.t0);
+  segs.slice(1).forEach(s=>{if(!s.wipe&&s.type!=="card")cue("knock",s.t0,.6)});cuts.forEach(c=>cue("knock",c,.7));
+
+  window.render=function(t){
+    const s=segAt(t);
+    /* scrim */
+    if(s.fit==="band")scrim.style.background=`linear-gradient(180deg,${C.night} 0,${C.night} ${s.band.y-1}px,transparent ${s.band.y}px,transparent ${s.band.y+s.band.h}px,${C.night} ${s.band.y+s.band.h+1}px)`;
+    else scrim.style.background=`linear-gradient(180deg,rgba(7,8,12,.55) 0%,rgba(7,8,12,0) 18%,rgba(7,8,12,0) 52%,rgba(7,8,12,.78) 80%,rgba(7,8,12,.9) 100%)`;
+    if(s.fit==="band")scrim.insertAdjacentHTML?0:0;
+    /* header */
+    const tEnd=T?T.t1:0,showHead=s.fit==="band"&&hd.title&&t>=tEnd-.3;
+    head.style.display=showHead?"block":"none";
+    if(showHead){const by=s.band.y;hk.style.top=(by-330)+"px";ht.style.top=(by-282)+"px";hs.style.top=(by-282+ht.offsetHeight+18)+"px";
+      const hs0=Math.max(segs.find(x=>x.fit==="band").t0,tEnd-.3);rise(ht,t,hs0+.05,.025,.5);hk.style.opacity=P(t,hs0,hs0+.3);hs.style.opacity=P(t,hs0+.3,hs0+.6)}
+    /* lap timer */
+    const lapOn=L&&s.lap&&t>=(T?T.t1-.2:0);
+    tw.style.display=lapOn?"block":"none";if(best)best.style.display=lapOn?"block":"none";
+    if(lapOn){
+      const ct=s.clipIn+(t-s.t0)*(s.speed||1),lt=ct+L.offset;
+      const by=s.fit==="band"?s.band.y+s.band.h+44:1180;tw.style.top=by+"px";
+      if(best){best.style.left="64px";best.style.top=(s.fit==="band"?s.band.y+24:200)+"px";if(s.tagEl)s.tagEl.style.top=(s.band.y+84)+"px"}
+      let frozen=null;for(const r of splitRows){if(r.s.at!=null&&lt>=r.s.at&&lt<r.s.at+(L.hold??2.5))frozen=r.s.time}
+      tv.textContent=fmtT(frozen??lt);tv.style.color=frozen!=null?C.sky:C.ice;
+      splitRows.forEach(r=>{const done=r.s.at!=null&&lt>=r.s.at;r.v.textContent=done?fmtT(r.s.time):"—";r.d.textContent=done&&r.s.delta?r.s.delta:"";r.d.style.color=String(r.s.delta||"").startsWith("-")?C.sky:C.steel;
+        const cur=!done&&(splitRows.findIndex(x=>!(x.s.at!=null&&lt>=x.s.at))===splitRows.indexOf(r));r.r.style.opacity=done||cur?1:.45;r.r.querySelector(".n").style.color=cur?C.ice:C.sky});
+      if(inW){const i=inAt(lt);inW.style.display="block";inW.style.left="700px";inW.style.top=(by+10)+"px";
+        const B=IN.b[i]||0,Th=IN.th[i]||0,St=IN.st?IN.st[i]:0;
+        inW.querySelector("#ib").setAttribute("y",210-190*B);inW.querySelector("#ib").setAttribute("height",190*B);
+        inW.querySelector("#it").setAttribute("y",210-190*Th);inW.querySelector("#it").setAttribute("height",190*Th);
+        inW.querySelector("#iw").setAttribute("transform",`rotate(${cl(St,-1,1)*IN.steerDeg} 190 110)`)}
+    }else if(inW)inW.style.display="none";
+    /* segments */
+    segs.forEach(sg=>{const on=t>=sg.t0&&t<sg.t1;sg.ly.style.display=on?"block":"none";if(!on)return;
+      const lt=t-sg.t0;
+      if(sg.tagEl){const q=oE(P(lt,.1,.45));sg.tagEl.style.opacity=q;sg.tagEl.style.transform=`translateX(${(1-q)*-40}px)`}
+      if(sg.lEl){rise(sg.lEl,lt,.15,.028,.5);if(sg.kEl)sg.kEl.style.opacity=P(lt,.05,.3);
+        const o=iC(P(t,sg.t1-.28,sg.t1));sg.lEl.style.transform=`translateX(${-o*160}px)`;sg.lEl.style.opacity=1-o;if(sg.kEl)sg.kEl.style.opacity*=1-o}
+      if(sg.type==="split"){const q=oE(P(lt,0,.4));sg.ly.firstElementChild.style.transform=`skewY(-${sg.divAngle??4}deg) scaleX(${q})`}
+      if(sg.cEl){rise(sg.cEl.querySelector(".cl"),lt,.12,.025,.5);const k=sg.cEl.querySelector(".k");k.style.opacity=P(lt,0,.3);
+        sg.cEl.querySelectorAll(".card").forEach((c,i)=>{const q=oE(P(lt,.5+i*.18,.9+i*.18));c.style.opacity=q;c.style.transform=`translateX(${(1-q)*-50}px)`});
+        sg.cEl.querySelectorAll(".b").forEach(b=>{if(!b.closest(".card"))b.style.opacity=P(lt,.6,1)});
+        const ch=sg.cEl.querySelector(".chw polyline:last-of-type");const cw=sg.cEl.querySelector(".chw");if(cw)cw.style.clipPath=`inset(0 ${(1-ioC(P(lt,.5,2.2)))*100}% 0 0)`}
+    });
+    /* notes */
+    notes.forEach(n=>{const on=t>=n.t0&&t<n.t1;n.el.style.display=on?"block":"none";if(!on)return;
+      const q=oE(P(t,n.t0,n.t0+.4)),o=iC(P(t,n.t1-.3,n.t1));
+      const y=s.fit==="band"?s.band.y+s.band.h-n.el.offsetHeight/2:1000;n.el.style.top=y+"px";
+      n.el.style.opacity=q*(1-o);n.el.style.transform=`translateX(${(1-q)*-80+o*60}px)`});
+    /* title */
+    if(tEl){const on=t<T.t1;tEl.style.display=on?"block":"none";
+      if(on){tK.style.opacity=P(t,.05,.35);rise(T.el,t,.1,.03,.55);tS.style.top=(1062+T.el.offsetHeight+28)+"px";tS.style.opacity=P(t,.5,.9);
+        const o=iC(P(t,T.t1-.35,T.t1));tEl.style.opacity=1-o;tEl.style.transform=`translateY(${-o*60}px)`}}
+    /* end */
+    if(eEl){const on=t>=E.t0;eEl.style.display=on?"block":"none";
+      if(on){const lt=t-E.t0,q=oE(P(lt,0,.5));eEl.style.clipPath=`polygon(${(1-q)*1400}px 0,${1080+(1-q)*1400+400}px 0,${1080+(1-q)*1400}px 1920px,${(1-q)*1400-400}px 1920px)`;
+        eEl.querySelector("#elk").style.opacity=P(lt,.3,.7);rise(E.h,lt,.45,.03,.55);mk.style.display="none"}else mk.style.display="flex"}
+    /* wipes */
+    let w=null;for(const c of cuts)if(t>=c-.2&&t<c+.2)w=c;
+    wipe.style.display=w==null?"none":"block";
+    if(w!=null){const p=(t-(w-.2))/.4;wipe.style.transform=`translateX(${-2400+p*(2400+1080)}px)`}
+  };
+  return AM.ready().then(()=>FITS.forEach(f=>f()));
+};
+</script></body></html>

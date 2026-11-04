@@ -1,0 +1,104 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="kit.css">
+<style>
+body{display:flex;flex-wrap:wrap;gap:40px;padding:40px;width:max-content;max-width:6000px}
+.slide{width:1080px;height:1350px;flex:none}
+.fitw{white-space:nowrap}
+.head{position:absolute;left:64px;right:64px;top:168px;z-index:10}
+.head .k{font-size:21px;margin-bottom:22px}
+.head .h{font-size:84px}
+.vis{position:absolute;left:64px;right:64px;z-index:10;display:flex;align-items:center;justify-content:center}
+.copy{position:absolute;left:64px;right:64px;z-index:10}
+.copy .b{font-size:33px}
+.note{position:absolute;z-index:12;font-family:JBM;font-size:17px;letter-spacing:.16em;color:var(--steel);text-transform:uppercase}
+.tag{display:inline-block;font-family:JBM;font-size:19px;letter-spacing:.2em;padding:8px 14px;background:rgba(243,244,246,.1);color:var(--ice);text-transform:uppercase}
+.tag.on{background:var(--blue)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%}
+.ba .col{display:flex;flex-direction:column;gap:18px}
+.ba .card{padding:18px;display:flex;justify-content:center}
+</style></head><body>
+<div id="root"></div>
+<script src="logo.js"></script>
+<script src="kit.js"></script>
+<script>
+/* window.build(spec) renders every slide; spec = {series, number, slides:[...], demo, handle}
+   Slide types: hook | content | close. Content slides take one `visual` (see README). */
+const {esc,rich,headline,photo,lineChart,legend,bars,gauge,split,flow,carLoad,corner,chrome,flag,lockupSvg,C}=AM;
+function visual(v,w,h){
+  if(!v)return "";
+  switch(v.type){
+    case "chart":{const cw=w,ch=h-(v.series.length>1||v.legend?60:0);
+      return `<div style="display:flex;flex-direction:column;gap:22px;align-items:flex-start">${v.series.length>1||v.legend?legend(v.series):""}${lineChart({...v,w:cw,h:ch})}</div>`}
+    case "bars":return bars({...v,w});
+    case "table":return `<table class="t" style="width:${w}px"><tr>${v.columns.map(c=>`<th>${esc(c)}</th>`).join("")}</tr>${v.rows.map((r,i)=>`<tr class="${(v.highlight||[]).includes(i)?"hl":""}">${r.map((c,j)=>{const [main,sub]=String(c).split("||");return `<td class="${(v.mono||[]).includes(j)?"n":""}">${rich(main)}${sub?`<span class="sub">${esc(sub)}</span>`:""}</td>`}).join("")}</tr>`).join("")}</table>`;
+    case "corner":return corner({...v,w,h});
+    case "gauge":return gauge({...v,size:Math.min(w,h*1.6)});
+    case "split":return split({...v,w});
+    case "flow":return flow({...v,w});
+    case "car-load":return `<div style="display:flex;gap:40px;justify-content:center">${(v.cars||[v]).map(c=>carLoad({...c,w:Math.min(420,(w-40)/(v.cars||[v]).length)})).join("")}</div>`;
+    case "stats":return `<div style="display:flex;gap:0;width:${w}px">${v.items.map((it,i)=>`<div class="chip${it.hot?" hot":""}" style="flex:1"><b style="font-size:${it.size||72}px">${esc(it.value)}</b><span>${esc(it.label)}</span></div>`).join("")}</div>`;
+    case "photo":return `<div style="position:relative;width:${w}px;height:${h}px;clip-path:${v.lean===false?"none":AM.lean(h)}">${photo({src:v.src,pos:v.pos,x:0,y:0,w,h,fade:"soft",tint:.3})}</div>`;
+    case "before-after":{const cw=(w-28)/2;
+      return `<div class="ba" style="width:${w}px">${[["before",v.before],["after",v.after]].map(([k,c])=>`<div class="col">
+        <div><span class="tag ${k==="after"?"on":""}">${esc(c.label||k)}</span></div>
+        ${c.visual?`<div class="card">${visual(c.visual,cw-36,c.visual.h||460)}</div>`:""}
+        ${c.title?`<div class="h" style="font-size:44px">${esc(c.title)}</div>`:""}
+        ${c.body?`<div class="b" style="font-size:27px;color:${k==="after"?C.ice:C.steel}">${rich(c.body)}</div>`:""}</div>`).join("")}</div>`}
+    default:return `<div class="m" style="color:red">unknown visual ${esc(v.type)}</div>`;
+  }
+}
+function fitText(el,min=40){let fs=parseFloat(getComputedStyle(el).fontSize);while(el.scrollWidth>el.clientWidth+1&&fs>min){fs-=2;el.style.fontSize=fs+"px"}}
+window.build=function(spec){
+  const root=document.getElementById("root");root.innerHTML="";
+  const N=spec.slides.length,series=spec.series||"APEX NOTES",num=spec.number!=null&&spec.number!==""?` · ${typeof spec.number==="number"?"#"+spec.number:spec.number}`:"";
+  spec.slides.forEach((s,i)=>{
+    const el=document.createElement("div");el.className="slide frame";el.id="slide-"+(i+1);root.appendChild(el);
+    const counter=`${String(i+1).padStart(2,"0")} / ${String(N).padStart(2,"0")}`;
+    const pattern=s.pattern===false?null:(s.pattern||spec.pattern||null);
+    let html="";
+    if(s.type==="hook"){
+      const ph=s.photoHeight||900;
+      if(s.photo)html+=photo({src:s.photo,pos:s.pos||"50% 50%",x:0,y:0,w:1080,h:ph,fade:"bottom",tint:.3,zoom:s.zoom||1});
+      html+=`<div class="abs k" style="left:64px;top:${s.photo?ph-260:420}px;font-size:22px;z-index:10">${esc(s.kicker||series+num)}</div>
+        <div class="abs h fitw" style="left:64px;right:64px;top:${s.photo?ph-210:470}px;font-size:${s.size||104}px;z-index:10">${headline(s.title)}</div>
+        ${s.sub?`<div class="abs b" style="left:64px;right:120px;bottom:120px;font-size:32px;color:${C.steel};z-index:10">${rich(s.sub)}</div>`:""}
+        <div class="abs m" style="right:64px;bottom:48px;font-size:18px;letter-spacing:.2em;color:${C.sky};z-index:45">SWIPE →</div>`;
+    }else if(s.type==="close"){
+      html+=`<div class="abs k" style="left:64px;top:300px;font-size:22px;z-index:10">${esc(s.kicker||"The takeaway")}</div>
+        <div class="abs h fitw" style="left:64px;right:64px;top:350px;font-size:${s.size||92}px;z-index:10">${headline(s.title)}</div>
+        ${s.body?`<div class="abs b" style="left:64px;right:64px;top:${s.bodyTop||720}px;font-size:33px;color:${C.steel};z-index:10">${rich(s.body)}</div>`:""}
+        <div class="abs" style="left:64px;right:64px;bottom:150px;z-index:10;display:flex;align-items:flex-end;justify-content:space-between">
+          <div>${lockupSvg(430)}</div>
+          <div style="text-align:right"><div class="h" style="font-size:44px">@AKKI_MEISTER</div>
+          <div class="m" style="font-size:19px;color:${C.sky};letter-spacing:.22em;margin-top:12px">${esc(s.cta||"FOLLOW FOR MORE · SAVE THIS")}</div></div></div>
+        <div class="chq" style="left:456px;bottom:96px"></div>`;
+    }else{
+      const top=s.visualTop||(s.title?470:300),vh=s.visualHeight||560;
+      html+=`<div class="head"><div class="k">${esc(s.kicker||"")}</div><div class="h fitw" style="${s.size?`font-size:${s.size}px`:""}">${headline(s.title)}</div></div>
+        <div class="vis" style="top:${top}px;height:${vh}px">${visual(s.visual,952,vh)}</div>
+        ${s.body?`<div class="copy" style="top:${s.bodyTop||top+vh+40}px"><div class="b">${rich(s.body)}</div></div>`:""}`;
+      if(s.note)html+=`<div class="note" style="right:64px;bottom:${spec.demo?92:48}px">${esc(s.note)}</div>`;
+    }
+    el.innerHTML=html;
+    chrome(el,{w:1080,h:1350,counter:`${series}${num} · ${counter}`,demo:spec.demo,handle:s.type==="close"?"":(spec.handle||"@akki_meister"),
+      pattern,patternOp:s.patternOp??.12,flagAt:s.type==="hook"?(s.flag!==false?[760,150]:null):s.type==="close"?[720,170]:null});
+    el.querySelectorAll(".fitw").forEach(e=>fitText(e));
+  });
+  return AM.ready();
+};
+/* overflow audit: text or blocks spilling outside a slide, or content colliding with the bottom chrome */
+window.audit=function(){
+  const out=[];
+  document.querySelectorAll(".slide").forEach(sl=>{const R=sl.getBoundingClientRect();
+    sl.querySelectorAll(".head,.vis>*,.copy,.h,.b,table,.k").forEach(e=>{const r=e.getBoundingClientRect();
+      if(r.width===0)return;
+      if(r.left<R.left-1||r.right>R.right+1||r.top<R.top-1||r.bottom>R.bottom-1)out.push(`${sl.id}: ${e.className||e.tagName} outside slide (${Math.round(r.left-R.left)},${Math.round(r.top-R.top)} ${Math.round(r.width)}x${Math.round(r.height)})`);
+      if(e.scrollWidth>e.clientWidth+2&&getComputedStyle(e).overflow!=="visible")out.push(`${sl.id}: ${e.className} clipped horizontally`)});
+    const copy=sl.querySelector(".copy");if(copy){const r=copy.getBoundingClientRect();if(r.bottom>R.top+1350-90)out.push(`${sl.id}: copy runs into footer (bottom ${Math.round(r.bottom-R.top)})`)}
+    const vis=sl.querySelector(".vis");if(vis&&vis.firstElementChild){const a=vis.getBoundingClientRect(),c=vis.firstElementChild.getBoundingClientRect();if(c.height>a.height+4)out.push(`${sl.id}: visual taller than its box (${Math.round(c.height)} > ${Math.round(a.height)})`)}
+    const head=sl.querySelector(".head"),v2=sl.querySelector(".vis");if(head&&v2&&v2.firstElementChild){const hb=head.getBoundingClientRect().bottom,vt=v2.firstElementChild.getBoundingClientRect().top;if(hb>vt-10)out.push(`${sl.id}: headline overlaps visual`)}
+  });
+  return out;
+};
+</script></body></html>

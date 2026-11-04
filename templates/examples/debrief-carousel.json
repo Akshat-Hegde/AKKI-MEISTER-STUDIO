@@ -1,0 +1,30 @@
+{
+  "template": "debrief-carousel",
+  "out": "templates/samples/debrief-carousel",
+  "demo": true,
+  "episode": 0,
+  "track": "Demo circuit",
+  "car": "Demo car",
+  "lapA": { "label": "Akki", "csv": "templates/examples/demo-data/demo-lap-reference.csv" },
+  "lapB": { "label": "Driver", "csv": "templates/examples/demo-data/demo-lap-driver.csv" },
+  "corners": [],
+  "focus": 2,
+  "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/07-signal-dots-overlay.png",
+  "hook": {
+    "photo": "library/sim-coaching/dsc00987.jpg",
+    "pos": "50% 45%",
+    "title": ["{gap}s off.", "{lost}s of it in", "{nWord} corners."],
+    "size": 104,
+    "sub": "Driver vs reference, same car, same track. **Here's exactly where.**"
+  },
+  "drill": {
+    "title": ["Find your", "real brake marker."],
+    "steps": [
+      { "title": "Pick {c1}. Note where you brake now", "body": "A board, a kerb, a shadow. Same reference every lap." },
+      { "title": "Brake 5 m later each run", "body": "Same peak pressure, same release." },
+      { "title": "Missed the apex? Go back one step", "body": "That's your marker for now." },
+      { "title": "Then do the same at {c2}", "body": "One corner at a time." }
+    ]
+  },
+  "caption": "Episode 0 of The Debrief. 📊 Most of the gap was in two corners, and both were braking too early.\nWant yours reviewed? Send your lap (link in bio).\n@akki_meister\n\n#simracing #simracer #telemetry #thedebrief #f1sim #simracingtips #laptime #simracingindia #akkimeister\n"
+}

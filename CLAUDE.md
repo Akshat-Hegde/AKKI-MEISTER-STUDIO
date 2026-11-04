@@ -39,6 +39,8 @@ Captions are simple: one or two short lines, an optional emoji (🏁 🏎️), `
 | `…/AKKI-MEISTER-reel.mp4` | Final 31 s teaser reel, 1080×1920 |
 | `…/index.html` | Open in a browser for an overview of the whole kit |
 | `outreach/` | **Outreach kit:** `media-kit/` (4 slides + 1-page PDF; fill audience numbers in `data.js`, then `node outreach/media-kit/render.js`), `targets.md`, `templates.md`, `PLAN.md` (4-week outreach plan + tracker) |
+| `templates/` | **Signature-series templates:** `make.js` (one command), `examples/` (specs), `samples/` (renders), `README.md` (every spec field). See "Templates" below |
+| `infographics/_kit/` | Shared brand kit for every template: fonts, colours, frame, charts, corner sketches |
 | `reel/assets/` | **The photo library** (sim rigs, coaching, karts, Formula Student, podiums, suit and helmet) plus fonts and patterns |
 | `reel/comp.html` | Reel composition: an HTML page where `window.render(t)` draws frame `t` |
 | `reel/tools/scenes.js` | Source of the reel's scenes. Copy it into `comp.html` after the `/* time shift` marker after editing |
@@ -116,8 +118,7 @@ The current focus: carousel infographics on niche sim racing topics, posted on @
 - **Content slides:** each has a headline, one visual and a short line or two of copy. Good visuals: a diagram, a chart, a track corner sketch, a settings table, a before/after comparison, or a gauge. Never a wall of text.
 - **Where things live:**
   - Build slides in `infographics/<slug>/` as one HTML page with a `.slide` div per slide.
-  - Share styles from `infographics/_kit/` (fonts, colours, slide shell, chart helpers). Create the kit on first use and reuse it after.
-  - Render each slide to `infographics/<slug>/slide-01.png` etc., with the same puppeteer screenshot approach as `stories-india-open/shoot.js`.
+  - Write the slides as `infographics/<slug>/spec.json` (template `apex-notes`) and render with `node templates/make.js infographics/<slug>/spec.json`. It uses the shared kit in `infographics/_kit/` and writes `slide-01.png` etc. next to the spec.
   - Write the caption and hashtags to `infographics/<slug>/caption.md`.
 - **Photos:** Akki's own sim racing photos go in `photos/` (create it if missing). Use them as hero images or slide backgrounds with the usual cobalt soft-light tint. Crop with object-position and check that faces and wheels aren't cut off.
 - **Style:**
@@ -131,6 +132,26 @@ The current focus: carousel infographics on niche sim racing topics, posted on @
   - For F1 26 (game) and 2026 F1 regulation specifics (ERS, battery deployment, active aero, override modes), check current sources on the web, or ask Akki, before stating anything as fact.
   - Mark Akki's personal setup values as "my setup", not universal truth.
 - **Topic ideas:** ERS and battery management under the 2026 regs, trail braking, brake bias and migration, force-feedback settings, wheel rotation and steering ratio, load-cell pedals, FOV calculation, tyre temperatures and wear, the racing line vs the defensive line, quali vs race mindset, rig ergonomics, sim vs real-car differences, track guides (braking points per corner).
+
+## Templates
+
+Every signature series has a template. One command each, input = a small JSON spec + files from `library/`, output = finished PNGs/MP4 (+ `caption.md` if the spec has a `caption`). Full field reference: `templates/README.md`. Working examples (tested with real library files): `templates/examples/`; their renders: `templates/samples/`.
+
+| Series | Command | Output |
+|---|---|---|
+| 📐 APEX NOTES carousel | `node templates/make.js infographics/<slug>/spec.json` | `slide-01..NN.png` (1080×1350) |
+| 🎙️ THE DEBRIEF carousel (two laps) | `node templates/make.js templates/examples/debrief-carousel.json` | slides + `debrief-numbers.json` |
+| 🎙️ THE DEBRIEF reel | `node templates/make.js templates/examples/debrief-reel.json` | `debrief-ep0.mp4` (1080×1920) + `stills/` |
+| ⏱️ Hotlap / onboard overlay | `node templates/make.js templates/examples/hotlap.json` | `hotlap-nurburgring.mp4` + `stills/` |
+| 🏁 SIM TO TARMAC reel | `node templates/make.js templates/examples/sim-to-tarmac.json` | `sim-to-tarmac-1.mp4` + `stills/` |
+| Stories (announcement · result · quote · question · poll) | `node templates/make.js templates/examples/stories.json` | `story-01-<type>.png …` (1080×1920) |
+
+- **New post:** copy the closest example spec into `posts/<date>-<slug>/spec.json` (or set `"date"` + `"slug"`, or pass `--out`), swap the media and copy, run the command.
+- **Iterate fast:** `--no-video` renders only a reel's review stills; `--stills 3.5,12` adds more. Footage is cached in `<out>/.work/`.
+- **Check before posting:** open every PNG and every file in `stills/`, then scrub the MP4. `⚠` lines flag overflow and sticker-zone collisions; crops of faces, wheels and cars still need your eyes.
+- **No invented numbers:** lap timers are synced to the game's own HUD (`lap.offset` = lap time − clip time, read off 2–3 frames); splits and deltas are copied from the HUD; Debrief charts are computed from the lap CSVs. Concept charts use `"illustrative": true` (no numeric axes). Synthetic test data carries `"demo": true` → a DEMO DATA stamp; never post a demo render.
+- **Audio:** clip sound low, a soft knock on cuts, a quiet tick when type lands. Music only via `"music": {"src": "reel/music/drums.wav", "gain": 0.16}` (licensed, on Akki's PC); without it, reels render with clip sound + knocks only.
+- **Setup:** Playwright (or puppeteer-core + `CHROME_PATH`), ffmpeg, Python 3 + numpy. Library videos are Git LFS: `git lfs pull` first.
 
 ## Preferences learned so far
 

@@ -1,0 +1,61 @@
+{
+  "template": "stories",
+  "out": "templates/samples/stories",
+  "_source": "Result: library/results/img-5943.jpg / tourni-2.jpg (VRH ACC AM Championship final standings: Akki P3 on 51 pts, tied with Surya). Quote: Akki's own India Open debrief (stories-india-open). Show dates follow CONTENT-CALENDAR.md.",
+  "stories": [
+    {
+      "type": "announcement",
+      "label": "New show",
+      "photo": "library/portraits/img-0505.jpg",
+      "pos": "50% 22%",
+      "kicker": "New on @akki_meister",
+      "title": ["The Debrief.", "Every Saturday."],
+      "size": 124,
+      "body": "Send me your lap. I'll find where the time is and give you **one drill** to fix it.",
+      "chips": [ { "value": "EP 0", "label": "SAT 14 NOV" }, { "value": "60–90 S", "label": "ONE REEL A WEEK", "hot": true, "flex": 1.3 } ],
+      "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/02-pinstripe-overlay.png"
+    },
+    {
+      "type": "result",
+      "label": "Result",
+      "photo": "library/sim-rig/img-6234.jpg",
+      "pos": "50% 38%",
+      "kicker": "VRH ACC AM Championship · Final standings",
+      "title": ["P3 in", "season one."],
+      "size": 128,
+      "chips": [ { "value": "P3", "label": "FINAL STANDINGS", "hot": true }, { "value": "51", "label": "POINTS" }, { "value": "S1", "label": "INAUGURAL SEASON" } ],
+      "body": "Tied on 51 points for third. One point here or there decides a season, ~~so every lap counts.~~",
+      "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/07-signal-dots-overlay.png"
+    },
+    {
+      "type": "quote",
+      "label": "Quote",
+      "photo": "library/sim-rig/img-0037.jpg",
+      "pos": "45% 30%",
+      "kicker": "F1 Sim Racing India Open 2026",
+      "quote": "It was a privilege to race India's best F1 sim racers. **A real eye-opener.**",
+      "size": 62
+    },
+    {
+      "type": "question",
+      "label": "Q&A",
+      "photo": "library/telemetry/img-4366.jpg",
+      "pos": "50% 40%",
+      "kicker": "Sim racing · racecraft · setups",
+      "title": ["Ask me", "anything."],
+      "body": "The best questions get answered on the feed.",
+      "zoneLabel": "QUESTION STICKER"
+    },
+    {
+      "type": "poll",
+      "label": "Poll",
+      "photo": "library/sim-rig/img-4609.jpg",
+      "pos": "50% 50%",
+      "kicker": "Apex Notes · You pick",
+      "title": ["What should I", "break down next?"],
+      "size": 104,
+      "body": "Most votes gets a full carousel on Monday.",
+      "zoneLabel": "POLL STICKER"
+    }
+  ]
+}
