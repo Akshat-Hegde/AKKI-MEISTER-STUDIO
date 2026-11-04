@@ -1,0 +1,35 @@
+@font-face{font-family:ClashD;src:url(../../reel/assets/clash-display.woff2) format('woff2');font-weight:600}
+@font-face{font-family:Clash;src:url(../../reel/assets/clash-grotesk.woff2) format('woff2');font-weight:600}
+@font-face{font-family:JBM;src:url(../../reel/assets/jetbrains-mono-latin-wght-normal.woff2) format('woff2');font-weight:100 800}
+:root{--night:#07080C;--blue:#2440FF;--sky:#5B7BFF;--ice:#F3F4F6;--steel:#8C93A3;--panel:rgba(12,14,22,.92);--hair:rgba(243,244,246,.13)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1a1a1a;display:flex;flex-wrap:wrap;gap:40px;padding:40px;width:max-content}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--night);color:var(--ice)}
+.abs{position:absolute}
+.h{font-family:ClashD;font-weight:600;text-transform:uppercase;line-height:.9;letter-spacing:-.005em}
+.k{font-family:Clash;font-weight:600;text-transform:uppercase;letter-spacing:.3em}
+.m{font-family:JBM;font-weight:500;letter-spacing:.08em}
+.b{font-family:Clash;font-weight:600;letter-spacing:.005em}
+.c{color:var(--blue)} .s{color:var(--sky)} .st{color:var(--steel)}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.045;z-index:40;
+ background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.glow{position:absolute;inset:0;pointer-events:none;z-index:2;
+ background:radial-gradient(ellipse 80% 30% at 100% 100%,rgba(36,64,255,.22),transparent 72%),radial-gradient(ellipse 60% 22% at 0% 0%,rgba(91,123,255,.10),transparent 70%)}
+.vig{position:absolute;inset:0;pointer-events:none;z-index:39;background:radial-gradient(ellipse at 50% 45%,transparent 62%,rgba(0,0,0,.34))}
+/* photo panel with brand treatment */
+.ph{position:absolute;overflow:hidden;z-index:3}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.06) brightness(.86)}
+.ph .tint{position:absolute;inset:0;background:var(--blue);mix-blend-mode:soft-light;opacity:.32}
+.ph .scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(7,8,12,.16) 0 1px,transparent 1px 5px)}
+.slant{clip-path:polygon(0 0,100% 0,calc(100% - var(--sk,0px)) 100%,0 100%)}
+/* chrome: mark, counter, handle */
+.wm{position:absolute;left:64px;top:60px;z-index:30}
+.pg{position:absolute;right:64px;top:70px;z-index:30;font-family:JBM;font-size:19px;letter-spacing:.2em;color:var(--steel)}
+.handle{position:absolute;left:64px;bottom:52px;z-index:30;font-family:JBM;font-size:19px;letter-spacing:.12em;color:var(--steel)}
+.handle b{color:var(--ice);font-weight:500}
+.chq{position:absolute;right:64px;bottom:58px;width:132px;height:12px;z-index:30;opacity:.6;transform:skewX(-12deg);
+ background:repeating-conic-gradient(#F3F4F6 0 25%,transparent 0 50%) 0 0/12px 12px;
+ -webkit-mask-image:linear-gradient(90deg,transparent,#000 45%);mask-image:linear-gradient(90deg,transparent,#000 45%)}
+.pin{position:absolute;inset:0;background:url(../../AKKI-MEISTER-COMPLETE/patterns-transparent/02-pinstripe-overlay.png) center/1300px auto;opacity:.16;z-index:1}
+/* placeholders Akki fills in */
+.fill{display:inline-block;font-family:JBM;font-weight:600;color:var(--sky);border:2px dashed var(--sky);padding:2px 12px;letter-spacing:.08em;background:rgba(36,64,255,.10)}

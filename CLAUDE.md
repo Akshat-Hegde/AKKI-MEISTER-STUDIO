@@ -38,6 +38,7 @@ Captions are simple: one or two short lines, an optional emoji (🏁 🏎️), `
 | `…/story/` | 8-frame teaser story, 1080×1920 |
 | `…/AKKI-MEISTER-reel.mp4` | Final 31 s teaser reel, 1080×1920 |
 | `…/index.html` | Open in a browser for an overview of the whole kit |
+| `outreach/` | **Outreach kit:** `media-kit/` (4 slides + 1-page PDF; fill audience numbers in `data.js`, then `node outreach/media-kit/render.js`), `targets.md`, `templates.md`, `PLAN.md` (4-week outreach plan + tracker) |
 | `reel/assets/` | **The photo library** (sim rigs, coaching, karts, Formula Student, podiums, suit and helmet) plus fonts and patterns |
 | `reel/comp.html` | Reel composition: an HTML page where `window.render(t)` draws frame `t` |
 | `reel/tools/scenes.js` | Source of the reel's scenes. Copy it into `comp.html` after the `/* time shift` marker after editing |
