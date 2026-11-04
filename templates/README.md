@@ -15,7 +15,7 @@ node templates/make.js <spec.json>
 | `sim-to-tarmac` | 🏁 SIM TO TARMAC kinetic reel | `<name>.mp4` + `stills/` |
 | `stories` | Story set: announcement · result · quote · question · poll | `story-01-<type>.png …` 1080×1920 |
 
-Working examples (all tested with real library files) are in `templates/examples/`, their renders in `templates/samples/`.
+Working examples (all tested with real library files) are in `templates/examples/`, their renders in `templates/samples/`. Sample MP4s aren't committed (like every render, `*.mp4` is gitignored); re-create one with its command, or look at the committed `*-stills.jpg` contact sheet.
 
 **Flags:** `--out <dir>` overrides the output folder · `--no-video` renders only the review stills of a reel (seconds, not minutes) · `--stills 3.5,12` adds review stills at those reel times.
 **Output folder:** `"out"` in the spec, else `posts/<date>-<slug>/` when `"date"` and `"slug"` are set, else next to the spec. If the spec has a `"caption"`, it's written to `caption.md`.
