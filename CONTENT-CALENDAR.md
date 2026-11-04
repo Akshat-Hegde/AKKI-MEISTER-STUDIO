@@ -1,6 +1,6 @@
 # AKKI MEISTER: 4-week content calendar
 
-**Runs 9 Nov – 6 Dec 2026.** Follows `strategy/STRATEGY.md`.
+**Runs 9 Nov – 6 Dec 2026.** Follows `strategy/STRATEGY.md`. Outreach runs alongside it: `outreach/PLAN.md` says who to contact each week, once the relevant posts are live.
 
 **Positioning:** *India's own sim racing coach. Real laps, real data, real racecraft. Every post makes you faster.*
 

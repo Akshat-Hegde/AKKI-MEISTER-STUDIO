@@ -26,7 +26,7 @@ Tick items off as you go (`- [x]`). The reasoning behind each item is in `strate
 ## Phase 1 · 0–3 months (Nov 2026 – Jan 2027) · *Prove the format*
 
 **Setup**
-- [ ] 🛠️ Run Playbook Session 3: media kit + target list + templates.
+- [x] 🛠️ Run Playbook Session 3: media kit + target list + templates (`outreach/`). Fill the audience numbers in `outreach/media-kit/data.js` before sending to brands.
 - [ ] 🛠️ Run Playbook Session 4: content engine. **Debrief template first**, then Apex Notes, then the hotlap overlay.
 - [ ] 🛠️ Record every practice session with an input overlay (the raw material for everything else).
 - [ ] 🛠️ Set up a telemetry capture workflow for F1 26 (and ACC) so a lap export takes under 5 minutes.

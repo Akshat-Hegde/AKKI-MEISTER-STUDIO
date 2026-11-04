@@ -299,9 +299,9 @@ Results graphics and trophies: runner-up (Forza Horizon 5 league), championship 
 | File | Type | Orientation | Size | Notes |
 |---|---|---|---|---|
 | `results/img-5384.jpg` | photo | square | 1179×1177 | RUNNER-UP graphic, Acer Predator Forza Horizon 5 league |
-| `results/img-5943.jpg` | photo | vertical | 1536×2048 | AM Championship standings (VRH) - Akki P4 |
+| `results/img-5943.jpg` | photo | vertical | 1536×2048 | VRH ACC AM Championship final standings: Akki P3 (51 pts, tied with Surya) |
 | `results/toruni.jpg` | photo | vertical | 903×1600 | P2 overall at a sim racing event (story graphic) |
-| `results/tourni-2.jpg` | photo | vertical | 900×1600 | P2 in VRH ACC AM Championship (story graphic) |
+| `results/tourni-2.jpg` | photo | vertical | 900×1600 | P3 in the inaugural VRH ACC AM Championship (story graphic, same standings + prize tee) |
 
 ## design
 
@@ -347,11 +347,11 @@ Photos already used on Akki's portfolio website (curated, good quality): podium 
 | `website/nyc.jpg` | photo | vertical | 960×1280 |  |
 | `website/p1.jpg` | photo | vertical | 1500×2000 |  |
 | `website/podium-p1-jeddah.jpg` | photo | vertical | 1050×1400 | P1 podium Jeddah |
-| `website/podium-p1-redrabbit.jpg` | photo | square | 1100×1181 | P1 podium |
-| `website/podium-p1-supra.jpg` | photo | vertical | 1007×1400 | P1 podium |
+| `website/podium-p1-redrabbit.jpg` | photo | square | 1100×1181 | P1: Red Rabbit "E-Sports Winner" medal |
+| `website/podium-p1-supra.jpg` | photo | vertical | 1007×1400 | Akki with trophy on FS car CV-10 (event/result to confirm with Akki) |
 | `website/podium-p2-austria.jpg` | photo | vertical | 1029×1400 | P2 podium Austria |
 | `website/podium-p2-brazil.jpg` | photo | vertical | 930×1400 | P2 podium Brazil |
-| `website/podium-p2-teho.jpg` | photo | vertical | 727×1400 | P2 podium |
+| `website/podium-p2-teho.jpg` | photo | vertical | 727×1400 | P2 overall, Project Teho sim racing event |
 | `website/podium-p3-spa.jpg` | photo | vertical | 1100×1294 | P3 podium Spa |
 | `website/podium-p3-vrh.jpg` | photo | vertical | 1050×1400 | P3 podium VRH |
 | `website/portrait.jpg` | photo | horizontal | 2000×1333 |  |
