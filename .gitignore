@@ -11,5 +11,9 @@ __pycache__/
 *.bak.js
 *.bak.py
 
-# ...but keep the source media Akki uploads (videos go through Git LFS, see .gitattributes)
-!media/**
+# raw uploads stay local (full size); the web-ready copies in library/ are tracked
+media/
+library/_staging/
+library-build.log
+!library/**
+library/_staging/**

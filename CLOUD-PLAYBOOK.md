@@ -26,7 +26,9 @@
 ## Session 1: research the creator landscape
 
 ```
-Read CLAUDE.md. I want to become a leading sim racing / motorsport / lifestyle creator, especially in India.
+Read CLAUDE.md (especially "The mission").
+
+My end goal: become a popular and genuinely valuable sim racing / motorsport / lifestyle content creator — starting in India — who gets invited to sim racing expos, gets F1 paddock passes, gets invited by teams, lands brand partnerships and ambassador roles through my content, and above all delivers real value and knowledge to my audience. I want to study the creators who already did this — Jimmy Broadbent, Super GT, Jardier globally, Adi Plays in India — and find everyone else doing this in India, then craft my own path: positioning, ideas, content plan.
 
 Research (use web search, cite every source with a link, never invent numbers — if you can't verify a figure, say so):
 1. Global sim racing creators: Jimmy Broadbent, Super GT, Jardier, and 6–10 others in the same space (find them). For each: platforms, approx audience (with source + date), niche/angle, signature formats, posting cadence, how they grew (key videos/moments), how they make money (sponsors, ambassadors, merch, team deals), and any F1/team/expo partnerships.
@@ -42,7 +44,9 @@ Output: research/creator-landscape.md (tables + short analysis) and research/ind
 ## Session 2: positioning, strategy and the path
 
 ```
-Read CLAUDE.md, research/creator-landscape.md, research/india-ecosystem.md.
+Read CLAUDE.md (especially "The mission"), research/creator-landscape.md, research/india-ecosystem.md, MEDIA.md.
+
+My end goal (repeat it back in one paragraph before you start, so I know you've got it): become a popular, valuable sim racing / motorsport / lifestyle creator who gets invited to sim expos, earns F1 paddock access and team invitations, lands partnerships and ambassador roles through content, and delivers real knowledge — built the way Jimmy Broadbent, Super GT, Jardier and Adi Plays built theirs, but in my own lane.
 
 My real assets: competed at F1 Sim Racing India Open 2026 (top 40 of 33k+), sim racing podiums, karting, Formula Student (engineering + driving), I coach sim racing (incl. kids), I understand data/telemetry, I have a finished brand (AKKI MEISTER).
 
@@ -54,7 +58,10 @@ Build my strategy:
 5. Metrics to track monthly and what "working" looks like.
 6. Risks and what to avoid (burnout, inconsistency, copying others, unverified claims).
 
-Output: strategy/STRATEGY.md and strategy/ROADMAP.md (checklist format I can tick off).
+7. Content ideas: 30 specific post/reel ideas mapped to pillars and series, each noting which files from MEDIA.md it would use (or what I need to film).
+8. Update CONTENT-CALENDAR.md so it follows this strategy.
+
+Output: strategy/STRATEGY.md and strategy/ROADMAP.md (checklist format I can tick off), plus the updated calendar.
 ```
 
 ---
@@ -88,7 +95,7 @@ Document each in CLAUDE.md under "Templates" with the exact command. Test each w
 ## Session 5 onward: batch production
 
 ```
-Read CLAUDE.md, CONTENT-CALENDAR.md, strategy/STRATEGY.md. Using the templates, produce Week <N> from the calendar: every post as finished files in posts/<date>-<slug>/ with caption.md. Fact-check everything marked 🔎 with cited sources. Then extend CONTENT-CALENDAR.md by 4 more weeks aligned with the strategy's signature series.
+Read CLAUDE.md, MEDIA.md, CONTENT-CALENDAR.md, strategy/STRATEGY.md. For every post, choose the photos/clips from library/ whose subject actually matches the post (see "Choosing media" in CLAUDE.md) — look at the frames before using a clip, and tell me which files you picked and why. Using the templates, produce Week <N> from the calendar: every post as finished files in posts/<date>-<slug>/ with caption.md. Fact-check everything marked 🔎 with cited sources. Then extend CONTENT-CALENDAR.md by 4 more weeks aligned with the strategy's signature series.
 ```
 
 Run one session per 1–2 weeks of content. Give it the media first.

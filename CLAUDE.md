@@ -63,11 +63,45 @@ Photo crops: check every crop on a rendered still before calling it done. `telem
   - point `executablePath` at this machine's Chrome or Edge,
   - check that `ffmpeg` and Python with `numpy` are installed.
 
-## Content plan and raw media
+## The mission (read this first, every session)
 
-- **The plan:** `CONTENT-CALENDAR.md` has the 4-week plan, with hooks, captions, hashtag sets and the assets each post needs. Work from it. Tick posts off as they're made, and flag anything marked 🔎 for fact-checking.
-- **Akki's raw uploads** go in `media/photos/`, `media/videos/` and `media/telemetry/`. Videos are stored with Git LFS.
-- **Before using a clip:** check its length and resolution with `ffprobe`. Pull frames with ffmpeg and look at them before cutting.
+Akki wants to become a **popular, genuinely valuable sim racing, motorsport and lifestyle creator**, starting in India. The goals:
+- get invited to **sim racing expos and events**,
+- earn **F1 paddock access** and **invitations from teams**,
+- land **brand partnerships** and **ambassador roles** through content,
+- above all, deliver **real value and knowledge**. The audience should learn something from every post.
+
+**Reference creators:**
+- Global: Jimmy Broadbent, Super GT, Jardier.
+- India: Adi Plays, plus others found in `research/`.
+
+Learn from what made them grow; never copy them.
+
+**Akki's credibility:**
+- Competed at the F1 Sim Racing India Open 2026 (top 40 from 33,000+ on the leaderboard).
+- Sim racing podiums.
+- Karting.
+- Formula Student (engineering and driving).
+- Coaches sim racing, including kids.
+- Understands telemetry and data.
+
+**Every piece of content should serve the mission:** build expertise and trust, show personality and lifestyle, and look premium enough that brands and teams want to be associated with it.
+
+## Content plan and media
+
+- **The plan:** `CONTENT-CALENDAR.md` has the 4-week plan, with hooks, captions, hashtag sets and the assets each post needs. `CLOUD-PLAYBOOK.md` lists the sessions in order. Tick posts off as they're made, and flag anything marked 🔎 for fact-checking.
+- **The media library:** `library/` holds Akki's photos and videos. They're deduplicated, photos are resized to 2048 px JPG, and videos are compressed to 1080p MP4. **`MEDIA.md` catalogs every file:** category, what's in it, orientation and best use. Read `MEDIA.md` before choosing anything. Original full-size files stay on Akki's PC and aren't in the repo; ask him if you need a full-resolution original.
+- **Choosing media (important):**
+  - Pick the photo or clip whose *subject matches the post*:
+    - sim racing tips → rig and cockpit shots or onboard clips
+    - coaching → the coaching photos
+    - Formula Student → FS photos
+    - lifestyle → karting, events, people
+  - Never use a random or loosely related image just to fill space.
+  - Match orientation to format: vertical clips and photos for reels and stories (1080×1920); vertical or square for carousels (1080×1350).
+  - Prefer the sharpest, best-lit shot of the set. Avoid repeating the same hero photo across consecutive posts.
+  - **Before using a clip:** run `ffprobe` and pull a few frames with ffmpeg to see what actually happens in it. Then cut the best 2–6 s moments. Never assume a clip's content from its filename.
+  - Always check crops on rendered stills: faces, wheels, cars and text must not be cut off.
 - **Output:** put finished posts in `posts/<date>-<slug>/`: PNGs or MP4 plus `caption.md`.
 
 ## Infographic posts (sim racing explainers)
