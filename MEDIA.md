@@ -8,10 +8,10 @@ Originals (full resolution, HEIC/MOV) stay on Akki's PC in `media/`; ask him if 
 
 | Category | Files | What it is / best for |
 |---|---|---|
-| `sim-rig/` | 36 | Akki driving or sitting in sim rigs: home setup, triple-screen rigs, sim venues and events. Best for sim racing tips, rig/setup posts, hotlap reels. |
-| `sim-coaching/` | 74 | Coaching sessions: Akki coaching drivers (incl. kids) at a karting-venue sim tent, explaining telemetry on a tablet, group briefings. Best for coaching, teaching, community, credibility. |
-| `telemetry/` | 6 | Telemetry/data screens, track maps, laptop setups. Best for data, telemetry and engineering posts. |
-| `karting/` | 30 | Akki karting: action shots (Rotax, rental/race karts), panning shots, track portraits, karting clips. Best for sim-to-real, lifestyle, racecraft. |
+| `sim-rig/` | 46 | Akki driving or sitting in sim rigs: home setup, triple-screen rigs, sim venues and events. Best for sim racing tips, rig/setup posts, hotlap reels. |
+| `sim-coaching/` | 76 | Coaching sessions: Akki coaching drivers (incl. kids) at a karting-venue sim tent, explaining telemetry on a tablet, group briefings. Best for coaching, teaching, community, credibility. |
+| `telemetry/` | 7 | Telemetry/data screens, track maps, laptop setups. Best for data, telemetry and engineering posts. |
+| `karting/` | 33 | Akki karting: action shots (Rotax, rental/race karts), panning shots, track portraits, karting clips. Best for sim-to-real, lifestyle, racecraft. |
 | `formula-student/` | 63 | Formula Student: the car (#10), workshop builds, chassis, suspension, testing at the track, team presentations, BIC pit-lane photos. Best for engineering, sim-to-real, story posts. |
 | `portraits/` | 9 | Akki in race suit / team kit, posed portraits (studio wall, outdoors, kart track at sunset). Best for hook slides, intros, announcements, profile/media kit. |
 | `lifestyle/` | 5 | Events and lifestyle: F1/Williams fan moments, US trip (Texas), vintage car, paddock-style shots. Best for lifestyle and personality posts. |
@@ -62,6 +62,16 @@ Akki driving or sitting in sim rigs: home setup, triple-screen rigs, sim venues 
 | `sim-rig/img-8214.mp4` | video | vertical | 1080×1920, 5.6s | clip (6s): wheel close-up / race on screen |
 | `sim-rig/img-9939.mp4` | video | vertical | 1080×1920, 5.8s | clip (6s): driving at a venue |
 | `sim-rig/sim-intro.mp4` | video | horizontal | 1920×1080, 22.3s | clip (22s): Akki talking to camera at his rig - TALKING-HEAD intro, great for hooks |
+| `sim-rig/1723324577150150.mp4` | video | vertical | 1080×1920, 54.4s | over-the-shoulder at the home rig: hands on wheel, F1 race on screen, colour-changing ambient light (strong; hotlap reels, moody intros) |
+| `sim-rig/img-0130.mp4` | video | vertical | 1080×1920, 19.5s | F1 Sim Racing India Open venue: rows of Playseat rigs with people (strong; event recap, India scene posts) |
+| `sim-rig/img-0086.mp4` | video | vertical | 1080×1920, 10.6s | Akki in helmet at home rig, screen visible (strong) |
+| `sim-rig/img-1875.mp4` | video | horizontal | 1920×1080, 7.9s | driving at a blue-lit venue rig, friend watching |
+| `sim-rig/img-5665.mp4` | video | vertical | 1080×1920, 9.8s | hands on wheel in a red pro rig |
+| `sim-rig/img-2856.mp4` | video | vertical | 1080×1920, 9.6s | Race At Will rig: screen and hands on wheel |
+| `sim-rig/img-2853.mp4` | video | vertical | 1080×1920, 7.6s | Race At Will venue walkthrough |
+| `sim-rig/img-5009.mp4` | video | vertical | 1080×1920, 1.2s | Race At Will banner, very short b-roll |
+| `sim-rig/img-5036.mp4` | video | vertical | 1080×1920, 2.8s | Race At Will triple-screen rig, very short b-roll |
+| `sim-rig/img-6312.mp4` | video | vertical | 1080×1920, 31.8s | helmeted driver at home rig |
 
 ## sim-coaching
 
@@ -143,6 +153,8 @@ Coaching sessions: Akki coaching drivers (incl. kids) at a karting-venue sim ten
 | `sim-coaching/g.jpg` | photo | horizontal | 2048×1365 | telemetry on tablet |
 | `sim-coaching/img-1826.jpg` | photo | vertical | 1536×2048 | Akki standing, coaching someone at desk rig |
 | `sim-coaching/race-engineer.mp4` | video | horizontal | 1920×1080, 7.1s | clip (7s): two people at the rig, engineer/driver dynamic |
+| `sim-coaching/img-2461.mp4` | video | horizontal | 1920×1080, 6.8s | Akki coaching a friend at the rig with a tablet, extends race-engineer.mp4 (strong) |
+| `sim-coaching/img-2465.mp4` | video | horizontal | 1920×1080, 7.1s | Akki coaching a friend at the rig with a tablet, extends race-engineer.mp4 (strong) |
 
 ## telemetry
 
@@ -156,6 +168,7 @@ Telemetry/data screens, track maps, laptop setups. Best for data, telemetry and 
 | `telemetry/img-9320.jpg` | photo | vertical | 1536×2048 | telemetry + track map on monitor |
 | `telemetry/img-9997.jpg` | photo | vertical | 1536×2048 | track map on monitor + wheel (Marina Bay?) |
 | `telemetry/lotus.mp4` | video | horizontal | 392×320, 9.0s | clip (9s): laptop setup / data |
+| `telemetry/img-9855.mp4` | video | horizontal | 1920×1080, 45.2s | live telemetry comparison dashboard on a monitor: Suzuka map, onboard vs player speed and gear (strong; best for THE DEBRIEF and data posts; CROP THE TOP before posting: the browser bookmarks bar shows email addresses, and an orange warning banner sits under the header) |
 
 ## karting
 
@@ -193,6 +206,9 @@ Akki karting: action shots (Rotax, rental/race karts), panning shots, track port
 | `karting/img-2541.mp4` | video | vertical | 1080×1920, 18.6s | clip (19s): karting track |
 | `karting/img-8254.mp4` | video | horizontal | 1920×1080, 12.4s | clip (12s): kart on track behind tyre wall |
 | `karting/reel-1.mp4` | video | vertical | 1080×1920, 40.6s | clip (41s) black & white kart footage |
+| `karting/img-4451.mp4` | video | vertical | 1080×1920, 9.4s | karts at a kart track; use the moment nearest the camera |
+| `karting/img-4452.mp4` | video | vertical | 1080×1920, 8.5s | karts at a kart track, closest pass of this set |
+| `karting/img-4462.mp4` | video | vertical | 1080×1920, 8.7s | karts at a kart track; use the moment nearest the camera |
 
 ## formula-student
 

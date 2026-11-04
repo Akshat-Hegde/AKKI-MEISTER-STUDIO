@@ -2817,5 +2817,181 @@
   "cat": "lifestyle",
   "note": "F1 fan-zone sim rig",
   "orient": "vertical"
+ },
+ {
+  "file": "telemetry/img-9855.mp4",
+  "src": "videos/new vids/IMG_9855.MOV",
+  "type": "video",
+  "w": 1920,
+  "h": 1080,
+  "dur": 45.2,
+  "cat": "telemetry",
+  "note": "live telemetry comparison dashboard on a monitor: Suzuka map, onboard vs player speed and gear (strong; best for THE DEBRIEF and data posts; CROP THE TOP before posting: the browser bookmarks bar shows email addresses, and an orange warning banner sits under the header)",
+  "orient": "horizontal"
+ },
+ {
+  "file": "sim-rig/1723324577150150.mp4",
+  "src": "videos/new vids/1723324577150150.MP4",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 54.4,
+  "cat": "sim-rig",
+  "note": "over-the-shoulder at the home rig: hands on wheel, F1 race on screen, colour-changing ambient light (strong; hotlap reels, moody intros)",
+  "orient": "vertical"
+ },
+ {
+  "file": "sim-rig/img-0130.mp4",
+  "src": "videos/new vids/IMG_0130.MOV",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 19.5,
+  "cat": "sim-rig",
+  "note": "F1 Sim Racing India Open venue: rows of Playseat rigs with people (strong; event recap, India scene posts)",
+  "orient": "vertical"
+ },
+ {
+  "file": "sim-rig/img-0086.mp4",
+  "src": "videos/new vids/IMG_0086.mov",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 10.6,
+  "cat": "sim-rig",
+  "note": "Akki in helmet at home rig, screen visible (strong)",
+  "orient": "vertical"
+ },
+ {
+  "file": "sim-rig/img-1875.mp4",
+  "src": "videos/new vids/IMG_1875.MOV",
+  "type": "video",
+  "w": 1920,
+  "h": 1080,
+  "dur": 7.9,
+  "cat": "sim-rig",
+  "note": "driving at a blue-lit venue rig, friend watching",
+  "orient": "horizontal"
+ },
+ {
+  "file": "sim-rig/img-5665.mp4",
+  "src": "videos/new vids/IMG_5665.MOV",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 9.8,
+  "cat": "sim-rig",
+  "note": "hands on wheel in a red pro rig",
+  "orient": "vertical"
+ },
+ {
+  "file": "sim-rig/img-2856.mp4",
+  "src": "videos/new vids/IMG_2856.MOV",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 9.6,
+  "cat": "sim-rig",
+  "note": "Race At Will rig: screen and hands on wheel",
+  "orient": "vertical"
+ },
+ {
+  "file": "sim-rig/img-2853.mp4",
+  "src": "videos/new vids/IMG_2853.MOV",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 7.6,
+  "cat": "sim-rig",
+  "note": "Race At Will venue walkthrough",
+  "orient": "vertical"
+ },
+ {
+  "file": "sim-rig/img-5009.mp4",
+  "src": "videos/new vids/IMG_5009.MOV",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 1.2,
+  "cat": "sim-rig",
+  "note": "Race At Will banner, very short b-roll",
+  "orient": "vertical"
+ },
+ {
+  "file": "sim-rig/img-5036.mp4",
+  "src": "videos/new vids/IMG_5036.MOV",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 2.8,
+  "cat": "sim-rig",
+  "note": "Race At Will triple-screen rig, very short b-roll",
+  "orient": "vertical"
+ },
+ {
+  "file": "sim-rig/img-6312.mp4",
+  "src": "videos/new vids/IMG_6312.MOV",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 31.8,
+  "cat": "sim-rig",
+  "note": "helmeted driver at home rig",
+  "orient": "vertical"
+ },
+ {
+  "file": "sim-coaching/img-2461.mp4",
+  "src": "videos/new vids/IMG_2461.MOV",
+  "type": "video",
+  "w": 1920,
+  "h": 1080,
+  "dur": 6.8,
+  "cat": "sim-coaching",
+  "note": "Akki coaching a friend at the rig with a tablet, extends race-engineer.mp4 (strong)",
+  "orient": "horizontal"
+ },
+ {
+  "file": "sim-coaching/img-2465.mp4",
+  "src": "videos/new vids/IMG_2465.MOV",
+  "type": "video",
+  "w": 1920,
+  "h": 1080,
+  "dur": 7.1,
+  "cat": "sim-coaching",
+  "note": "Akki coaching a friend at the rig with a tablet, extends race-engineer.mp4 (strong)",
+  "orient": "horizontal"
+ },
+ {
+  "file": "karting/img-4451.mp4",
+  "src": "videos/new vids/IMG_4451.MOV",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 9.4,
+  "cat": "karting",
+  "note": "karts at a kart track; use the moment nearest the camera",
+  "orient": "vertical"
+ },
+ {
+  "file": "karting/img-4452.mp4",
+  "src": "videos/new vids/IMG_4452.MOV",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 8.5,
+  "cat": "karting",
+  "note": "karts at a kart track, closest pass of this set",
+  "orient": "vertical"
+ },
+ {
+  "file": "karting/img-4462.mp4",
+  "src": "videos/new vids/IMG_4462.MOV",
+  "type": "video",
+  "w": 1080,
+  "h": 1920,
+  "dur": 8.7,
+  "cat": "karting",
+  "note": "karts at a kart track; use the moment nearest the camera",
+  "orient": "vertical"
  }
 ]
