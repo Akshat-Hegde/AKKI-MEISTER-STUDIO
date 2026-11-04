@@ -1,0 +1,52 @@
+{
+  "template": "hotlap",
+  "name": "hotlap-nurburgring",
+  "out": "templates/samples/hotlap",
+  "_source": "library/sim-rig/esports-flying-lap.mp4: Conspit 'Formula Challenge Pro' qualifying broadcast, Nürburgring GP. Lap offset, S1 split and best lap are read off the game's own HUD (lap timer = clip time + 2.953 s, checked at 1 s, 45 s and 56 s).",
+  "title": {
+    "kicker": "HOTLAP · ONBOARD",
+    "lines": ["Nürburgring", "GP."],
+    "sub": "Formula Challenge Pro · Qualifying",
+    "dur": 2.6
+  },
+  "header": {
+    "kicker": "HOTLAP · ONBOARD",
+    "title": ["Nürburgring", "GP."],
+    "sub": "FORMULA CHALLENGE PRO · QUALIFYING"
+  },
+  "segments": [
+    {
+      "type": "clip",
+      "src": "library/sim-rig/esports-flying-lap.mp4",
+      "in": 13, "out": 47,
+      "fit": "band",
+      "crop": [560, 0, 1258, 960],
+      "lap": true,
+      "audio": 0.5
+    }
+  ],
+  "lap": {
+    "offset": 2.953,
+    "best": "BEST 1:27.130 · P2 IN QUALIFYING",
+    "hold": 2.5,
+    "splits": [
+      { "name": "S1", "time": 42.104, "delta": "+0.08" },
+      { "name": "S2" },
+      { "name": "S3" }
+    ]
+  },
+  "notes": [
+    { "lap": 19.5, "kicker": "Sector 1", "text": "Eyes up. Find the apex **before** you turn in.", "dur": 3.4 },
+    { "lap": 30.5, "kicker": "Sector 1", "text": "Patience on throttle. **Exit speed** pays all the way down the straight.", "dur": 3.6 },
+    { "lap": 42.3, "kicker": "Split", "text": "Sector 1 done in **42.104**.", "dur": 3 }
+  ],
+  "end": {
+    "kicker": "Hotlap",
+    "lines": ["Copy.", "See you on track."],
+    "size": 96,
+    "body": "Best lap **1:27.130**, P2 in qualifying.",
+    "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/04-speed-lines-overlay.png",
+    "dur": 3.2
+  },
+  "caption": "One lap of the Nürburgring GP, every split on screen. ⏱️ Best of the session: 1:27.130, P2 in qualifying.\n@akki_meister\n\n#simracing #simracer #hotlap #nurburgring #racecraft #simracingindia #esports #akkimeister\n"
+}

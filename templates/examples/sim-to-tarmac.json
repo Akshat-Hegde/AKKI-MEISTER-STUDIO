@@ -1,0 +1,37 @@
+{
+  "template": "sim-to-tarmac",
+  "name": "sim-to-tarmac-1",
+  "out": "templates/samples/sim-to-tarmac",
+  "_source": "Clips checked frame by frame: img-0972 (Akki at his home rig, steering, 2-15 s); karting/img-8254 (kart passes close behind the tyre wall at 5.2-7 s); formula-student/img-0548 (FS car passes the camera at 12.9-15.3 s and 24.2-26.4 s). Copy follows CONTENT-CALENDAR week 3 (what carried over / what didn't).",
+  "title": {
+    "kicker": "SIM TO TARMAC · #1",
+    "lines": ["Sim to", "tarmac."],
+    "size": 168,
+    "sub": "Does the rig make you faster in a real car?",
+    "dur": 2.8
+  },
+  "segments": [
+    { "type": "clip", "src": "library/sim-rig/img-0972.mp4", "in": 2.0, "dur": 2.8, "focus": "50% 45%", "audio": 0.2, "wipe": false },
+    { "type": "clip", "src": "library/sim-rig/img-0972.mp4", "in": 9.0, "dur": 2.6, "focus": "50% 45%", "audio": 0.2,
+      "tag": "SIM · HOME RIG", "kicker": "What carries over", "lines": ["Braking", "references."], "size": 120 },
+    { "type": "split", "dur": 2.8,
+      "top": { "src": "library/sim-rig/img-0972.mp4", "in": 12.5, "focus": "45% 52%" },
+      "bottom": { "src": "library/karting/img-8254.mp4", "in": 5.2, "focus": "30% 55%" },
+      "tags": ["SIM", "TARMAC · KARTING"], "audio": 0.35,
+      "kicker": "What carries over", "lines": ["Vision.", "Consistency."], "linesY": 1460, "size": 100 },
+    { "type": "clip", "src": "library/formula-student/img-0548.mp4", "in": 12.9, "dur": 2.5, "focus": "50% 30%", "zoom": 1.15, "audio": 0.35,
+      "tag": "TARMAC · FORMULA STUDENT", "kicker": "What doesn't", "lines": ["G-force."], "size": 150 },
+    { "type": "clip", "src": "library/formula-student/img-0548.mp4", "in": 24.3, "dur": 2.2, "focus": "50% 30%", "zoom": 1.15, "audio": 0.35,
+      "tag": "TARMAC · FORMULA STUDENT", "kicker": "What doesn't", "lines": ["Grip feel.", "Fear."], "size": 130 }
+  ],
+  "end": {
+    "kicker": "The verdict",
+    "lines": ["The rig builds", "the habits.", "The track tests them."],
+    "size": 84,
+    "bodyTop": 1340,
+    "body": "Full breakdown in the caption. **Sim to Tarmac, every month.**",
+    "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/04-speed-lines-overlay.png",
+    "dur": 3.4
+  },
+  "caption": "Sim to tarmac. 🏎️ What the rig taught me that worked in a kart, and the one thing no sim can teach you.\n@akki_meister\n\n#simracing #simracer #karting #formulastudent #simtoreal #motorsport #simracingindia #akkimeister\n"
+}

@@ -17,3 +17,8 @@ library/_staging/
 library-build.log
 !library/**
 library/_staging/**
+
+# template render caches
+**/.work/
+# template sample renders: commit contact sheets, not the per-frame review stills (MP4s stay ignored like every render)
+templates/samples/**/stills/

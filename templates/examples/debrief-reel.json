@@ -1,0 +1,52 @@
+{
+  "template": "debrief-reel",
+  "name": "debrief-ep0",
+  "out": "templates/samples/debrief-reel",
+  "_source": "Opening: library/sim-rig/img-0972.mp4 (Akki driving at his home rig, 2-5.5 s checked frame by frame). Lap: library/sim-rig/esports-flying-lap.mp4, Akki's own qualifying lap (lap timer = clip time + 2.953 s, S1 42.104 / +0.08 read off the HUD). The coaching notes are placeholder copy: replace them with Akki's own read of the lap.",
+  "title": {
+    "kicker": "THE DEBRIEF · EP 0",
+    "lines": ["My own lap.", "Under the", "microscope."],
+    "size": 132,
+    "sub": "Nürburgring GP · Formula Challenge Pro",
+    "dur": 3.0
+  },
+  "header": {
+    "kicker": "THE DEBRIEF · EP 0",
+    "title": ["Akki vs", "the clock."],
+    "sub": "NÜRBURGRING GP · QUALIFYING LAP"
+  },
+  "segments": [
+    { "type": "clip", "src": "library/sim-rig/img-0972.mp4", "in": 2.0, "dur": 3.0, "fit": "cover", "focus": "50% 45%", "audio": 0.25, "wipe": false },
+    { "type": "clip", "src": "library/sim-rig/esports-flying-lap.mp4", "in": 31, "out": 46, "fit": "band", "crop": [560, 0, 1258, 960], "lap": true },
+    {
+      "type": "card", "dur": 5.0,
+      "kicker": "The one drill",
+      "lines": ["Same marker.", "Every lap."],
+      "size": 120,
+      "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/02-pinstripe-overlay.png",
+      "steps": [
+        { "title": "Pick one braking marker per corner", "body": "A board, a kerb, a shadow." },
+        { "title": "Ten laps, brake on it every time", "body": "Consistency first. Speed comes after." },
+        { "title": "Then move it 5 m later", "body": "Missed the apex? Go back one step." }
+      ]
+    }
+  ],
+  "lap": {
+    "offset": 2.953,
+    "best": "BEST 1:27.130 · P2 IN QUALIFYING",
+    "splits": [ { "name": "S1", "time": 42.104, "delta": "+0.08" }, { "name": "S2" }, { "name": "S3" } ]
+  },
+  "notes": [
+    { "lap": 35.2, "kicker": "Watch", "text": "Where I brake vs where I **turn in**.", "dur": 3.2 },
+    { "lap": 42.25, "kicker": "Sector 1", "text": "**42.104.** Now the question: where's the next tenth?", "dur": 3.5 }
+  ],
+  "end": {
+    "kicker": "Your lap next",
+    "lines": ["Send me", "your lap."],
+    "body": "Lap video with inputs or a telemetry export. **Link in bio.** The best ones get a Debrief.",
+    "cta": "THE DEBRIEF · EVERY SATURDAY",
+    "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/07-signal-dots-overlay.png",
+    "dur": 3.5
+  },
+  "caption": "Episode 0 of The Debrief: I put my own lap under the microscope first. 📊\nWant yours reviewed? Send your lap (link in bio).\n@akki_meister\n\n#simracing #simracer #thedebrief #telemetry #simracingtips #nurburgring #simracingindia #akkimeister\n"
+}
