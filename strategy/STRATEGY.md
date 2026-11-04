@@ -3,9 +3,8 @@
 *Written 4 Nov 2026. Built on `research/creator-landscape.md` and `research/india-ecosystem.md`. Pair it with `strategy/ROADMAP.md` (the checklist) and `CONTENT-CALENDAR.md` (the next 4 weeks).*
 
 > **⚠️ Settle these before anything goes public**
-> 1. **Top 40 or top 80?** In this session you said "top 80 of 33k+". `CLAUDE.md`, the research and the old calendar all say "top 40". This strategy uses **top 80** because it's your latest statement. Screenshot the MFRL app leaderboard (your position and the total entries), then fix whichever files are wrong. Your whole positioning rests on credibility, and the audience *will* check.
-> 2. **Kids in coaching photos.** `library/sim-coaching/` includes minors. Get written parental consent before any child's face appears in a post. Otherwise use shots where they aren't identifiable, or blur them.
-> 3. **"33,000+"** comes from the leaderboard, not a press figure. Keep the screenshot (see the research).
+> 1. **Kids in coaching photos.** `library/sim-coaching/` includes minors. Get written parental consent before any child's face appears in a post. Otherwise use shots where they aren't identifiable, or blur them.
+> 2. **The India Open figure is top 80 out of 33,000+ registered participants** (confirmed by Akki, 4 Nov 2026). It comes from the MFRL app, not a press release, so keep a screenshot of the leaderboard as proof. Your whole positioning rests on credibility, and the audience *will* check.
 
 ---
 
@@ -145,7 +144,7 @@ There's a **minimum viable week** for exam weeks (see below), and missing a week
 | **Twitch / live** | Later: Hotlap Challenge finals, charity or endurance stream | Optional from month 9+. One "event" stream per quarter, not a schedule. | 9+ months |
 
 ### First long-form YouTube video: candidate titles
-1. "How I finished top 80 of 33,000 at the F1 Sim Racing India Open (and what I'd change)" ⚠️ confirm the number first.
+1. "How I finished top 80 of 33,000+ at the F1 Sim Racing India Open (and what I'd change)"
 2. "I reviewed 5 of your laps. Here's the mistake all of you make" (a Debrief compilation).
 3. "Sim racing in India: the complete beginner's guide (₹30k to ₹3 lakh)" 🔎 prices at the time of posting.
 
@@ -276,7 +275,7 @@ Track these in a simple sheet. Month 1 sets the **baseline**, and "working" mean
    - Every 🔎 gets checked with sources.
    - Personal values are labelled "my setup".
    - Corrections go in a pinned comment or story, not deleted.
-2. **Overstating results.** Settle top 40 vs top 80 now. Never round up. Keep screenshots of every result.
+2. **Overstating results.** Always say exactly "top 80 of 33,000+ registered". Never round up. Keep screenshots of every result.
 3. **Burnout and inconsistency.** The research pattern is that creators who last 6+ months win. Use the minimum viable week, batch production (Session 5), and templates. Don't add platforms ahead of the plan.
 4. **Copying.** Learn the *mechanics*, not the look:
    - Broadbent: the annual event.
@@ -304,7 +303,7 @@ Track these in a simple sheet. Month 1 sets the **baseline**, and "working" mean
 
 | # | Idea (hook) | Format | Pillar | Series | Media to use / what to film |
 |---|---|---|---|---|---|
-| 1 | **"33,000+ on the leaderboard. Here's what top 80 actually took."** | Reel 30–45 s | P4 | — | Render `email-motion/email-zoom.html` → mp4 first; `stories-india-open/assets/venue.jpg`, `room.jpg`, `cockpit.jpg`; talking-head hook from `sim-rig/sim-intro.mp4` (check frames). ⚠️ top 40/80 |
+| 1 | **"33,000+ registered. Here's what top 80 actually took."** | Reel 30–45 s | P4 | — | Render `email-motion/email-zoom.html` → mp4 first; `stories-india-open/assets/venue.jpg`, `room.jpg`, `cockpit.jpg`; talking-head hook from `sim-rig/sim-intro.mp4` (check frames) |
 | 2 | **"The ERS mistake that killed my race pace in F1 26"** | Carousel 7 | P2 | APX | Hero `telemetry/img-9320.jpg`; battery deploy/harvest diagram from the kit. 🔎 2026 regs + F1 26 ERS modes |
 | 3 | **Debrief Ep 0: "I debriefed my own lap. 0.Xs in two corners."** | Reel 75 s | P2 | DEB | 📊 Akki's lap + reference export; b-roll `sim-rig/img-8214.mp4` (wheel close-up), `telemetry/img-4366.jpg` |
 | 4 | **"You're braking in a straight line. That's why you're slow."** (trail braking) | Carousel 7 | P1 | APX | Hero `sim-coaching/dsc00978.jpg` (strong); brake-pressure graph. 🔎 |

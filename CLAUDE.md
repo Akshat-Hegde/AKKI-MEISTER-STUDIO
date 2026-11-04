@@ -78,7 +78,7 @@ Akki wants to become a **popular, genuinely valuable sim racing, motorsport and 
 Learn from what made them grow; never copy them.
 
 **Akki's credibility:**
-- Competed at the F1 Sim Racing India Open 2026 (top 40 from 33,000+ on the leaderboard).
+- Competed at the F1 Sim Racing India Open 2026 (top 80 out of 33,000+ registered participants).
 - Sim racing podiums.
 - Karting.
 - Formula Student (engineering and driving).

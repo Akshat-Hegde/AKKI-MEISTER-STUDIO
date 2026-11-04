@@ -4,7 +4,9 @@
 
 **Positioning:** *India's own sim racing coach. Real laps, real data, real racecraft. Every post makes you faster.*
 
-> ⚠️ **Before week 1:** settle **top 40 vs top 80** with the leaderboard screenshot (see `strategy/ROADMAP.md`). The posts below say top 80, per Akki's latest statement. Get parental consent before any coached child's face is used.
+> **India Open figure:** top 80 out of 33,000+ registered participants. Use exactly that wording, and keep the leaderboard screenshot as proof.
+>
+> ⚠️ **Before week 1:** get parental consent before any coached child's face is used.
 
 ## The weekly rhythm
 
@@ -68,7 +70,7 @@ India Open finals week (NSCI Dome, Mumbai), so the scene is paying attention.
   > The India Open taught me the hard way: in F1 26, battery management *is* race pace. 🔋 Here's what went wrong and what I'm changing. Save this before your next race.
 - **Tags:** Core + Racecraft + Data
 
-### Fri 13 · REEL · "33,000+ on the leaderboard. Here's what top 80 took." ⚠️ 🎥 · *P4*
+### Fri 13 · REEL · "33,000+ registered. Here's what top 80 took." 🎥 · *P4*
 - **Structure:**
   1. The email-zoom clip: "Congratulations on qualifying…".
   2. Venue photos.
@@ -79,8 +81,8 @@ India Open finals week (NSCI Dome, Mumbai), so the scene is paying attention.
   - `stories-india-open/assets/venue.jpg`, `room.jpg`, `cockpit.jpg`.
   - Any clips Akki has from Mumbai.
 - **Caption:**
-  > 33,000+ on the leaderboard. Top 80. Not where I wanted to finish, but I learned more in those days than in a year of hotlapping. Coming back stronger. 🏁 @akki_meister
-- ⚠️ Confirm the number. Add a congratulations line for the 2026 champions once the finals results are out.
+  > 33,000+ registered. I finished top 80. Not where I wanted to finish, but I learned more in those days than in a year of hotlapping. Coming back stronger. 🏁 @akki_meister
+- Add a congratulations line for the 2026 champions once the finals results are out.
 - **Tags:** Core + India and lifestyle
 
 ### Sat 14 · REEL · THE DEBRIEF, Ep 0: "I debriefed my own lap" 📊 🎥 · *P2 · the show begins*
@@ -262,7 +264,7 @@ The full list of 30 ideas is in `strategy/STRATEGY.md` §8.
 
 | For | What |
 |---|---|
-| Before week 1 | ⚠️ Leaderboard screenshot (top 40 vs 80); consent list for coached kids; any Mumbai clips or photos |
+| Before week 1 | Leaderboard screenshot (top 80 of 33,000+, as proof); consent list for coached kids; any Mumbai clips or photos |
 | Week 1 | 📊 Your lap + a faster reference lap export (Debrief Ep 0); 📸 wheel and pedal close-ups |
 | Week 2 | 🎥 Onboard hotlap with input overlay (+ pedal-cam if possible); 📊 a coached driver's lap (with permission) |
 | Week 3 | 🎥 Kart footage with timing if you have it; 📊 the Ep 1 driver's re-run lap |

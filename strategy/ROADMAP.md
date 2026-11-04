@@ -8,7 +8,7 @@ Tick items off as you go (`- [x]`). The reasoning behind each item is in `strate
 
 ## This week (4–10 Nov 2026): before anything goes public
 
-- [ ] 🛠️ **Settle top 40 vs top 80.** Screenshot the MFRL app leaderboard (your position + total entries). Fix `CLAUDE.md`, `research/*.md` and the calendar to match.
+- [ ] 🛠️ **Screenshot the MFRL app leaderboard** showing top 80 of 33,000+ registered (your position + the total). Keep it in the receipts folder as proof.
 - [ ] 🛠️ Write down your baseline (today's numbers):
   - IG followers: ____
   - YT subs: ____
