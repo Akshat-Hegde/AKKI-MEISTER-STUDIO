@@ -1,0 +1,114 @@
+{
+ "template": "apex-notes",
+ "series": "APEX NOTES",
+ "number": "PEDALS",
+ "out": "posts/bank-load-cell",
+ "scan": false,
+ "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/02-pinstripe-overlay.png",
+ "slides": [
+  {
+   "type": "hook",
+   "photo": "sim-rig/img-8350.jpg",
+   "pos": "78% 45%",
+   "photoHeight": 990,
+   "kicker": "APEX NOTES · PEDALS",
+   "title": [
+    "BRAKE BY",
+    "PRESSURE.",
+    "NOT TRAVEL."
+   ],
+   "size": 112,
+   "sub": "Why load-cell brakes make braking repeatable."
+  },
+  {
+   "type": "big-number",
+   "kicker": "02 · Two sensors",
+   "title": [
+    "WHAT'S MEASURED."
+   ],
+   "value": "FORCE",
+   "label": "LOAD CELL",
+   "vs": "TRAVEL",
+   "vsLabel": "POTENTIOMETER",
+   "numberSize": 100,
+   "body": "A load cell reads **how hard** you press. A potentiometer reads **how far** the pedal moves.",
+   "bodyTop": 720
+  },
+  {
+   "type": "content",
+   "kicker": "03 · What your foot learns",
+   "title": [
+    "A FORCE,",
+    "NOT A POSITION."
+   ],
+   "visual": {
+    "type": "before-after",
+    "before": {
+     "label": "Travel",
+     "title": "A position",
+     "body": "Your foot learns where the pedal is. Hard to hit the same spot at the limit."
+    },
+    "after": {
+     "label": "Pressure",
+     "title": "A force",
+     "body": "Your foot learns how hard to push, like the brake in a real race car."
+    }
+   },
+   "visualHeight": 520
+  },
+  {
+   "type": "cutout",
+   "kicker": "04 · Why it's repeatable",
+   "title": [
+    "SAME PUSH.",
+    "SAME BRAKING."
+   ],
+   "size": 112,
+   "titleTop": 250,
+   "cutout": "photos/cutouts/akki-talk-a.png",
+   "side": "right",
+   "cutoutHeight": 700,
+   "cutoutX": -40,
+   "photo": "sim-rig/img-8350.jpg",
+   "photoOp": 0.3,
+   "body": "The same pressure gives the same braking force, wherever the pedal sits. **The gain is consistency, lap after lap.**",
+   "bodyTop": 680,
+   "bodyWidth": 500
+  },
+  {
+   "type": "content",
+   "kicker": "05 · Make it work",
+   "title": [
+    "NO FLEX."
+   ],
+   "visual": {
+    "type": "flow",
+    "steps": [
+     {
+      "title": "Rigid mounting",
+      "body": "Pedal plate and seat must not move under load"
+     },
+     {
+      "title": "Set the force",
+      "body": "Max braking at a push you can repeat"
+     },
+     {
+      "title": "Practise by feel",
+      "body": "Brake to pressure, not to a position"
+     }
+    ]
+   },
+   "body": "A pressure brake only works if **the rig doesn't flex** when you push."
+  },
+  {
+   "type": "close",
+   "title": [
+    "BRAKE BY FEEL,",
+    "NOT DISTANCE."
+   ],
+   "body": "Faster isn't the first win. Being the same every lap is.",
+   "cta": "FOLLOW FOR MORE · SAVE THIS"
+  }
+ ],
+ "caption": "Brake by pressure, not by travel. 🏁\nWhy load-cell brakes make your braking repeatable, and what your rig needs first.\n\n@akki_meister\n#simracing #simracer #f1sim #motorsport #simracingindia #akkimeister #simrig #simracingsetup #loadcell #simracingtips\n\n---\nAlternatives:\n- Your foot can't find a position at 200 km/h. It can find a pressure. 🏎️ @akki_meister #simracing #loadcell #simrig\n- Load cell or potentiometer? It's about consistency, not raw speed. @akki_meister #simracing #simracingsetup #loadcell\n\n---\nSources (fact check):\n- Load cell measures force, potentiometer measures travel; consistency/muscle-memory argument; needs a rigid setup: https://www.apexsimracing.com/blogs/sim-racing-blog/load-cell-vs-hydraulic-vs-active-sim-racing-pedals\n- Main benefit is repeatability rather than raw speed: https://isrtv.com/load-cell-sim-racing-pedals-are-they-actually-worth-it/\n(Both are retailer/review sites; claims are framed as consistency, not lap-time gains.)"
+}
