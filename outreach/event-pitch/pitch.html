@@ -1,0 +1,65 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../infographics/_kit/kit.css">
+<style>
+/* One-page event pitch, A4 (794×1123 CSS px). Render: node outreach/event-pitch/render.js */
+@page{size:A4;margin:0}
+html,body{margin:0;width:794px;height:1123px;background:#07080C}
+.page{position:relative;width:794px;height:1123px;overflow:hidden;background:radial-gradient(700px 420px at 50% -6%,rgba(36,64,255,.32),transparent 70%),radial-gradient(700px 420px at 50% 106%,rgba(36,64,255,.22),transparent 70%),#07080C;color:#F3F4F6}
+.pad{position:absolute;left:48px;right:48px}
+.k{font-family:Clash;font-weight:600;font-size:12px;letter-spacing:.3em;color:#5B7BFF;text-transform:uppercase}
+.h{font-family:ClashD;font-weight:600;text-transform:uppercase;line-height:.92;letter-spacing:-.01em}
+.h b{color:#2440FF;font-weight:600}
+.m{font-family:JBM;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#8C93A3}
+.b{font-family:Clash;font-weight:600;font-size:12.5px;line-height:1.45;color:#C9CDD6}
+.photo{position:absolute;right:0;top:0;width:330px;height:420px;clip-path:polygon(22% 0,100% 0,100% 100%,0 100%);background:url('../../stories-india-open/assets/venue.jpg') 50% 35%/cover;filter:saturate(.88) contrast(1.05)}
+.photo:after{content:"";position:absolute;inset:0;background:#2440FF;mix-blend-mode:soft-light;opacity:.28}
+.photo .fade{position:absolute;inset:0;background:linear-gradient(90deg,#07080C,transparent 40%),linear-gradient(transparent 70%,#07080C)}
+.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.card{background:rgba(14,16,24,.92);border:1px solid rgba(243,244,246,.12);border-top:4px solid #2440FF;padding:16px 16px 18px}
+.card .n{font-family:JBM;font-size:11px;color:#5B7BFF;letter-spacing:.2em}
+.card .t{font-family:ClashD;font-weight:600;font-size:21px;line-height:1;text-transform:uppercase;margin:10px 0 10px}
+.card ul{margin:10px 0 0;padding:0;list-style:none}
+.card li{font-family:JBM;font-size:10px;letter-spacing:.06em;color:#F3F4F6;padding:6px 0;border-top:1px solid rgba(243,244,246,.1)}
+.ph{display:inline-block;border:1px dashed #5B7BFF;color:#5B7BFF;padding:1px 6px;font-family:JBM;font-size:10px;letter-spacing:.08em}
+.cred{display:grid;grid-template-columns:1fr 1fr;gap:8px 22px}
+.cred div{font-family:Clash;font-weight:600;font-size:12px;padding:6px 0;border-top:1px solid rgba(243,244,246,.14)}
+.cred div span{color:#5B7BFF}
+#lock svg{width:104px!important;height:auto!important;display:block}
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.aud div{border:1px dashed rgba(91,123,255,.7);padding:8px 14px}
+.aud b{display:block;font-family:ClashD;font-size:20px;color:#5B7BFF}
+.aud span{font-family:JBM;font-size:9.5px;letter-spacing:.14em;color:#8C93A3;text-transform:uppercase}
+</style></head><body>
+<div class="page">
+  <div class="photo"><div class="fade"></div></div>
+  <div class="pad" style="top:40px" id="lock"></div>
+  <div class="pad" style="top:118px"><div class="k">For event organisers · Sim racing · India</div></div>
+  <div class="pad h" style="top:146px;font-size:58px">What I'd run<br>at your <b>event.</b></div>
+  <div class="pad b" style="top:282px;right:330px">Three formats that turn a sim rig on a stand into something people queue for, learn from and post about. Run by a competitive sim racer and coach.</div>
+  <div class="pad cards" style="top:410px">
+    <div class="card"><div class="n">01 · 20 MIN</div><div class="t">Telemetry clinic</div><div class="b">Live on a big screen: how to read a lap comparison, where the time goes, and one drill to fix it.</div>
+      <ul><li>Stage or screen + one rig</li><li>Racers and curious visitors</li><li>Up to <span class="ph">[GROUP SIZE]</span> per session</li></ul></div>
+    <div class="card"><div class="n">02 · ALL DAY</div><div class="t">First-lap coaching corner</div><div class="b">One-to-one first laps for newcomers. Seat position, braking, one clear goal per lap. Kids welcome with a parent present.</div>
+      <ul><li>One rig, short slots</li><li>Beginners of any age</li><li><span class="ph">[SLOTS PER HOUR]</span></li></ul></div>
+    <div class="card"><div class="n">03 · ALL DAY</div><div class="t">Hotlap challenge</div><div class="b">One car, one track, a live leaderboard. The fastest laps get a short on-stage debrief at the end.</div>
+      <ul><li>Leaderboard screen</li><li>Content for your socials</li><li>Prizes: <span class="ph">[SPONSOR / OPTIONAL]</span></li></ul></div>
+  </div>
+  <div class="pad" style="top:790px"><div class="k" style="margin-bottom:10px">Who runs it</div>
+    <div class="cred">
+      <div><span>Top 80</span> of 33,000+ registered · F1 Sim Racing India Open 2026</div>
+      <div><span>Podiums</span> in sim racing competition</div>
+      <div><span>Coach</span> · sim racing coaching, including kids</div>
+      <div><span>Telemetry</span> · reads and explains driving data</div>
+      <div><span>Karting</span> · real-world seat time</div>
+      <div><span>Formula Student</span> · engineering and driving</div>
+    </div></div>
+  <div class="pad" style="top:952px"><div class="k" style="margin-bottom:10px">Audience <span class="ph" style="margin-left:8px">FILL IN BEFORE SENDING</span></div>
+    <div class="aud"><div><b>[FOLLOWERS]</b><span>Instagram followers</span></div><div><b>[AVG VIEWS]</b><span>Average reel views</span></div><div><b>[% INDIA]</b><span>Audience in India</span></div></div></div>
+  <div class="pad" style="bottom:22px;display:flex;justify-content:space-between;align-items:center">
+    <div class="h" style="font-size:22px">@AKKI_MEISTER</div>
+    <div class="m">Sim · Track · Paddock &nbsp;·&nbsp; <span class="ph">[EMAIL]</span> &nbsp; <span class="ph">[PHONE]</span></div></div>
+</div>
+<script src="../../infographics/_kit/logo.js"></script><script src="../../infographics/_kit/kit.js"></script>
+<script>document.getElementById("lock").innerHTML=AM.markSvg(120);</script>
+</body></html>
