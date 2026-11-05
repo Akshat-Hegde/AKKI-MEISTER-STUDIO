@@ -1,0 +1,72 @@
+{
+ "template": "stories",
+ "out": "posts/2026-11-09-week1-stories",
+ "_source": "Week 1 stories from CONTENT-CALENDAR.md. 33,000+ registered = Akki's India Open figure (CLAUDE.md). Setup Sunday #1 skipped: needs wheel + pedal close-ups.",
+ "stories": [
+  {
+   "type": "poll",
+   "label": "Mon 9 · Poll",
+   "kicker": "You pick the next breakdown",
+   "title": [
+    "What do I",
+    "break down",
+    "next?"
+   ],
+   "size": 120,
+   "body": "**Trail braking** or **FOV**? Vote below.",
+   "photo": "library/portraits/img-0505.jpg",
+   "pos": "50% 6%"
+  },
+  {
+   "type": "quote",
+   "label": "Wed 11 · India Open",
+   "photo": "stories-india-open/assets/venue.jpg",
+   "pos": "50% 40%",
+   "kicker": "F1 Sim Racing India Open · Finals week",
+   "quote": "33,000+ registered. To everyone racing the final: respect. Go get it.",
+   "by": "Akki · top 80"
+  },
+  {
+   "type": "question",
+   "label": "Thu 12 · AMA",
+   "kicker": "Sim racing AMA",
+   "title": [
+    "Ask me",
+    "anything."
+   ],
+   "size": 140,
+   "body": "Setup, racecraft, telemetry, or getting started in **sim racing in India**.",
+   "photo": "library/sim-rig/img-1802.jpg",
+   "pos": "15% 45%"
+  },
+  {
+   "type": "announcement",
+   "label": "Sat 14 · Send your lap",
+   "photo": "library/sim-coaching/dsc00987.jpg",
+   "pos": "45% 50%",
+   "kicker": "The Debrief · how to send your lap",
+   "title": [
+    "Send me",
+    "your lap."
+   ],
+   "size": 130,
+   "body": "One full lap as a **screen recording**, plus the **track, car and your lap time**. DM me. I'll pick laps for The Debrief.",
+   "chips": [
+    {
+     "value": "1",
+     "label": "SCREEN RECORDING"
+    },
+    {
+     "value": "2",
+     "label": "TRACK + CAR"
+    },
+    {
+     "value": "3",
+     "label": "YOUR LAP TIME",
+     "hot": true
+    }
+   ]
+  }
+ ],
+ "caption": "Week 1 stories (no feed caption needed).\n\n- Mon 9: poll sticker in the bracketed box: 🛞 Trail braking / 🎯 FOV\n- Wed 11: tag the finalists who post\n- Thu 12: question sticker: \"Ask me anything about sim racing\"\n- Sat 14: pin to a \"Send your lap\" highlight\n\nTags on stories: @akki_meister #simracing #simracingindia #f1simracingindiaopen"
+}
