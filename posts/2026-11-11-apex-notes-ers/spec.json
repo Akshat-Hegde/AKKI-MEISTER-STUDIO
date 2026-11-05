@@ -24,7 +24,7 @@
    "type": "big-number",
    "kicker": "02 · Why it matters now",
    "title": [
-    "MORE BATTERY."
+    "MORE ELECTRIC POWER."
    ],
    "value": "350",
    "label": "KW · MGU-K, 2026 RULES",
@@ -33,7 +33,8 @@
    "numberSize": 200,
    "body": "The 2026 rules nearly triple the electric motor's power and drop the MGU-H. **How you deploy now decides your pace.**",
    "bodyTop": 820,
-   "note": "Source: FIA / formula1.com"
+   "note": "Source: FIA / formula1.com",
+   "size": 64
   },
   {
    "type": "cutout",

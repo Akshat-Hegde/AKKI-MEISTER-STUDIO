@@ -22,8 +22,8 @@
    "label": "Wed 11 · India Open",
    "photo": "stories-india-open/assets/venue.jpg",
    "pos": "50% 40%",
-   "kicker": "F1 Sim Racing India Open · Finals week",
-   "quote": "33,000+ registered. To everyone racing the final: respect. Go get it.",
+   "kicker": "F1 Sim Racing India Open",
+   "quote": "33,000+ registered. To everyone who made the final: respect.",
    "by": "Akki · top 80"
   },
   {
@@ -42,8 +42,8 @@
   {
    "type": "announcement",
    "label": "Sat 14 · Send your lap",
-   "photo": "library/sim-coaching/dsc00987.jpg",
-   "pos": "45% 50%",
+   "photo": "library/sim-rig/img-5415.jpg",
+   "pos": "50% 45%",
    "kicker": "The Debrief · how to send your lap",
    "title": [
     "Send me",
@@ -68,5 +68,7 @@
    ]
   }
  ],
- "caption": "Week 1 stories (no feed caption needed).\n\n- Mon 9: poll sticker in the bracketed box: 🛞 Trail braking / 🎯 FOV\n- Wed 11: tag the finalists who post\n- Thu 12: question sticker: \"Ask me anything about sim racing\"\n- Sat 14: pin to a \"Send your lap\" highlight\n\nTags on stories: @akki_meister #simracing #simracingindia #f1simracingindiaopen"
+ "caption": "Week 1 stories (no feed caption needed).\n\n- Mon 9: poll sticker in the bracketed box: 🛞 Trail braking / 🎯 FOV\n- Wed 11: tag the finalists who post\n- Thu 12: question sticker: \"Ask me anything about sim racing\"\n- Sat 14: pin to a \"Send your lap\" highlight\n\nTags on stories: @akki_meister #simracing #simracingindia #f1simracingindiaopen",
+ "counters": false,
+ "zones": false
 }
