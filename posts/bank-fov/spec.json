@@ -1,0 +1,128 @@
+{
+ "template": "apex-notes",
+ "series": "APEX NOTES",
+ "number": "FOV",
+ "out": "posts/bank-fov",
+ "scan": false,
+ "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/02-pinstripe-overlay.png",
+ "slides": [
+  {
+   "type": "hook",
+   "photo": "sim-rig/img-5415.jpg",
+   "pos": "55% 50%",
+   "photoHeight": 1130,
+   "kicker": "APEX NOTES · FIELD OF VIEW",
+   "title": [
+    "YOUR FOV",
+    "IS GUESSING."
+   ],
+   "size": 120,
+   "sub": "Measure it once. Brake at the same marker every lap."
+  },
+  {
+   "type": "big-number",
+   "kicker": "02 · The formula",
+   "title": [
+    "HORIZONTAL FOV."
+   ],
+   "value": "2·atan(W÷2D)",
+   "numberSize": 120,
+   "label": "W = VISIBLE SCREEN WIDTH · D = EYES TO SCREEN",
+   "body": "Measure both in the **same units**. The result is in degrees.",
+   "bodyTop": 720,
+   "note": "Source: horizontal FOV formula · everycalculators.com"
+  },
+  {
+   "type": "annotated",
+   "kicker": "03 · Measure",
+   "title": [
+    "TWO NUMBERS."
+   ],
+   "photo": "posts/bank-fov/assets/cockpit-screen.jpg",
+   "photoTop": 330,
+   "photoHeight": 773,
+   "callouts": [
+    {
+     "shape": "bracket",
+     "x": 1,
+     "y": 10,
+     "w": 97,
+     "h": 64,
+     "label": "W · VISIBLE SCREEN WIDTH",
+     "tx": 30,
+     "ty": 5,
+     "on": true
+    },
+    {
+     "x": 50,
+     "y": 96,
+     "label": "D · YOUR EYES → SCREEN",
+     "tx": 40,
+     "ty": 84,
+     "r": 22
+    }
+   ],
+   "body": "W: image width, not the bezel. D: **eyes to screen, seated**.",
+   "bodyTop": 1125
+  },
+  {
+   "type": "content",
+   "kicker": "04 · Set it",
+   "title": [
+    "4 STEPS."
+   ],
+   "visual": {
+    "type": "flow",
+    "steps": [
+     {
+      "title": "Measure W",
+      "body": "Visible screen width"
+     },
+     {
+      "title": "Measure D",
+      "body": "Eyes to screen, seated"
+     },
+     {
+      "title": "Calculate",
+      "body": "2 × atan(W ÷ 2D)"
+     },
+     {
+      "title": "Check the game",
+      "body": "Horizontal, vertical or 3D FOV? Convert if needed"
+     }
+    ]
+   },
+   "body": "Games label FOV differently: **check yours first.**",
+   "visualHeight": 660
+  },
+  {
+   "type": "cutout",
+   "kicker": "05 · Why it helps",
+   "title": [
+    "REAL SCALE.",
+    "REAL MARKERS."
+   ],
+   "size": 110,
+   "titleTop": 250,
+   "cutout": "photos/cutouts/akki-talk-b.png",
+   "side": "right",
+   "cutoutHeight": 700,
+   "cutoutX": -60,
+   "photo": "sim-rig/img-5415.jpg",
+   "photoOp": 0.3,
+   "body": "The screen acts like a window at true scale, so **speed and distance read the same every lap**. Easier to repeat your braking points.",
+   "bodyTop": 640,
+   "bodyWidth": 500
+  },
+  {
+   "type": "close",
+   "title": [
+    "MEASURE IT.",
+    "DON'T GUESS IT."
+   ],
+   "body": "A wide FOV feels fast. The right FOV makes you consistent.",
+   "cta": "FOLLOW FOR MORE · SAVE THIS"
+  }
+ ],
+ "caption": "Your FOV is guessing. 🎯\nTwo measurements, one formula, and your braking markers stop moving. Save this before you change your settings.\n\n@akki_meister\n#simracing #simracer #f1sim #motorsport #simracingindia #akkimeister #simrig #simracingsetup #simracingtips #fov\n\n---\nAlternatives:\n- Too-wide FOV feels fast and makes you inconsistent. Here's the fix. 🏁 @akki_meister #simracing #fov #simracingtips\n- 2 × atan(W ÷ 2D). The only setup number you can calculate. @akki_meister #simracing #simrig #fov\n\n---\nSources (fact check):\n- Horizontal FOV = 2 × arctan(width ÷ (2 × distance)); vertical / iRacing 3D conversions: https://everycalculators.com/horizontal-fov-calculator-for-sim-racing.html\n- Why racing sims use the 'realistic window' FOV: https://www.wsgf.org/phpBB3/viewtopic.php?p=154256"
+}
