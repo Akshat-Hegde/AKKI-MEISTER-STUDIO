@@ -1,0 +1,655 @@
+{
+ "template": "apex-notes",
+ "series": "APEX NOTES",
+ "number": "TRAIL BRAKING",
+ "out": "posts/bank-trail-braking",
+ "scan": false,
+ "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/02-pinstripe-overlay.png",
+ "slides": [
+  {
+   "type": "hook",
+   "photo": "sim-rig/img-9148.jpg",
+   "pos": "50% 60%",
+   "photoHeight": 990,
+   "kicker": "APEX NOTES · TRAIL BRAKING",
+   "title": [
+    "DON'T DROP",
+    "THE BRAKE.",
+    "RELEASE IT."
+   ],
+   "size": 112,
+   "sub": "Why the release matters more than the stomp."
+  },
+  {
+   "type": "content",
+   "kicker": "02 · The physics",
+   "title": [
+    "BRAKING LOADS",
+    "THE FRONT."
+   ],
+   "visual": {
+    "type": "car-load",
+    "cars": [
+     {
+      "front": 0.65,
+      "rear": 0.35,
+      "frontText": "MORE",
+      "rearText": "LESS",
+      "label": "ON THE BRAKES"
+     },
+     {
+      "front": 0.5,
+      "rear": 0.5,
+      "frontText": "LESS",
+      "rearText": "MORE",
+      "label": "OFF THE BRAKES"
+     }
+    ]
+   },
+   "body": "Braking shifts weight forward. **More load on the front tyres = more front grip** to turn in with.",
+   "note": "Illustrative · not real data",
+   "visualHeight": 620
+  },
+  {
+   "type": "cutout",
+   "kicker": "03 · The mistake",
+   "title": [
+    "DROP IT",
+    "AND THE FRONT",
+    "GOES LIGHT."
+   ],
+   "size": 112,
+   "titleTop": 250,
+   "cutout": "photos/cutouts/akki-talk-a.png",
+   "side": "right",
+   "cutoutHeight": 700,
+   "cutoutX": -40,
+   "photo": "sim-rig/img-9148.jpg",
+   "photoOp": 0.3,
+   "body": "Snap off the brake at turn-in and the weight jumps back. **Less front grip, more understeer.**",
+   "bodyTop": 680,
+   "bodyWidth": 500
+  },
+  {
+   "type": "content",
+   "kicker": "04 · The technique",
+   "title": [
+    "RELEASE IT",
+    "GRADUALLY."
+   ],
+   "visual": {
+    "type": "chart",
+    "illustrative": true,
+    "xLabel": "DISTANCE INTO THE CORNER",
+    "yLabel": "BRAKE PRESSURE",
+    "xDomain": [
+     0,
+     1
+    ],
+    "yDomain": [
+     0,
+     1.1
+    ],
+    "series": [
+     {
+      "label": "DROPPED",
+      "points": [
+       [
+        0.0,
+        1.0
+       ],
+       [
+        0.017,
+        1.0
+       ],
+       [
+        0.033,
+        1.0
+       ],
+       [
+        0.05,
+        1.0
+       ],
+       [
+        0.067,
+        1.0
+       ],
+       [
+        0.083,
+        1.0
+       ],
+       [
+        0.1,
+        1.0
+       ],
+       [
+        0.117,
+        1.0
+       ],
+       [
+        0.133,
+        1.0
+       ],
+       [
+        0.15,
+        1.0
+       ],
+       [
+        0.167,
+        1.0
+       ],
+       [
+        0.183,
+        1.0
+       ],
+       [
+        0.2,
+        1.0
+       ],
+       [
+        0.217,
+        1.0
+       ],
+       [
+        0.233,
+        1.0
+       ],
+       [
+        0.25,
+        1.0
+       ],
+       [
+        0.267,
+        1.0
+       ],
+       [
+        0.283,
+        1.0
+       ],
+       [
+        0.3,
+        1.0
+       ],
+       [
+        0.317,
+        1.0
+       ],
+       [
+        0.333,
+        1.0
+       ],
+       [
+        0.35,
+        1.0
+       ],
+       [
+        0.367,
+        1.0
+       ],
+       [
+        0.383,
+        1.0
+       ],
+       [
+        0.4,
+        1.0
+       ],
+       [
+        0.417,
+        1.0
+       ],
+       [
+        0.433,
+        1.0
+       ],
+       [
+        0.45,
+        1.0
+       ],
+       [
+        0.467,
+        0.741
+       ],
+       [
+        0.483,
+        0.259
+       ],
+       [
+        0.5,
+        0.0
+       ],
+       [
+        0.517,
+        0.0
+       ],
+       [
+        0.533,
+        0.0
+       ],
+       [
+        0.55,
+        0.0
+       ],
+       [
+        0.567,
+        0.0
+       ],
+       [
+        0.583,
+        0.0
+       ],
+       [
+        0.6,
+        0.0
+       ],
+       [
+        0.617,
+        0.0
+       ],
+       [
+        0.633,
+        0.0
+       ],
+       [
+        0.65,
+        0.0
+       ],
+       [
+        0.667,
+        0.0
+       ],
+       [
+        0.683,
+        0.0
+       ],
+       [
+        0.7,
+        0.0
+       ],
+       [
+        0.717,
+        0.0
+       ],
+       [
+        0.733,
+        0.0
+       ],
+       [
+        0.75,
+        0.0
+       ],
+       [
+        0.767,
+        0.0
+       ],
+       [
+        0.783,
+        0.0
+       ],
+       [
+        0.8,
+        0.0
+       ],
+       [
+        0.817,
+        0.0
+       ],
+       [
+        0.833,
+        0.0
+       ],
+       [
+        0.85,
+        0.0
+       ],
+       [
+        0.867,
+        0.0
+       ],
+       [
+        0.883,
+        0.0
+       ],
+       [
+        0.9,
+        0.0
+       ],
+       [
+        0.917,
+        0.0
+       ],
+       [
+        0.933,
+        0.0
+       ],
+       [
+        0.95,
+        0.0
+       ],
+       [
+        0.967,
+        0.0
+       ],
+       [
+        0.983,
+        0.0
+       ],
+       [
+        1.0,
+        0.0
+       ]
+      ],
+      "color": "#8C93A3",
+      "width": 4,
+      "dash": "10 8"
+     },
+     {
+      "label": "TRAILED",
+      "points": [
+       [
+        0.0,
+        1.0
+       ],
+       [
+        0.017,
+        1.0
+       ],
+       [
+        0.033,
+        1.0
+       ],
+       [
+        0.05,
+        1.0
+       ],
+       [
+        0.067,
+        1.0
+       ],
+       [
+        0.083,
+        1.0
+       ],
+       [
+        0.1,
+        1.0
+       ],
+       [
+        0.117,
+        1.0
+       ],
+       [
+        0.133,
+        1.0
+       ],
+       [
+        0.15,
+        1.0
+       ],
+       [
+        0.167,
+        1.0
+       ],
+       [
+        0.183,
+        1.0
+       ],
+       [
+        0.2,
+        1.0
+       ],
+       [
+        0.217,
+        1.0
+       ],
+       [
+        0.233,
+        1.0
+       ],
+       [
+        0.25,
+        1.0
+       ],
+       [
+        0.267,
+        1.0
+       ],
+       [
+        0.283,
+        1.0
+       ],
+       [
+        0.3,
+        1.0
+       ],
+       [
+        0.317,
+        1.0
+       ],
+       [
+        0.333,
+        1.0
+       ],
+       [
+        0.35,
+        1.0
+       ],
+       [
+        0.367,
+        1.0
+       ],
+       [
+        0.383,
+        1.0
+       ],
+       [
+        0.4,
+        1.0
+       ],
+       [
+        0.417,
+        0.991
+       ],
+       [
+        0.433,
+        0.966
+       ],
+       [
+        0.45,
+        0.926
+       ],
+       [
+        0.467,
+        0.874
+       ],
+       [
+        0.483,
+        0.811
+       ],
+       [
+        0.5,
+        0.741
+       ],
+       [
+        0.517,
+        0.664
+       ],
+       [
+        0.533,
+        0.583
+       ],
+       [
+        0.55,
+        0.5
+       ],
+       [
+        0.567,
+        0.417
+       ],
+       [
+        0.583,
+        0.336
+       ],
+       [
+        0.6,
+        0.259
+       ],
+       [
+        0.617,
+        0.189
+       ],
+       [
+        0.633,
+        0.126
+       ],
+       [
+        0.65,
+        0.074
+       ],
+       [
+        0.667,
+        0.034
+       ],
+       [
+        0.683,
+        0.009
+       ],
+       [
+        0.7,
+        0.0
+       ],
+       [
+        0.717,
+        0.0
+       ],
+       [
+        0.733,
+        0.0
+       ],
+       [
+        0.75,
+        0.0
+       ],
+       [
+        0.767,
+        0.0
+       ],
+       [
+        0.783,
+        0.0
+       ],
+       [
+        0.8,
+        0.0
+       ],
+       [
+        0.817,
+        0.0
+       ],
+       [
+        0.833,
+        0.0
+       ],
+       [
+        0.85,
+        0.0
+       ],
+       [
+        0.867,
+        0.0
+       ],
+       [
+        0.883,
+        0.0
+       ],
+       [
+        0.9,
+        0.0
+       ],
+       [
+        0.917,
+        0.0
+       ],
+       [
+        0.933,
+        0.0
+       ],
+       [
+        0.95,
+        0.0
+       ],
+       [
+        0.967,
+        0.0
+       ],
+       [
+        0.983,
+        0.0
+       ],
+       [
+        1.0,
+        0.0
+       ]
+      ],
+      "color": "#5B7BFF",
+      "width": 6
+     }
+    ],
+    "marks": [
+     {
+      "x": 0.42,
+      "label": "TURN-IN"
+     },
+     {
+      "x": 0.7,
+      "label": "APEX"
+     }
+    ]
+   },
+   "body": "Keep a little pressure as you turn in, then **bleed it off as the steering goes on**, reaching zero around the apex.",
+   "note": "Illustrative · shape only"
+  },
+  {
+   "type": "annotated",
+   "kicker": "05 · Feel it",
+   "title": [
+    "ONE UP, ONE DOWN."
+   ],
+   "size": 72,
+   "photo": "posts/bank-trail-braking/assets/rig-wheel-pedals.jpg",
+   "photoTop": 330,
+   "photoHeight": 833,
+   "callouts": [
+    {
+     "x": 46.7,
+     "y": 9,
+     "label": "STEERING · ADD LOCK",
+     "tx": 62,
+     "ty": 30,
+     "r": 40
+    },
+    {
+     "x": 45,
+     "y": 71,
+     "label": "BRAKE · EASE OFF",
+     "tx": 62,
+     "ty": 52,
+     "r": 40,
+     "on": true
+    }
+   ],
+   "body": "Steering lock up, brake pressure down. **Smooth hand-off.**",
+   "bodyTop": 1185
+  },
+  {
+   "type": "close",
+   "title": [
+    "EASE OFF",
+    "AS YOU TURN IN."
+   ],
+   "body": "Not every corner needs it: in fast corners you'll often release earlier to keep the rear settled.",
+   "cta": "FOLLOW FOR MORE · SAVE THIS"
+  }
+ ],
+ "caption": "Don't drop the brake. Release it. 🏁\nTrail braking keeps load on the front tyres while you turn in. Save this for your next session.\n\n@akki_meister\n#simracing #simracer #f1sim #motorsport #simracingindia #akkimeister #racecraft #trailbraking #simracingtips #drivercoaching\n\n---\nAlternatives:\n- The brake release is where the corner is won. 🏎️ @akki_meister #simracing #trailbraking #racecraft #simracingtips\n- Stomp, then let go? That's why your car understeers. @akki_meister #simracing #trailbraking #learntodrive\n\n---\nSources (fact check):\n- Trail braking: https://en.wikipedia.org/wiki/Trail_braking\n- Weight transfer, sudden release unsettles the car, faster corners release earlier: https://www.carthrottle.com/post/how-to-trail-brake-and-why-itll-make-you-a-faster-driver/"
+}
