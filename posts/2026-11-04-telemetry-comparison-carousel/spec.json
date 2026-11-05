@@ -16,7 +16,8 @@
     "WHO'S FASTER?"
    ],
    "sub": "How to read a telemetry comparison, in 3 steps.",
-   "size": 110
+   "size": 110,
+   "photoHeight": 1130
   },
   {
    "type": "big-number",
@@ -25,9 +26,9 @@
     "SAME MOMENT."
    ],
    "value": "279",
-   "label": "KM/H · PLAYER",
+   "label": "KM/H · PLAYER · GEAR 7",
    "vs": "35",
-   "vsLabel": "KM/H · AKKI3346",
+   "vsLabel": "KM/H · AKKI3346 · GEAR 3",
    "numberSize": 215,
    "body": "Two rigs on my live dashboard, same instant. Who's faster? **You can't tell yet.**",
    "bodyTop": 820,
@@ -628,29 +629,18 @@
      "label": "GEAR",
      "tx": 10,
      "ty": 45,
-     "r": 34,
+     "r": 34
+    },
+    {
+     "shape": "bracket",
+     "x": 31,
+     "y": 8.5,
+     "w": 54,
+     "h": 12,
+     "label": "THROTTLE · BRAKE · STEERING",
+     "tx": 40,
+     "ty": 40,
      "on": true
-    },
-    {
-     "x": 56,
-     "y": 10.7,
-     "label": "THROTTLE",
-     "tx": 66,
-     "ty": 40
-    },
-    {
-     "x": 56,
-     "y": 14.3,
-     "label": "BRAKE",
-     "tx": 66,
-     "ty": 55
-    },
-    {
-     "x": 58,
-     "y": 18.1,
-     "label": "STEERING",
-     "tx": 66,
-     "ty": 70
     }
    ],
    "body": "At that spot: **throttle, brake, gear, steering.** That's the why.",
@@ -668,7 +658,7 @@
    "titleTop": 250,
    "cutout": "photos/cutouts/akki-track.png",
    "side": "right",
-   "cutoutHeight": 860,
+   "cutoutHeight": 700,
    "photo": "telemetry/img-4366.jpg",
    "photoOp": 0.4,
    "body": "Save this for your next debrief.",

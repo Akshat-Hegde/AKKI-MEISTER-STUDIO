@@ -1,0 +1,351 @@
+{
+ "template": "explainer",
+ "name": "fov-explainer",
+ "out": "posts/bank-fov/reel",
+ "scenes": [
+  {
+   "dur": 2.6,
+   "freeze": {
+    "src": "sim-rig/img-5415.jpg",
+    "at": 0,
+    "crop": [
+     0,
+     0,
+     2048,
+     1536
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       500,
+       0,
+       864,
+       1536
+      ]
+     },
+     {
+      "t": 2.6,
+      "rect": [
+       620,
+       120,
+       700,
+       1244
+      ]
+     }
+    ]
+   },
+   "head": {
+    "lines": [
+     "YOUR FOV IS",
+     "GUESSING."
+    ],
+    "size": 118,
+    "y": 260
+   },
+   "shadeBottom": 500
+  },
+  {
+   "dur": 3.2,
+   "clip": {
+    "src": "sim-rig/sim-intro.mp4",
+    "in": 0.6,
+    "crop": [
+     1250,
+     0,
+     608,
+     1080
+    ]
+   },
+   "head": {
+    "kicker": "The problem",
+    "lines": [
+     "WIDE FEELS",
+     "FAST."
+    ],
+    "size": 110,
+    "y": 220
+   },
+   "say": "A wide field of view feels fast. But it changes how big and how far everything looks."
+  },
+  {
+   "dur": 3.4,
+   "freeze": {
+    "src": "posts/bank-fov/slide-03.png",
+    "at": 0,
+    "crop": [
+     0,
+     300,
+     1080,
+     800
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       1080,
+       800
+      ]
+     },
+     {
+      "t": 2.0,
+      "rect": [
+       100,
+       0,
+       880,
+       652
+      ]
+     }
+    ],
+    "area": [
+     0,
+     460,
+     1080,
+     800
+    ]
+   },
+   "head": {
+    "kicker": "Step 1",
+    "lines": [
+     "TWO",
+     "NUMBERS."
+    ],
+    "size": 104,
+    "y": 220
+   },
+   "say": "Measure two numbers: the visible screen width, and the distance from your eyes to the screen.",
+   "capY": 1380
+  },
+  {
+   "dur": 3.4,
+   "freeze": {
+    "src": "posts/bank-fov/slide-02.png",
+    "at": 0,
+    "crop": [
+     0,
+     360,
+     1080,
+     500
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       1080,
+       500
+      ]
+     },
+     {
+      "t": 3.4,
+      "rect": [
+       20,
+       10,
+       1040,
+       481
+      ]
+     }
+    ],
+    "area": [
+     0,
+     520,
+     1080,
+     500
+    ]
+   },
+   "head": {
+    "kicker": "Step 2",
+    "lines": [
+     "THE",
+     "FORMULA."
+    ],
+    "size": 104,
+    "y": 220
+   },
+   "host": {
+    "src": "photos/cutouts/akki-talk-b.png",
+    "side": "right",
+    "h": 620,
+    "ar": 0.96,
+    "in": 0.5
+   },
+   "say": "Two times arc-tan of width over two times distance. Same units for both.",
+   "capY": 1360,
+   "capStyle": "right:470px;text-align:left"
+  },
+  {
+   "dur": 3.4,
+   "freeze": {
+    "src": "posts/bank-fov/slide-04.png",
+    "at": 0,
+    "crop": [
+     0,
+     330,
+     1080,
+     760
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       1080,
+       760
+      ]
+     },
+     {
+      "t": 3.4,
+      "rect": [
+       20,
+       14,
+       1040,
+       732
+      ]
+     }
+    ],
+    "area": [
+     0,
+     460,
+     1080,
+     760
+    ]
+   },
+   "head": {
+    "kicker": "Step 3",
+    "lines": [
+     "CHECK",
+     "YOUR GAME."
+    ],
+    "size": 104,
+    "y": 220
+   },
+   "say": "Games label FOV differently: horizontal, vertical or 3D. Check which one yours uses.",
+   "capY": 1380
+  },
+  {
+   "dur": 3.2,
+   "freeze": {
+    "src": "sim-rig/img-9148.jpg",
+    "at": 0,
+    "crop": [
+     0,
+     0,
+     1536,
+     2048
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       200,
+       1536,
+       1300
+      ]
+     },
+     {
+      "t": 3.2,
+      "rect": [
+       200,
+       350,
+       1100,
+       930
+      ]
+     }
+    ],
+    "area": [
+     0,
+     420,
+     1080,
+     900
+    ]
+   },
+   "head": {
+    "kicker": "Why it helps",
+    "lines": [
+     "REAL",
+     "SCALE."
+    ],
+    "size": 110,
+    "y": 200
+   },
+   "say": "Now the screen works like a window at true scale.",
+   "capY": 1400
+  },
+  {
+   "dur": 3.2,
+   "photo": {
+    "src": "sim-rig/img-5415.jpg",
+    "focus": "50% 40%"
+   },
+   "head": {
+    "lines": [
+     "SAME MARKERS.",
+     "EVERY LAP."
+    ],
+    "size": 100,
+    "y": 260
+   },
+   "host": {
+    "src": "photos/cutouts/akki-track.png",
+    "side": "right",
+    "h": 820,
+    "ar": 0.54,
+    "x": 0
+   },
+   "say": "Speed and distance read the same every lap, so braking points get easier to repeat.",
+   "capY": 1250,
+   "capStyle": "right:470px;text-align:left"
+  },
+  {
+   "dur": 3.2,
+   "backdrop": {
+    "src": "sim-rig/img-9148.jpg",
+    "op": 0.8
+   },
+   "head": {
+    "kicker": "The takeaway",
+    "lines": [
+     "MEASURE IT.",
+     "DON'T GUESS IT."
+    ],
+    "size": 104,
+    "y": 500
+   },
+   "say": "Measure it. Don't guess it.",
+   "capY": 1300
+  },
+  {
+   "dur": 4.4,
+   "beats": 2,
+   "clip": {
+    "src": "sim-rig/sim-intro.mp4",
+    "in": 15.8,
+    "crop": [
+     1000,
+     0,
+     608,
+     1080
+    ]
+   },
+   "chip": "@akki_meister · follow for more",
+   "chipY": 1160,
+   "say": "Save this before you touch your settings. Copy. See you on track.",
+   "capY": 1240,
+   "shadeTop": 300
+  }
+ ],
+ "voiceover": {
+  "src": "posts/bank-fov/reel/voiceover.wav",
+  "gain": 1.0
+ },
+ "music": {
+  "src": "reel/music/drums.wav",
+  "gain": 0.16
+ },
+ "caption": "Your FOV is guessing. 🎯 Two measurements, one formula.\n\n@akki_meister\n#simracing #simrig #fov #simracingtips #simracingsetup #simracingindia #akkimeister\n\nSources: see ../caption.md"
+}

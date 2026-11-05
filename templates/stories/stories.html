@@ -45,14 +45,14 @@ const R={
     `<div class="abs k" style="left:72px;top:250px;font-size:22px;z-index:5">${esc(s.kicker)}</div>
      <div class="abs h fitw" style="left:72px;right:72px;top:300px;font-size:${s.size||128}px;z-index:5">${headline(s.title)}</div>
      ${s.body?`<div class="abs b" style="left:72px;right:72px;top:${s.bodyTop||(zy-130)}px;font-size:34px;color:${C.steel};z-index:5">${rich(s.body)}</div>`:""}
-     ${zone(110,zy,860,zh,s.zoneLabel??(poll?"POLL STICKER":"QUESTION STICKER"))}`},
+     ${(s.zone??(window.SPEC||{}).zones)===false?"":zone(110,zy,860,zh,s.zoneLabel??(poll?"POLL STICKER":"QUESTION STICKER"))}`},
 };
-window.build=function(spec){
+window.build=function(spec){window.SPEC=spec;
   const root=document.getElementById("root");root.innerHTML="";const N=spec.stories.length;
   spec.stories.forEach((s,i)=>{const el=document.createElement("div");el.className="st frame";el.id="story-"+(i+1);root.appendChild(el);
     el.innerHTML=(s.pattern?`<div class="pat" style="background-image:url(${s.pattern});opacity:${s.patternOp??.14};z-index:0"></div>`:"")+R[s.type==="poll"?"question":s.type](s,s.type==="poll");
     if(s.cta)el.insertAdjacentHTML("beforeend",`<div class="abs" style="left:0;right:0;bottom:${s.ctaBottom||190}px;text-align:center;z-index:6"><span class="m" style="display:inline-block;font-size:21px;letter-spacing:.24em;color:${C.ice};padding:14px 24px;background:${C.blue}">${esc(s.cta)}</span></div>`);
-    chrome(el,{w:1080,h:1920,counter:s.counter||`${(s.label||s.type).toUpperCase()} · ${String(i+1).padStart(2,"0")} / ${String(N).padStart(2,"0")}`,handle:"",pad:72,markW:132,flagAt:s.flag===false?null:(s.flagAt||[700,200]),demo:spec.demo});
+    chrome(el,{w:1080,h:1920,counter:(s.counter??spec.counters)===false?"":s.counter||`${(s.label||s.type).toUpperCase()} · ${String(i+1).padStart(2,"0")} / ${String(N).padStart(2,"0")}`,handle:"",pad:72,markW:132,flagAt:s.flag===false?null:(s.flagAt||[700,200]),demo:spec.demo});
     el.insertAdjacentHTML("beforeend",`<div class="chq" style="left:456px;bottom:136px"></div><div class="handle" style="left:0;right:0;bottom:80px;text-align:center;font-size:22px">@akki_meister</div>`);
     el.querySelectorAll(".fitw").forEach(e=>fitText(e));
   });

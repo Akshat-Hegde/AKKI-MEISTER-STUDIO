@@ -30,7 +30,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:transparent!impo
 .host{position:absolute;bottom:0}
 .host img{display:block;height:100%;filter:drop-shadow(0 0 40px rgba(0,0,0,.6)) saturate(.95)}
 .slab{position:absolute;bottom:0;background:var(--blue);transform:skewX(-12deg);transform-origin:bottom}
-.dg{position:absolute;left:60px;width:960px}
+.dg{position:absolute;left:0;width:1080px}
+.dg svg{width:100%;height:auto;display:block}
 .dg text{font-family:JBM;font-weight:600;fill:var(--ice)}
 .top{position:absolute;left:64px;top:118px;display:flex;align-items:center;gap:18px;font-family:JBM;font-size:20px;letter-spacing:.18em;color:var(--ice);text-shadow:0 2px 12px rgba(0,0,0,.8)}
 </style></head><body>
@@ -91,7 +92,7 @@ window.setup=(tl)=>{
     // legibility shades top + bottom (keep faces/numbers in the middle clear)
     div(el,"shade",`top:0;height:${s.shadeTop??560}px;background:linear-gradient(rgba(7,8,12,.86),rgba(7,8,12,.55) 55%,transparent)`);
     div(el,"shade",`bottom:0;height:${s.shadeBottom??760}px;background:linear-gradient(transparent,rgba(7,8,12,.7) 40%,rgba(7,8,12,.92))`);
-    if(s.diagram){const d=s.diagram;o.dg=div(el,"dg",`top:${d.y??560}px`,d.type==="spot"?spotSvg():traceSvg(d));}
+    if(s.diagram){const d=s.diagram;o.dg=div(el,"dg",`top:${d.y??500}px`,d.type==="spot"?spotSvg():traceSvg(d));}
     if(s.host){const h=s.host,hh=h.h||900,ww=hh*(h.ar||.8);
       o.slab=div(el,"slab",`${h.side==="left"?"left":"right"}:${h.side==="left"?-60:-60}px;width:${ww*.62}px;height:${hh*.62}px;opacity:.92`);
       o.host=div(el,"host",`${h.side==="left"?"left":"right"}:${h.x??-30}px;height:${hh}px`,`<img src="${h.src}">`);}
@@ -103,7 +104,7 @@ window.setup=(tl)=>{
       let acc=0;o.words=words.map((w,i)=>{const t=a+(b-a)*acc/tot;acc+=wt[i];return{w,t};});
       // chunks of ≤3 words, broken after punctuation
       o.chunks=[];let cur=[];o.words.forEach((w,i)=>{cur.push(i);if(cur.length===3||/[.,?!:]$/.test(w.w)){o.chunks.push(cur);cur=[];}});if(cur.length)o.chunks.push(cur);
-      o.cap=div(el,"cap",`top:${s.capY??1300}px;${s.capStyle||""}`);}
+      o.cap=div(el,"cap",`top:${s.capY??(s.diagram?1450:1300)}px;${s.capStyle||""}`);}
     if(s.i>0)cue("knock",s.t0,.9);
     S.push(o);
   }

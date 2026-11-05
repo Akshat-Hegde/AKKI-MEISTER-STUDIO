@@ -58,7 +58,7 @@ async function renderExplainer(ctx) {
     if (s.freeze) {
       const f = s.freeze, [cx, cy, cw, ch] = f.crop;
       const png = path.join(work, `freeze-${i}-${path.basename(f.src, path.extname(f.src))}-${f.at}-${f.crop.join("_")}.png`);
-      if (!fs.existsSync(png)) run("ffmpeg", ["-y", "-ss", String(f.at), "-i", f.src, "-frames:v", "1", "-vf", `crop=${cw}:${ch}:${cx}:${cy}`, png]);
+      if (!fs.existsSync(png)) run("ffmpeg", ["-y", ...(/\.(jpe?g|png|webp)$/i.test(f.src) ? [] : ["-ss", String(f.at)]), "-i", f.src, "-frames:v", "1", "-vf", `crop=${cw}:${ch}:${cx}:${cy}`, png]);
       s.freeze = { ...f, img: fileUrl(png), w: cw, h: ch };
     }
     for (const k of ["photo"]) if (s[k] && s[k].src) s[k] = { ...s[k], src: fileUrl(s[k].src) };

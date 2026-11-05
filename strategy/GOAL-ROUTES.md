@@ -23,7 +23,7 @@ Sources: [FIA 2024 F1 accreditation guidelines (via GP Canada)](https://gpcanada
 
 | Event | What happened in 2026 | Your route in |
 |---|---|---|
-| **F1 Sim Racing India Open** (Formula 1 × Mumbai Falcons) | Launched late April 2026: online qualifiers, then city rounds (Delhi; Kohima at TXG Expo, 28–29 Aug), then a **final in Mumbai in Nov 2026** 🔎. Runs on F1 25. | You're a top-80 competitor already. Offer the organisers **content from inside the event** (DEBRIEF-style breakdowns, coaching corner for newcomers). Pitch: Mumbai Falcons Racing marketing. |
+| **F1 Sim Racing India Open** (Formula 1 × Mumbai Falcons) | Launched late April 2026: online qualifiers, then city rounds (Delhi; Kohima at TXG Expo, 28–29 Aug), then a **final in Mumbai in Nov 2026** 🔎. Runs on F1 26. | You're a top-80 competitor already. Offer the organisers **content from inside the event** (DEBRIEF-style breakdowns, coaching corner for newcomers). Pitch: Mumbai Falcons Racing marketing. |
 | **India Gaming Show** (CII, Chennai) | 17–19 Apr 2026, Chennai Trade Centre; ~250 exhibitors 🔎 | Apply as an exhibitor's sim zone host or speaker for the 2027 edition. Ask the sim hardware exhibitors, not the organiser. |
 | **Digital Gaming India Expo** (New Delhi) | 23–25 Mar 2026, Pragati Maidan 🔎 | Same approach for 2027. |
 | **GamingCon** (NODWIN, Mumbai) | 17–18 Oct 2026, Bombay Exhibition Centre 🔎 | NODWIN runs esports IPs. Pitch a sim racing demo or coaching session for 2027. |
@@ -72,7 +72,7 @@ Same weekly rhythm as `CONTENT-CALENDAR.md`. New this block: **Wednesday = 🎓 
 | 5 | 7–13 Dec | Trail braking: why you release, not drop, the brake | Same topic, 35 s | Follower lap #1 | Expertise |
 | 6 | 14–20 Dec | Brake bias: what moving it forward/back does (concept; *my setup* labelled) | "Brake bias in 30 s" | Coached driver lap (consent ✔) | Coaching proof → expos |
 | 7 | 21–27 Dec | FOV: why the right FOV makes you faster (formula only, cite source 🔎) | "Your FOV is wrong" | Year-end: my best lap of 2026 | Rig brands |
-| 8 | 28 Dec–3 Jan | 2026 recap: India Open run (top 80 / 33,000+, exact wording) | "What 33,000 drivers taught me" | Hotlap challenge launch | Credibility → teams/organisers |
+| 8 | 28 Dec–3 Jan | 2026 recap: India Open run (top 80 / 33,000+, exact wording) | "What finishing top 80 of 33,000+ taught me" | Hotlap challenge launch | Credibility → teams/organisers |
 | 9 | 4–10 Jan | Tyre temps & wear: reading the four corners | "Hot tyres, slow laps" | Challenge entries | Expertise |
 | 10 | 11–17 Jan | Load-cell pedals: why force beats travel (concept) | "Why pros brake by pressure" | Challenge entry | Hardware brands (MOZA/NLR pitch) |
 | 11 | 18–24 Jan | Racing line vs defensive line (corner sketch) | "Defend without losing time" | Challenge results | Racecraft |

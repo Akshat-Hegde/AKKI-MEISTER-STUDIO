@@ -1,0 +1,368 @@
+{
+ "template": "explainer",
+ "name": "trail-braking-explainer",
+ "out": "posts/bank-trail-braking/reel",
+ "scenes": [
+  {
+   "dur": 2.6,
+   "freeze": {
+    "src": "sim-rig/img-9148.jpg",
+    "at": 0,
+    "crop": [
+     0,
+     0,
+     1536,
+     2048
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       200,
+       300,
+       1136,
+       2020
+      ]
+     },
+     {
+      "t": 2.6,
+      "rect": [
+       350,
+       700,
+       840,
+       1493
+      ]
+     }
+    ]
+   },
+   "head": {
+    "lines": [
+     "DON'T DROP",
+     "THE BRAKE."
+    ],
+    "size": 124,
+    "y": 260
+   },
+   "shadeBottom": 500
+  },
+  {
+   "dur": 3.2,
+   "clip": {
+    "src": "sim-rig/sim-intro.mp4",
+    "in": 0.6,
+    "crop": [
+     1250,
+     0,
+     608,
+     1080
+    ]
+   },
+   "head": {
+    "kicker": "The common mistake",
+    "lines": [
+     "BRAKE HARD,",
+     "THEN SNAP OFF."
+    ],
+    "size": 96,
+    "y": 220
+   },
+   "say": "The common mistake: brake hard, then snap off the pedal as you turn in."
+  },
+  {
+   "dur": 3.4,
+   "freeze": {
+    "src": "posts/bank-trail-braking/slide-02.png",
+    "at": 0,
+    "crop": [
+     0,
+     380,
+     1080,
+     700
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       1080,
+       700
+      ]
+     },
+     {
+      "t": 1.6,
+      "rect": [
+       0,
+       40,
+       560,
+       363
+      ]
+     }
+    ],
+    "area": [
+     0,
+     460,
+     1080,
+     860
+    ]
+   },
+   "head": {
+    "kicker": "The physics",
+    "lines": [
+     "BRAKING LOADS",
+     "THE FRONT."
+    ],
+    "size": 96,
+    "y": 200
+   },
+   "say": "Braking shifts weight forward. More load on the front tyres means more grip to turn in."
+  },
+  {
+   "dur": 3.2,
+   "freeze": {
+    "src": "posts/bank-trail-braking/slide-02.png",
+    "at": 0,
+    "crop": [
+     0,
+     380,
+     1080,
+     700
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       520,
+       40,
+       560,
+       363
+      ]
+     },
+     {
+      "t": 3.2,
+      "rect": [
+       540,
+       60,
+       520,
+       337
+      ]
+     }
+    ],
+    "area": [
+     0,
+     460,
+     1080,
+     860
+    ]
+   },
+   "head": {
+    "kicker": "Drop it",
+    "lines": [
+     "THE FRONT",
+     "GOES LIGHT."
+    ],
+    "size": 96,
+    "y": 200
+   },
+   "host": {
+    "src": "photos/cutouts/akki-talk-a.png",
+    "side": "right",
+    "h": 620,
+    "ar": 0.81,
+    "in": 0.3
+   },
+   "say": "Drop the brake and the weight jumps back. Less front grip, more understeer.",
+   "capY": 1360,
+   "capStyle": "right:440px;text-align:left"
+  },
+  {
+   "dur": 3.6,
+   "chip": "The fix",
+   "freeze": {
+    "src": "posts/bank-trail-braking/slide-04.png",
+    "at": 0,
+    "crop": [
+     0,
+     330,
+     1080,
+     640
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       1080,
+       640
+      ]
+     },
+     {
+      "t": 1.8,
+      "rect": [
+       300,
+       40,
+       600,
+       356
+      ]
+     }
+    ],
+    "area": [
+     0,
+     460,
+     1080,
+     820
+    ]
+   },
+   "head": {
+    "lines": [
+     "RELEASE IT",
+     "GRADUALLY."
+    ],
+    "size": 104,
+    "y": 250
+   },
+   "say": "Keep a little pressure as you turn in, then bleed it off as the steering goes on."
+  },
+  {
+   "dur": 3.4,
+   "freeze": {
+    "src": "posts/bank-trail-braking/assets/rig-wheel-pedals.jpg",
+    "at": 0,
+    "crop": [
+     0,
+     0,
+     1164,
+     898
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       1164,
+       898
+      ]
+     },
+     {
+      "t": 2.0,
+      "rect": [
+       250,
+       330,
+       660,
+       568
+      ]
+     }
+    ],
+    "area": [
+     0,
+     460,
+     1080,
+     833
+    ]
+   },
+   "rings": [
+    {
+     "at": 0.3,
+     "x": 543,
+     "y": 81,
+     "r": 70,
+     "label": "STEERING",
+     "labelSide": "right",
+     "until": 1.6
+    },
+    {
+     "at": 1.6,
+     "x": 524,
+     "y": 638,
+     "r": 60,
+     "label": "BRAKE",
+     "labelSide": "right"
+    }
+   ],
+   "head": {
+    "lines": [
+     "ONE UP,",
+     "ONE DOWN."
+    ],
+    "size": 104,
+    "y": 220
+   },
+   "say": "Steering lock goes up, brake pressure comes down. One smooth hand-off.",
+   "capY": 1380
+  },
+  {
+   "dur": 3.2,
+   "photo": {
+    "src": "sim-rig/img-9148.jpg",
+    "focus": "50% 30%"
+   },
+   "head": {
+    "kicker": "Not every corner",
+    "lines": [
+     "FAST CORNER?",
+     "RELEASE EARLIER."
+    ],
+    "size": 92,
+    "y": 240
+   },
+   "host": {
+    "src": "photos/cutouts/akki-track.png",
+    "side": "left",
+    "h": 820,
+    "ar": 0.54,
+    "x": 10
+   },
+   "say": "In fast corners you'll often release earlier to keep the rear settled.",
+   "capY": 1250,
+   "capStyle": "left:440px;text-align:left"
+  },
+  {
+   "dur": 3.2,
+   "photo": {
+    "src": "sim-rig/img-8350.jpg",
+    "focus": "75% 50%"
+   },
+   "head": {
+    "kicker": "The takeaway",
+    "lines": [
+     "EASE OFF AS",
+     "YOU TURN IN."
+    ],
+    "size": 112,
+    "y": 300
+   },
+   "say": "Ease off as you turn in. Don't drop it.",
+   "capY": 1380
+  },
+  {
+   "dur": 4.4,
+   "beats": 2,
+   "clip": {
+    "src": "sim-rig/sim-intro.mp4",
+    "in": 15.8,
+    "crop": [
+     1000,
+     0,
+     608,
+     1080
+    ]
+   },
+   "chip": "@akki_meister · follow for more",
+   "chipY": 1160,
+   "say": "Save this and try it in your next session. Copy. See you on track.",
+   "capY": 1240,
+   "shadeTop": 300
+  }
+ ],
+ "voiceover": {
+  "src": "posts/bank-trail-braking/reel/voiceover.wav",
+  "gain": 1.0
+ },
+ "music": {
+  "src": "reel/music/drums.wav",
+  "gain": 0.16
+ },
+ "caption": "Don't drop the brake. Release it. 🏁 Trail braking in 30 seconds.\n\n@akki_meister\n#simracing #simracer #trailbraking #racecraft #simracingtips #simracingindia #akkimeister\n\nSources: see ../caption.md"
+}

@@ -1,0 +1,355 @@
+{
+ "template": "explainer",
+ "name": "load-cell-explainer",
+ "out": "posts/bank-load-cell/reel",
+ "scenes": [
+  {
+   "dur": 2.6,
+   "freeze": {
+    "src": "sim-rig/img-8350.jpg",
+    "at": 0,
+    "crop": [
+     0,
+     0,
+     2048,
+     1536
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       1150,
+       0,
+       864,
+       1536
+      ]
+     },
+     {
+      "t": 2.6,
+      "rect": [
+       1150,
+       500,
+       640,
+       1137
+      ]
+     }
+    ]
+   },
+   "head": {
+    "lines": [
+     "BRAKE BY",
+     "PRESSURE."
+    ],
+    "size": 124,
+    "y": 260
+   },
+   "shadeBottom": 500
+  },
+  {
+   "dur": 3.2,
+   "freeze": {
+    "src": "posts/bank-load-cell/slide-02.png",
+    "at": 0,
+    "crop": [
+     0,
+     360,
+     1080,
+     330
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       1080,
+       330
+      ]
+     },
+     {
+      "t": 3.2,
+      "rect": [
+       20,
+       6,
+       1040,
+       318
+      ]
+     }
+    ],
+    "area": [
+     0,
+     560,
+     1080,
+     330
+    ]
+   },
+   "backdrop": {
+    "src": "sim-rig/img-8350.jpg",
+    "op": 0.6
+   },
+   "head": {
+    "kicker": "Two sensors",
+    "lines": [
+     "FORCE VS",
+     "TRAVEL."
+    ],
+    "size": 104,
+    "y": 230
+   },
+   "say": "A load cell reads how hard you press. A potentiometer reads how far the pedal moves.",
+   "capY": 1250
+  },
+  {
+   "dur": 3.4,
+   "freeze": {
+    "src": "posts/bank-trail-braking/assets/rig-wheel-pedals.jpg",
+    "at": 0,
+    "crop": [
+     0,
+     0,
+     1164,
+     898
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       200,
+       1164,
+       698
+      ]
+     },
+     {
+      "t": 2.0,
+      "rect": [
+       300,
+       450,
+       450,
+       382
+      ]
+     }
+    ],
+    "area": [
+     0,
+     460,
+     1080,
+     833
+    ]
+   },
+   "rings": [
+    {
+     "at": 0.8,
+     "x": 524,
+     "y": 638,
+     "r": 60,
+     "label": "BRAKE",
+     "labelSide": "right"
+    }
+   ],
+   "head": {
+    "kicker": "What your foot learns",
+    "lines": [
+     "POSITION",
+     "OR FORCE?"
+    ],
+    "size": 104,
+    "y": 220
+   },
+   "say": "With travel, your foot learns a position. With pressure, it learns a force.",
+   "capY": 1380
+  },
+  {
+   "dur": 3.4,
+   "freeze": {
+    "src": "posts/bank-load-cell/slide-03.png",
+    "at": 0,
+    "crop": [
+     0,
+     330,
+     1080,
+     640
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       1080,
+       640
+      ]
+     },
+     {
+      "t": 3.4,
+      "rect": [
+       20,
+       12,
+       1040,
+       616
+      ]
+     }
+    ],
+    "area": [
+     0,
+     460,
+     1080,
+     640
+    ]
+   },
+   "head": {
+    "lines": [
+     "A FORCE,",
+     "NOT A POSITION."
+    ],
+    "size": 96,
+    "y": 220
+   },
+   "say": "A force is easier to repeat at the limit, like the brake in a real race car.",
+   "capY": 1300
+  },
+  {
+   "dur": 3.2,
+   "clip": {
+    "src": "sim-rig/sim-intro.mp4",
+    "in": 0.6,
+    "crop": [
+     1250,
+     0,
+     608,
+     1080
+    ]
+   },
+   "head": {
+    "lines": [
+     "SAME PUSH.",
+     "SAME BRAKING."
+    ],
+    "size": 100,
+    "y": 220
+   },
+   "say": "Same pressure, same braking force, wherever the pedal sits."
+  },
+  {
+   "dur": 3.4,
+   "chip": "Before you buy",
+   "freeze": {
+    "src": "posts/bank-load-cell/slide-05.png",
+    "at": 0,
+    "crop": [
+     0,
+     330,
+     1080,
+     700
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       1080,
+       700
+      ]
+     },
+     {
+      "t": 3.4,
+      "rect": [
+       20,
+       13,
+       1040,
+       674
+      ]
+     }
+    ],
+    "area": [
+     0,
+     480,
+     1080,
+     700
+    ]
+   },
+   "head": {
+    "lines": [
+     "NO",
+     "FLEX."
+    ],
+    "size": 110,
+    "y": 250
+   },
+   "say": "It only works if the rig doesn't flex. Mount the pedals solid and set a force you can repeat.",
+   "capY": 1300
+  },
+  {
+   "dur": 3.2,
+   "backdrop": {
+    "src": "sim-rig/img-8350.jpg",
+    "op": 0.8
+   },
+   "head": {
+    "lines": [
+     "CONSISTENCY",
+     "FIRST."
+    ],
+    "size": 104,
+    "y": 260
+   },
+   "host": {
+    "src": "photos/cutouts/akki-track.png",
+    "side": "right",
+    "h": 820,
+    "ar": 0.54,
+    "x": 0
+   },
+   "say": "The first win isn't raw speed. It's being the same every lap.",
+   "capY": 1250,
+   "capStyle": "right:470px;text-align:left"
+  },
+  {
+   "dur": 3.2,
+   "photo": {
+    "src": "sim-rig/img-5415.jpg",
+    "focus": "60% 50%"
+   },
+   "head": {
+    "kicker": "The takeaway",
+    "lines": [
+     "BRAKE BY FEEL,",
+     "NOT DISTANCE."
+    ],
+    "size": 100,
+    "y": 300
+   },
+   "say": "Brake by feel, not by distance.",
+   "capY": 1380
+  },
+  {
+   "dur": 4.4,
+   "beats": 2,
+   "clip": {
+    "src": "sim-rig/sim-intro.mp4",
+    "in": 15.8,
+    "crop": [
+     1000,
+     0,
+     608,
+     1080
+    ]
+   },
+   "chip": "@akki_meister · follow for more",
+   "chipY": 1160,
+   "say": "Save this for your next rig upgrade. Copy. See you on track.",
+   "capY": 1240,
+   "shadeTop": 300
+  }
+ ],
+ "voiceover": {
+  "src": "posts/bank-load-cell/reel/voiceover.wav",
+  "gain": 1.0
+ },
+ "music": {
+  "src": "reel/music/drums.wav",
+  "gain": 0.16
+ },
+ "caption": "Brake by pressure, not travel. 🏁 Load-cell brakes in 30 seconds.\n\n@akki_meister\n#simracing #loadcell #simrig #simracingsetup #simracingtips #simracingindia #akkimeister\n\nSources: see ../caption.md"
+}
