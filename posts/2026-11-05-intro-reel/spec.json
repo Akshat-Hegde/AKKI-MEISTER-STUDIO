@@ -1,0 +1,345 @@
+{
+ "template": "explainer",
+ "name": "akki-intro",
+ "out": "posts/2026-11-05-intro-reel",
+ "_note": "Intro reel. Facts only from CLAUDE.md: top 80 of 33,000+ registered (F1 Sim Racing India Open 2026), sim racing podiums (website/podium-p1-jeddah.jpg), karting, Formula Student, coaching, telemetry. img-9855 uses the zoomed 37.6 s frame (no browser bar / banner).",
+ "scenes": [
+  {
+   "dur": 2.2,
+   "clip": {
+    "src": "sim-rig/sim-intro.mp4",
+    "crop": [
+     1000,
+     0,
+     608,
+     1080
+    ],
+    "in": 8.6
+   },
+   "head": {
+    "kicker": "@akki_meister",
+    "lines": [
+     "HEY,",
+     "I'M AKKI."
+    ],
+    "size": 150,
+    "y": 1080
+   },
+   "shadeTop": 200,
+   "shadeBottom": 900
+  },
+  {
+   "dur": 2.4,
+   "clip": {
+    "src": "sim-rig/img-8214.mp4",
+    "in": 0.3,
+    "crop": [
+     0,
+     0,
+     1080,
+     1920
+    ]
+   },
+   "head": {
+    "kicker": "Sim racing",
+    "lines": [
+     "BUILT ON",
+     "THE RIG."
+    ],
+    "size": 140,
+    "y": 240
+   },
+   "shadeBottom": 300
+  },
+  {
+   "dur": 2.8,
+   "freeze": {
+    "src": "stories-india-open/assets/venue.jpg",
+    "at": 0,
+    "crop": [
+     0,
+     0,
+     960,
+     1280
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       960,
+       1280
+      ]
+     },
+     {
+      "t": 2.8,
+      "rect": [
+       115,
+       102,
+       729,
+       972
+      ]
+     }
+    ]
+   },
+   "head": {
+    "kicker": "F1 Sim Racing India Open 2026",
+    "lines": [
+     "TOP 80",
+     "OF 33,000+."
+    ],
+    "size": 140,
+    "y": 1170
+   },
+   "shadeTop": 260,
+   "shadeBottom": 900
+  },
+  {
+   "dur": 2.4,
+   "freeze": {
+    "src": "website/podium-p1-jeddah.jpg",
+    "at": 0,
+    "crop": [
+     0,
+     0,
+     1050,
+     1400
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       180,
+       230,
+       700,
+       1170
+      ]
+     },
+     {
+      "t": 2.4,
+      "rect": [
+       260,
+       330,
+       560,
+       940
+      ]
+     }
+    ]
+   },
+   "head": {
+    "kicker": "Sim racing",
+    "lines": [
+     "PODIUMS."
+    ],
+    "size": 160,
+    "y": 1330
+   },
+   "shadeTop": 200,
+   "shadeBottom": 800
+  },
+  {
+   "dur": 2.4,
+   "freeze": {
+    "src": "karting/img-6017.jpg",
+    "at": 0,
+    "crop": [
+     0,
+     0,
+     2048,
+     1538
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       319,
+       115,
+       800,
+       1422
+      ]
+     },
+     {
+      "t": 2.4,
+      "rect": [
+       419,
+       300,
+       600,
+       1067
+      ]
+     }
+    ]
+   },
+   "head": {
+    "kicker": "Karting",
+    "lines": [
+     "SIM TO",
+     "TARMAC."
+    ],
+    "size": 150,
+    "y": 240
+   },
+   "shadeBottom": 300
+  },
+  {
+   "dur": 2.6,
+   "freeze": {
+    "src": "formula-student/img-1636.jpg",
+    "at": 0,
+    "crop": [
+     0,
+     0,
+     1536,
+     2048
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       0,
+       1536,
+       2048
+      ]
+     },
+     {
+      "t": 2.6,
+      "rect": [
+       150,
+       300,
+       1150,
+       1533
+      ]
+     }
+    ]
+   },
+   "head": {
+    "kicker": "Formula Student",
+    "lines": [
+     "ENGINEER.",
+     "DRIVER."
+    ],
+    "size": 140,
+    "y": 1250
+   },
+   "shadeTop": 200,
+   "shadeBottom": 800
+  },
+  {
+   "dur": 2.8,
+   "freeze": {
+    "src": "telemetry/img-9855.mp4",
+    "at": 37.6,
+    "crop": [
+     0,
+     0,
+     1920,
+     1080
+    ],
+    "area": [
+     0,
+     420,
+     1080,
+     900
+    ],
+    "keys": [
+     {
+      "t": 0,
+      "rect": [
+       0,
+       200,
+       1920,
+       1080
+      ]
+     },
+     {
+      "t": 2.8,
+      "rect": [
+       60,
+       300,
+       1000,
+       833
+      ]
+     }
+    ]
+   },
+   "head": {
+    "kicker": "Coach · telemetry",
+    "lines": [
+     "I TEACH",
+     "WITH DATA."
+    ],
+    "size": 120,
+    "y": 200
+   },
+   "host": {
+    "src": "photos/cutouts/akki-talk-a.png",
+    "side": "right",
+    "h": 700,
+    "ar": 0.81,
+    "in": 0.3
+   },
+   "shadeBottom": 600
+  },
+  {
+   "dur": 3.0,
+   "beats": 2,
+   "clip": {
+    "src": "sim-rig/img-1834.mp4",
+    "in": 9.0,
+    "crop": [
+     0,
+     0,
+     1080,
+     1920
+    ]
+   },
+   "head": {
+    "kicker": "On the feed",
+    "lines": [
+     "HOTLAPS.",
+     "RACECRAFT.",
+     "TELEMETRY."
+    ],
+    "size": 120,
+    "y": 1060
+   },
+   "shadeTop": 200,
+   "shadeBottom": 1000
+  },
+  {
+   "dur": 3.4,
+   "beats": 2,
+   "clip": {
+    "src": "sim-rig/sim-intro.mp4",
+    "crop": [
+     1000,
+     0,
+     608,
+     1080
+    ],
+    "in": 15.8
+   },
+   "head": {
+    "lines": [
+     "COPY.",
+     "SEE YOU ON TRACK."
+    ],
+    "size": 80,
+    "y": 1180
+   },
+   "chip": "@akki_meister · Sim · Track · Paddock",
+   "chipY": 1440,
+   "shadeTop": 200,
+   "shadeBottom": 900
+  }
+ ],
+ "voiceover": {
+  "src": "posts/2026-11-05-intro-reel/voiceover.wav"
+ },
+ "music": {
+  "src": "reel/music/drums.wav",
+  "gain": 0.16
+ },
+ "caption": "Hey, I'm Akki. 🏁\nSim racer, karter, Formula Student engineer and coach. Here you'll get hotlaps, racecraft and telemetry that make you faster.\n\n@akki_meister\n#simracing #simracer #f1sim #motorsport #simracingindia #karting #formulastudent #akkimeister\n\n---\nAlternatives:\n- Sim. Track. Paddock. This is what the feed is about. 🏎️ @akki_meister #simracing #motorsport #simracingindia\n- Top 80 of 33,000+ at the F1 Sim Racing India Open. Now I'm sharing everything I learn. @akki_meister #simracing #f1simracingindiaopen #esports"
+}
