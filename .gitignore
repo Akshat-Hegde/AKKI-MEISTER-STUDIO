@@ -22,3 +22,6 @@ library/_staging/**
 **/.work/
 # template sample renders: commit contact sheets, not the per-frame review stills (MP4s stay ignored like every render)
 templates/samples/**/stills/
+
+# explainer kit review stills (large); the *-stills.jpg contact sheet is committed instead
+posts/bank-*/reel/stills/
