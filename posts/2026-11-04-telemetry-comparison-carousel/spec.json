@@ -1,0 +1,682 @@
+{
+ "template": "apex-notes",
+ "series": "APEX NOTES",
+ "number": "TELEMETRY",
+ "out": "posts/2026-11-04-telemetry-comparison-carousel",
+ "scan": false,
+ "pattern": "AKKI-MEISTER-COMPLETE/patterns-transparent/02-pinstripe-overlay.png",
+ "slides": [
+  {
+   "type": "hook",
+   "photo": "sim-rig/img-1802.jpg",
+   "pos": "22% 35%",
+   "kicker": "APEX NOTES · TELEMETRY",
+   "title": [
+    "279 VS 35.",
+    "WHO'S FASTER?"
+   ],
+   "sub": "How to read a telemetry comparison, in 3 steps.",
+   "size": 110
+  },
+  {
+   "type": "big-number",
+   "kicker": "02 · The numbers",
+   "title": [
+    "SAME MOMENT."
+   ],
+   "value": "279",
+   "label": "KM/H · PLAYER",
+   "vs": "35",
+   "vsLabel": "KM/H · AKKI3346",
+   "numberSize": 215,
+   "body": "Two rigs on my live dashboard, same instant. Who's faster? **You can't tell yet.**",
+   "bodyTop": 820,
+   "photo": "posts/2026-11-04-telemetry-comparison-carousel/assets/numbers-3760.jpg",
+   "photoTop": 760,
+   "photoHeight": 440,
+   "pos": "50% 50%",
+   "note": "Read off my live dashboard · Suzuka"
+  },
+  {
+   "type": "annotated",
+   "kicker": "03 · The trap",
+   "title": [
+    "DIFFERENT PLACE."
+   ],
+   "photo": "posts/2026-11-04-telemetry-comparison-carousel/assets/map-3760.jpg",
+   "photoTop": 380,
+   "photoHeight": 756,
+   "callouts": [
+    {
+     "x": 52.5,
+     "y": 28.6,
+     "label": "AKKI3346 · 35 KM/H",
+     "tx": 62,
+     "ty": 8,
+     "r": 30
+    },
+    {
+     "x": 36.4,
+     "y": 38.0,
+     "label": "PLAYER · 279 KM/H",
+     "tx": 22,
+     "ty": 72,
+     "r": 30,
+     "on": true
+    }
+   ],
+   "body": "Live numbers compare two different points on track. **Speed only means something at the same spot.**",
+   "bodyTop": 1170
+  },
+  {
+   "type": "content",
+   "kicker": "04 · Steps 1 + 2",
+   "title": [
+    "FIND WHERE",
+    "THEY SPLIT."
+   ],
+   "visual": {
+    "type": "chart",
+    "illustrative": true,
+    "xLabel": "DISTANCE",
+    "yLabel": "SPEED",
+    "xDomain": [
+     0,
+     1
+    ],
+    "yDomain": [
+     0.15,
+     1
+    ],
+    "series": [
+     {
+      "label": "LAP A",
+      "points": [
+       [
+        0.0,
+        0.86
+       ],
+       [
+        0.017,
+        0.86
+       ],
+       [
+        0.033,
+        0.86
+       ],
+       [
+        0.05,
+        0.86
+       ],
+       [
+        0.067,
+        0.86
+       ],
+       [
+        0.083,
+        0.86
+       ],
+       [
+        0.1,
+        0.86
+       ],
+       [
+        0.117,
+        0.86
+       ],
+       [
+        0.133,
+        0.86
+       ],
+       [
+        0.15,
+        0.86
+       ],
+       [
+        0.167,
+        0.86
+       ],
+       [
+        0.183,
+        0.86
+       ],
+       [
+        0.2,
+        0.86
+       ],
+       [
+        0.217,
+        0.86
+       ],
+       [
+        0.233,
+        0.86
+       ],
+       [
+        0.25,
+        0.86
+       ],
+       [
+        0.267,
+        0.86
+       ],
+       [
+        0.283,
+        0.86
+       ],
+       [
+        0.3,
+        0.86
+       ],
+       [
+        0.317,
+        0.86
+       ],
+       [
+        0.333,
+        0.86
+       ],
+       [
+        0.35,
+        0.86
+       ],
+       [
+        0.367,
+        0.86
+       ],
+       [
+        0.383,
+        0.859
+       ],
+       [
+        0.4,
+        0.83
+       ],
+       [
+        0.417,
+        0.768
+       ],
+       [
+        0.433,
+        0.685
+       ],
+       [
+        0.45,
+        0.59
+       ],
+       [
+        0.467,
+        0.495
+       ],
+       [
+        0.483,
+        0.412
+       ],
+       [
+        0.5,
+        0.35
+       ],
+       [
+        0.517,
+        0.321
+       ],
+       [
+        0.533,
+        0.323
+       ],
+       [
+        0.55,
+        0.336
+       ],
+       [
+        0.567,
+        0.356
+       ],
+       [
+        0.583,
+        0.384
+       ],
+       [
+        0.6,
+        0.418
+       ],
+       [
+        0.617,
+        0.457
+       ],
+       [
+        0.633,
+        0.499
+       ],
+       [
+        0.65,
+        0.544
+       ],
+       [
+        0.667,
+        0.591
+       ],
+       [
+        0.683,
+        0.637
+       ],
+       [
+        0.7,
+        0.683
+       ],
+       [
+        0.717,
+        0.726
+       ],
+       [
+        0.733,
+        0.767
+       ],
+       [
+        0.75,
+        0.803
+       ],
+       [
+        0.767,
+        0.833
+       ],
+       [
+        0.783,
+        0.857
+       ],
+       [
+        0.8,
+        0.873
+       ],
+       [
+        0.817,
+        0.88
+       ],
+       [
+        0.833,
+        0.88
+       ],
+       [
+        0.85,
+        0.88
+       ],
+       [
+        0.867,
+        0.88
+       ],
+       [
+        0.883,
+        0.88
+       ],
+       [
+        0.9,
+        0.88
+       ],
+       [
+        0.917,
+        0.88
+       ],
+       [
+        0.933,
+        0.88
+       ],
+       [
+        0.95,
+        0.88
+       ],
+       [
+        0.967,
+        0.88
+       ],
+       [
+        0.983,
+        0.88
+       ],
+       [
+        1.0,
+        0.88
+       ]
+      ],
+      "color": "#F3F4F6",
+      "width": 5
+     },
+     {
+      "label": "LAP B",
+      "points": [
+       [
+        0.0,
+        0.86
+       ],
+       [
+        0.017,
+        0.86
+       ],
+       [
+        0.033,
+        0.86
+       ],
+       [
+        0.05,
+        0.86
+       ],
+       [
+        0.067,
+        0.86
+       ],
+       [
+        0.083,
+        0.86
+       ],
+       [
+        0.1,
+        0.86
+       ],
+       [
+        0.117,
+        0.86
+       ],
+       [
+        0.133,
+        0.86
+       ],
+       [
+        0.15,
+        0.86
+       ],
+       [
+        0.167,
+        0.86
+       ],
+       [
+        0.183,
+        0.86
+       ],
+       [
+        0.2,
+        0.86
+       ],
+       [
+        0.217,
+        0.86
+       ],
+       [
+        0.233,
+        0.86
+       ],
+       [
+        0.25,
+        0.86
+       ],
+       [
+        0.267,
+        0.86
+       ],
+       [
+        0.283,
+        0.86
+       ],
+       [
+        0.3,
+        0.86
+       ],
+       [
+        0.317,
+        0.86
+       ],
+       [
+        0.333,
+        0.859
+       ],
+       [
+        0.35,
+        0.843
+       ],
+       [
+        0.367,
+        0.806
+       ],
+       [
+        0.383,
+        0.753
+       ],
+       [
+        0.4,
+        0.688
+       ],
+       [
+        0.417,
+        0.616
+       ],
+       [
+        0.433,
+        0.54
+       ],
+       [
+        0.45,
+        0.465
+       ],
+       [
+        0.467,
+        0.395
+       ],
+       [
+        0.483,
+        0.334
+       ],
+       [
+        0.5,
+        0.287
+       ],
+       [
+        0.517,
+        0.258
+       ],
+       [
+        0.533,
+        0.25
+       ],
+       [
+        0.55,
+        0.255
+       ],
+       [
+        0.567,
+        0.267
+       ],
+       [
+        0.583,
+        0.285
+       ],
+       [
+        0.6,
+        0.309
+       ],
+       [
+        0.617,
+        0.338
+       ],
+       [
+        0.633,
+        0.37
+       ],
+       [
+        0.65,
+        0.406
+       ],
+       [
+        0.667,
+        0.444
+       ],
+       [
+        0.683,
+        0.485
+       ],
+       [
+        0.7,
+        0.527
+       ],
+       [
+        0.717,
+        0.569
+       ],
+       [
+        0.733,
+        0.612
+       ],
+       [
+        0.75,
+        0.653
+       ],
+       [
+        0.767,
+        0.694
+       ],
+       [
+        0.783,
+        0.732
+       ],
+       [
+        0.8,
+        0.767
+       ],
+       [
+        0.817,
+        0.799
+       ],
+       [
+        0.833,
+        0.826
+       ],
+       [
+        0.85,
+        0.849
+       ],
+       [
+        0.867,
+        0.866
+       ],
+       [
+        0.883,
+        0.876
+       ],
+       [
+        0.9,
+        0.88
+       ],
+       [
+        0.917,
+        0.88
+       ],
+       [
+        0.933,
+        0.88
+       ],
+       [
+        0.95,
+        0.88
+       ],
+       [
+        0.967,
+        0.88
+       ],
+       [
+        0.983,
+        0.88
+       ],
+       [
+        1.0,
+        0.88
+       ]
+      ],
+      "color": "#5B7BFF",
+      "width": 5
+     }
+    ],
+    "marks": [
+     {
+      "x": 0.33,
+      "label": "1 BRAKE"
+     },
+     {
+      "x": 0.53,
+      "label": "2 MIN SPEED"
+     },
+     {
+      "x": 0.72,
+      "label": "3 THROTTLE"
+     }
+    ]
+   },
+   "body": "Line both laps up by **distance**, not time. Then look where the lines split: braking, minimum speed, throttle.",
+   "note": "Illustrative · not real data"
+  },
+  {
+   "type": "annotated",
+   "kicker": "05 · Step 3",
+   "title": [
+    "THEN CHECK",
+    "THE INPUTS."
+   ],
+   "size": 84,
+   "photo": "posts/2026-11-04-telemetry-comparison-carousel/assets/inputs-3000.jpg",
+   "photoTop": 420,
+   "photoHeight": 756,
+   "callouts": [
+    {
+     "x": 28.8,
+     "y": 12.6,
+     "label": "GEAR",
+     "tx": 10,
+     "ty": 45,
+     "r": 34,
+     "on": true
+    },
+    {
+     "x": 56,
+     "y": 10.7,
+     "label": "THROTTLE",
+     "tx": 66,
+     "ty": 40
+    },
+    {
+     "x": 56,
+     "y": 14.3,
+     "label": "BRAKE",
+     "tx": 66,
+     "ty": 55
+    },
+    {
+     "x": 58,
+     "y": 18.1,
+     "label": "STEERING",
+     "tx": 66,
+     "ty": 70
+    }
+   ],
+   "body": "At that spot: **throttle, brake, gear, steering.** That's the why.",
+   "bodyTop": 1205
+  },
+  {
+   "type": "cutout",
+   "kicker": "The takeaway",
+   "title": [
+    "COMPARE BY",
+    "DISTANCE,",
+    "NOT BY TIME."
+   ],
+   "size": 124,
+   "titleTop": 250,
+   "cutout": "photos/cutouts/akki-track.png",
+   "side": "right",
+   "cutoutHeight": 860,
+   "photo": "telemetry/img-4366.jpg",
+   "photoOp": 0.4,
+   "body": "Save this for your next debrief.",
+   "bodyTop": 800,
+   "bodyWidth": 480,
+   "close": true,
+   "cutoutX": -40
+  }
+ ],
+ "caption": "279 vs 35 km/h. Who's faster? Wrong question. 🏁\nCompare by distance, not by time. Save this for your next debrief.\n\n@akki_meister\n#simracing #telemetry #simracer #motorsport #racing #f1 #motorsportlife\n\n---\nAlternatives:\n- Same moment ≠ same place. How I read a telemetry comparison, in 3 steps. 🏎️ @akki_meister #simracing #telemetry #simracer #motorsport #racing\n- Step 1 is where most people go wrong. Swipe. 🏁 @akki_meister #simracing #telemetry #racecraft #simracer #motorsportlife"
+}

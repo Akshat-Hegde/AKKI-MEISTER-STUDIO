@@ -17,6 +17,17 @@ body{display:flex;flex-wrap:wrap;gap:40px;padding:40px;width:max-content;max-wid
 .ba{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%}
 .ba .col{display:flex;flex-direction:column;gap:18px}
 .ba .card{padding:18px;display:flex;justify-content:center}
+/* new layouts: cutout · annotated · big-number (no scanlines: clean, readable photos) */
+.noscan .photo .scan{display:none}
+.shot{position:absolute;left:0;width:1080px;overflow:hidden;z-index:5}
+.shot img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.92) contrast(1.06)}
+.shot .tn{position:absolute;inset:0;background:#2440FF;mix-blend-mode:soft-light;opacity:.18}
+.co{position:absolute;inset:0;z-index:12;overflow:visible}
+.col-l{position:absolute;z-index:13;font-family:JBM;font-weight:700;font-size:24px;letter-spacing:.12em;padding:10px 16px;background:var(--ice);color:#07080C;text-transform:uppercase;white-space:nowrap;box-shadow:0 8px 30px rgba(0,0,0,.45)}
+.col-l.on{background:var(--blue);color:var(--ice)}
+.cut{position:absolute;bottom:0;z-index:20;filter:drop-shadow(0 0 50px rgba(0,0,0,.65))}
+.slabc{position:absolute;bottom:0;z-index:4;background:var(--blue);transform:skewX(-12deg);transform-origin:bottom}
+.big{font-family:ClashD;font-weight:600;line-height:.82;letter-spacing:-.03em}
 </style></head><body>
 <div id="root"></div>
 <script src="logo.js"></script>
@@ -53,7 +64,7 @@ window.build=function(spec){
   const root=document.getElementById("root");root.innerHTML="";
   const N=spec.slides.length,series=spec.series||"APEX NOTES",num=spec.number!=null&&spec.number!==""?` · ${typeof spec.number==="number"?"#"+spec.number:spec.number}`:"";
   spec.slides.forEach((s,i)=>{
-    const el=document.createElement("div");el.className="slide frame";el.id="slide-"+(i+1);root.appendChild(el);
+    const el=document.createElement("div");el.className="slide frame"+((s.scan??spec.scan)===false||["cutout","annotated","big-number"].includes(s.type)?" noscan":"");el.id="slide-"+(i+1);root.appendChild(el);
     const counter=`${String(i+1).padStart(2,"0")} / ${String(N).padStart(2,"0")}`;
     const pattern=s.pattern===false?null:(s.pattern||spec.pattern||null);
     let html="";
@@ -73,6 +84,36 @@ window.build=function(spec){
           <div style="text-align:right"><div class="h" style="font-size:44px">@AKKI_MEISTER</div>
           <div class="m" style="font-size:19px;color:${C.sky};letter-spacing:.22em;margin-top:12px">${esc(s.cta||"FOLLOW FOR MORE · SAVE THIS")}</div></div></div>
         <div class="chq" style="left:456px;bottom:96px"></div>`;
+    }else if(s.type==="cutout"){
+      /* cutout of Akki overlapping the headline: headline z10, cutout z20 */
+      const ch=s.cutoutHeight||1020,side=s.side||"right";
+      if(s.photo)html+=`<div class="shot" style="top:0;height:1350px;z-index:1;opacity:${s.photoOp??.35}"><img src="${s.photo}" style="object-position:${s.pos||"50% 50%"};filter:blur(${s.blur??6}px) saturate(.8) brightness(.7)"></div>`;
+      html+=`<div class="slabc" style="${side}:-80px;width:${ch*.42}px;height:${ch*.78}px;opacity:.95"></div>
+        <img class="cut" src="${s.cutout}" style="${side}:${s.cutoutX??-20}px;height:${ch}px">
+        <div class="abs k" style="left:64px;top:${(s.titleTop||250)-50}px;font-size:22px;z-index:10">${esc(s.kicker||"")}</div>
+        <div class="abs h" style="left:64px;right:64px;top:${s.titleTop||250}px;font-size:${s.size||150}px;line-height:.9;z-index:10">${headline(s.title)}</div>
+        ${s.body?`<div class="abs b" style="left:64px;width:${s.bodyWidth||520}px;top:${s.bodyTop||900}px;font-size:34px;z-index:25;text-shadow:0 2px 18px rgba(0,0,0,.8)">${rich(s.body)}</div>`:""}
+        ${s.close?`<div class="abs" style="left:64px;bottom:120px;z-index:25"><div class="h" style="font-size:46px">@AKKI_MEISTER</div><div class="m" style="font-size:19px;color:${C.sky};letter-spacing:.22em;margin-top:12px">${esc(s.cta||"FOLLOW FOR MORE · SAVE THIS")}</div></div>`:""}`;
+    }else if(s.type==="annotated"){
+      /* photo/screenshot with callout lines: callouts [{x,y,label,tx,ty,on}] in % of the photo box (dot at x,y; label at tx,ty) */
+      const pt=s.photoTop||420,phh=s.photoHeight||756;
+      html+=`<div class="head"><div class="k">${esc(s.kicker||"")}</div><div class="h fitw" style="${s.size?`font-size:${s.size}px`:""}">${headline(s.title)}</div></div>
+        <div class="shot" style="top:${pt}px;height:${phh}px"><img src="${s.photo}" style="object-position:${s.pos||"50% 50%"}"><div class="tn"></div></div>
+        <svg class="co" width="1080" height="1350">${(s.callouts||[]).map(c=>{const x=c.x*10.8,y=pt+c.y*phh/100,tx=c.tx*10.8,ty=pt+c.ty*phh/100;
+          return `<line x1="${x}" y1="${y}" x2="${tx}" y2="${ty}" stroke="#F3F4F6" stroke-width="3"/><circle cx="${x}" cy="${y}" r="${c.r||26}" fill="none" stroke="#2440FF" stroke-width="6"/><circle cx="${x}" cy="${y}" r="6" fill="#F3F4F6"/>`}).join("")}</svg>
+        ${(s.callouts||[]).map(c=>`<div class="col-l${c.on?" on":""}" style="left:${c.tx*10.8}px;top:${pt+c.ty*phh/100}px;transform:translate(${c.align==="right"?"-100%":c.align==="center"?"-50%":"0"},-50%)">${esc(c.label)}</div>`).join("")}
+        ${s.body?`<div class="copy" style="top:${s.bodyTop||pt+phh+40}px"><div class="b">${rich(s.body)}</div></div>`:""}`;
+      if(s.note)html+=`<div class="note" style="right:64px;bottom:${spec.demo?92:48}px">${esc(s.note)}</div>`;
+    }else if(s.type==="big-number"){
+      /* one huge number (or "A vs B"), straight from the source; unit + label in mono */
+      html+=`<div class="head"><div class="k">${esc(s.kicker||"")}</div>${s.title?`<div class="h fitw" style="font-size:${s.size||72}px">${headline(s.title)}</div>`:""}</div>
+        <div class="abs" style="left:64px;right:64px;top:${s.numberTop||430}px;z-index:10;display:flex;align-items:flex-end;gap:36px">
+          <div><div class="big" style="font-size:${s.numberSize||300}px;color:${C.blue}">${esc(s.value)}</div><div class="m" style="font-size:24px;letter-spacing:.2em;color:${C.sky};margin-top:22px">${esc(s.label||"")}</div></div>
+          ${s.vs!=null?`<div class="h" style="font-size:64px;color:${C.steel};padding-bottom:70px">VS</div><div><div class="big" style="font-size:${s.numberSize||300}px;color:${C.ice}">${esc(s.vs)}</div><div class="m" style="font-size:24px;letter-spacing:.2em;color:${C.steel};margin-top:22px">${esc(s.vsLabel||"")}</div></div>`:""}
+        </div>
+        ${s.body?`<div class="copy" style="top:${s.bodyTop||800}px;right:${s.photo?440:64}px"><div class="b">${rich(s.body)}</div></div>`:""}
+        ${s.photo?`<div class="shot" style="top:${s.photoTop||780}px;left:auto;right:0;width:${s.photoWidth||420}px;height:${s.photoHeight||380}px;clip-path:polygon(16% 0,100% 0,100% 100%,0 100%)"><img src="${s.photo}" style="object-position:${s.pos||"50% 50%"}"><div class="tn"></div></div>`:""}`;
+      if(s.note)html+=`<div class="note" style="right:64px;bottom:${spec.demo?92:48}px">${esc(s.note)}</div>`;
     }else{
       const top=s.visualTop||(s.title?470:300),vh=s.visualHeight||560;
       html+=`<div class="head"><div class="k">${esc(s.kicker||"")}</div><div class="h fitw" style="${s.size?`font-size:${s.size}px`:""}">${headline(s.title)}</div></div>

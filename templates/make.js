@@ -9,6 +9,7 @@
      debrief-reel      THE DEBRIEF reel (1080×1920 MP4 from a screen recording [+ two lap CSVs])
      hotlap            Hotlap / onboard reel overlay (1080×1920 MP4)
      sim-to-tarmac     SIM TO TARMAC kinetic reel (1080×1920 MP4)
+     explainer         EXPLAINER reel: Akki teaching one idea, 30–40 s (1080×1920 MP4)
      stories           Story set: announcement / result / quote / question (1080×1920 PNGs)
 
    Output: spec.out, else posts/<spec.date>-<slug>/ when spec.date is set, else next to the spec.
@@ -46,6 +47,11 @@ const { ROOT, resolver, resolveMedia, slugify } = require("./lib/common");
     case "stories": {
       const { renderStories } = require("./lib/stories");
       result = await renderStories(resolveMedia(raw, res), outDir);
+      break;
+    }
+    case "explainer": {
+      const { renderExplainer } = require("./lib/explainer");
+      result = await renderExplainer(ctx);
       break;
     }
     case "hotlap": case "debrief-reel": case "sim-to-tarmac": {

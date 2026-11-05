@@ -14,6 +14,7 @@ node templates/make.js <spec.json>
 | `hotlap` | ⏱️ Hotlap / onboard overlay | `<name>.mp4` + `stills/` |
 | `sim-to-tarmac` | 🏁 SIM TO TARMAC kinetic reel | `<name>.mp4` + `stills/` |
 | `stories` | Story set: announcement · result · quote · question · poll | `story-01-<type>.png …` 1080×1920 |
+| `explainer` | 🎓 EXPLAINER reel (Akki teaching one idea) | `<name>.mp4` 1080×1920 + `stills/` + contact sheet |
 
 Working examples (all tested with real library files) are in `templates/examples/`, their renders in `templates/samples/`. Sample MP4s aren't committed (like every render, `*.mp4` is gitignored); re-create one with its command, or look at the committed `*-stills.jpg` contact sheet.
 
@@ -125,3 +126,20 @@ Common: `label` (shown in the counter), `pattern`, `flag: false`, `cta` (a Cobal
 ## Shared kit
 
 `infographics/_kit/` holds the brand: `kit.css` (fonts, colours, grain/glow/vignette, photo treatment, chips, tables), `kit.js` (mark, lockup, breaking chequered flag, charts, corner sketches, flows, gauges), `logo.js`, fonts and the faint patterns. Every template uses it, so a brand tweak there updates everything.
+
+## 6 · EXPLAINER reel (`explainer`) + new carousel layouts
+
+**Explainer** (`templates/lib/explainer.js` + `templates/reel/explainer.html`): Akki teaching one idea in 30–40 s, 1080×1920. Example: `posts/2026-11-04-read-telemetry-comparison/spec.json` (+ `voiceover.md`). Structure: hook ≤ 2.6 s → problem → steps → one takeaway → short closing line (no logo card).
+`"scenes": [ … ]`, each with a `dur` and one visual source:
+- `clip`: `{src, in, crop:[x,y,w,h], area:[x,y,w,h]}`: live footage, cropped in ffmpeg *before* anything else (cropped pixels can never show), placed in `area`; the rest of the frame is a blurred copy, so there is no empty black.
+- `freeze`: `{src, at, crop, area, keys:[{t, rect:[x,y,w,h]}]}`: a frame grab the page zooms into (rect in crop pixels). `rings:[{at, x, y, r, label, labelSide, until}]` circle the exact number being discussed.
+- `photo: {src, focus}` (full bleed) or `backdrop: {src, op}` (blurred), else the brand backdrop.
+Layers: `head {kicker, lines, size, y, align}`, `diagram {type: "spot" | "trace", mode: "cursor" | "split", y}` (illustrative, always stamped), `host {src, side, h, ar, x, in}` (a rembg cutout in `photos/cutouts/`), `chip`, `say` (word-by-word captions; `capY`, `capStyle`), `shadeTop`/`shadeBottom`. Scenes over 3.6 s warn unless `beats` says the visual changes inside them.
+Audio slots: `"voiceover": {"src": "…/voiceover.wav"}` (recorded by Akki, never synthesised) and `"music"`; either missing → the reel renders with soft knocks only and says so.
+Cutouts: `pip install "rembg[cpu]"`, model `u2net_human_seg`, crop to the person first. Never cut out identifiable children.
+
+**Carousel layouts** (any `apex-notes` slide `type`; these never get scanlines; `"scan": false` on the spec or a slide removes them elsewhere):
+- `cutout`: `cutout` (PNG), `side`, `cutoutHeight`, `cutoutX`, `title`, `size`, `titleTop`, `kicker`, `body`, `bodyTop`, `photo` (blurred backdrop, `photoOp`), `close: true` adds handle + CTA. The cutout overlaps the headline; check the last line stays readable.
+- `annotated`: `photo`, `photoTop`, `photoHeight` (match the image's aspect, so callouts land), `callouts:[{x, y, label, tx, ty, on, r, align}]` in % of the photo box, `body`, `note`.
+- `big-number`: `value`, `label`, optional `vs` + `vsLabel`, `numberSize`, `body`, optional proof `photo` (diagonal crop). Only numbers read off the source.
+Example: `posts/2026-11-04-telemetry-comparison-carousel/spec.json`.

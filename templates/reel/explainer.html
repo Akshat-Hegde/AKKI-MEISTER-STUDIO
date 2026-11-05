@@ -1,0 +1,157 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="../../infographics/_kit/kit.css">
+<style>
+/* EXPLAINER overlay (templates/lib/explainer.js). Transparent where a live clip plays; everything else is drawn here. */
+html,body{width:1080px;height:1920px;overflow:hidden;background:transparent!important}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden}
+.sc{position:absolute;inset:0;display:none;overflow:hidden}
+.abs{position:absolute}
+.bd{position:absolute;inset:0;background:radial-gradient(900px 620px at 50% -4%,rgba(36,64,255,.34),transparent 70%),radial-gradient(900px 700px at 50% 104%,rgba(36,64,255,.26),transparent 70%),#07080C}
+.bdimg{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(18px) saturate(.75) brightness(.42)}
+.ph{position:absolute;inset:0;background-size:cover;filter:saturate(.86) contrast(1.05)}
+.tint{position:absolute;inset:0;background:#2440FF;mix-blend-mode:soft-light;opacity:.32}
+.fz{position:absolute;overflow:hidden;background:#07080C}
+.fz img{position:absolute;left:0;top:0;transform-origin:0 0;filter:saturate(.9) contrast(1.07)}
+.shade{position:absolute;left:0;right:0;pointer-events:none}
+.hd{position:absolute;left:72px;right:72px}
+.hd .k{font-family:Clash;font-weight:600;font-size:26px;letter-spacing:.3em;color:var(--sky);text-transform:uppercase;margin-bottom:14px}
+.hd .l{display:block;overflow:hidden;padding:.04em 0 .08em}
+.hd .l span{display:inline-block;font-family:ClashD;font-weight:600;text-transform:uppercase;line-height:.94;letter-spacing:-.01em;white-space:nowrap;text-shadow:0 4px 30px rgba(0,0,0,.55)}
+.hd .l:last-child span{color:var(--blue)}
+.hd.sky .l:last-child span{color:var(--sky)}
+.cap{position:absolute;left:60px;right:60px;text-align:center;font-family:ClashD;font-weight:600;font-size:74px;line-height:1.08;text-transform:uppercase}
+.cap b{display:inline-block;font-weight:600;margin:0 .14em;padding:0 .12em;border-radius:6px;-webkit-text-stroke:0;text-shadow:0 3px 0 rgba(0,0,0,.85),0 0 26px rgba(0,0,0,.9)}
+.cap b.on{color:#fff;background:var(--blue);text-shadow:none}
+.chip{position:absolute;font-family:JBM;font-weight:600;font-size:22px;letter-spacing:.22em;padding:10px 18px;background:var(--blue);color:var(--ice);text-transform:uppercase}
+.chip.ghost{background:rgba(7,8,12,.82);border:1px solid rgba(243,244,246,.22)}
+.ring{position:absolute;border-radius:50%;border:7px solid var(--blue);box-shadow:0 0 0 3px rgba(91,123,255,.55),0 0 40px rgba(36,64,255,.7)}
+.rl{position:absolute;font-family:JBM;font-weight:700;font-size:26px;letter-spacing:.12em;padding:8px 14px;background:var(--ice);color:#07080C;white-space:nowrap;text-transform:uppercase}
+.host{position:absolute;bottom:0}
+.host img{display:block;height:100%;filter:drop-shadow(0 0 40px rgba(0,0,0,.6)) saturate(.95)}
+.slab{position:absolute;bottom:0;background:var(--blue);transform:skewX(-12deg);transform-origin:bottom}
+.dg{position:absolute;left:60px;width:960px}
+.dg text{font-family:JBM;font-weight:600;fill:var(--ice)}
+.top{position:absolute;left:64px;top:118px;display:flex;align-items:center;gap:18px;font-family:JBM;font-size:20px;letter-spacing:.18em;color:var(--ice);text-shadow:0 2px 12px rgba(0,0,0,.8)}
+</style></head><body>
+<div id="stage"></div>
+<script src="../../infographics/_kit/logo.js"></script>
+<script src="../../infographics/_kit/kit.js"></script>
+<script>
+const {markSvg}=AM;
+const cl=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),P=(t,a,b)=>cl((t-a)/(b-a));
+const oC=x=>1-Math.pow(1-x,3),ioC=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2,oB=x=>{const c=1.7;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const $s=document.getElementById("stage");
+const div=(par,cls,css,html="")=>{const d=document.createElement("div");if(cls)d.className=cls;d.style.cssText=css;d.innerHTML=html;par.appendChild(d);return d};
+const EV=[];window.EVENTS=EV;const cue=(kind,t,gain=1)=>EV.push({kind,t:+t.toFixed(3),gain});
+let TL,S=[];
+
+/* ---------- illustrative diagrams (no numbers on axes; always stamped ILLUSTRATIVE) ---------- */
+const NS="http://www.w3.org/2000/svg";
+function spd(x,b,m,mx,th){ // speed vs distance: straight, brake at b, minimum m at mx, back to full by th
+  const sm=u=>u*u*(3-2*u);
+  if(x<b) return .86; if(x<mx) return .86-(.86-m)*sm((x-b)/(mx-b)); if(x<th) return m+(.88-m)*sm((x-mx)/(th-mx)); return .88;}
+function traceSvg(d){
+  const X=x=>70+x*840,Y=v=>520-v*430;
+  const A=[],B=[];for(let i=0;i<=200;i++){const x=i/200;A.push(`${X(x).toFixed(1)},${Y(spd(x,.38,.32,.52,.82)).toFixed(1)}`);B.push(`${X(x).toFixed(1)},${Y(spd(x,.33,.25,.53,.9)).toFixed(1)}`);}
+  let band="M"+A.join(" L")+" L"+B.slice().reverse().join(" L")+"Z";
+  return `<svg viewBox="0 0 960 600" width="960" height="600">
+  <g stroke="rgba(243,244,246,.12)" stroke-width="1">${[0,1,2,3,4].map(i=>`<line x1="70" x2="910" y1="${90+i*107.5}" y2="${90+i*107.5}"/>`).join("")}</g>
+  <line x1="70" y1="80" x2="70" y2="522" stroke="rgba(243,244,246,.5)" stroke-width="2"/><line x1="68" y1="522" x2="912" y2="522" stroke="rgba(243,244,246,.5)" stroke-width="2"/>
+  <text x="70" y="62" font-size="22" letter-spacing="3">SPEED ↑</text><text x="910" y="566" font-size="22" text-anchor="end" letter-spacing="3">DISTANCE →</text>
+  <path class="band" d="${band}" fill="rgba(36,64,255,.28)" opacity="0"/>
+  <polyline class="la" points="${A.join(" ")}" fill="none" stroke="#F3F4F6" stroke-width="7" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+  <polyline class="lb" points="${B.join(" ")}" fill="none" stroke="#5B7BFF" stroke-width="7" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+  <g class="lg"><rect x="640" y="100" width="34" height="7" fill="#F3F4F6"/><text x="684" y="110" font-size="22">LAP A</text><rect x="790" y="100" width="34" height="7" fill="#5B7BFF"/><text x="834" y="110" font-size="22">LAP B</text></g>
+  <g class="cur" opacity="0"><line x1="${X(.52)}" x2="${X(.52)}" y1="80" y2="522" stroke="#2440FF" stroke-width="4" stroke-dasharray="10 8"/>
+    <circle cx="${X(.52)}" cy="${Y(spd(.52,.38,.32,.52,.82))}" r="13" fill="#F3F4F6"/><circle cx="${X(.52)}" cy="${Y(spd(.52,.33,.25,.53,.9))}" r="13" fill="#5B7BFF"/>
+    <rect x="${X(.52)-170}" y="${Y(.1)-30}" width="340" height="46" fill="#2440FF"/><text x="${X(.52)}" y="${Y(.1)}" font-size="24" text-anchor="middle" letter-spacing="2">SAME POINT ON TRACK</text></g>
+  ${[[.335,"1 · BRAKES EARLIER",.92],[.525,"2 · LOWER MIN SPEED",.06],[.7,"3 · LATER ON THROTTLE",.6]].map(([x,l,v],i)=>`<g class="m m${i}" opacity="0"><line x1="${X(x)}" x2="${X(x)}" y1="${Y(v)+(v>.5?18:-34)}" y2="${Y(spd(x,.33,.25,.53,.9))}" stroke="#F3F4F6" stroke-width="2"/><rect x="${cl(X(x)-150,72,610)}" y="${Y(v)-30}" width="300" height="44" fill="#F3F4F6"/><text x="${cl(X(x)-150,72,610)+150}" y="${Y(v)-1}" font-size="22" text-anchor="middle" style="fill:#07080C">${l}</text></g>`).join("")}
+  <text x="910" y="62" font-size="18" text-anchor="end" letter-spacing="3" style="fill:#8C93A3">ILLUSTRATIVE</text></svg>`;}
+function spotSvg(){
+  return `<svg viewBox="0 0 960 640" width="960" height="640">
+  <path class="trk" d="M170,470 C90,350 160,190 320,200 C430,206 470,300 560,290 C660,278 650,150 770,150 C880,150 900,300 840,400 C780,500 640,470 560,520 C470,575 260,600 170,470 Z" fill="none" stroke="rgba(243,244,246,.85)" stroke-width="12" stroke-linejoin="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/>
+  <g class="flagm" opacity="0"></g>
+  <line class="link" stroke="#F3F4F6" stroke-width="3" stroke-dasharray="10 9" opacity="0"/>
+  <g class="ca"><circle r="22" fill="#F3F4F6"/><text class="t" font-size="24" x="30" y="-24">CAR A</text></g>
+  <g class="cb"><circle r="22" fill="#5B7BFF"/><text class="t" font-size="24" x="30" y="-24" style="fill:#5B7BFF">CAR B</text></g>
+  <g class="lab1" opacity="0"><rect x="250" y="20" width="460" height="52" fill="rgba(7,8,12,.85)" stroke="rgba(243,244,246,.3)"/><text x="480" y="55" font-size="26" text-anchor="middle" letter-spacing="2">SAME MOMENT ≠ SAME PLACE</text></g>
+  <g class="lab2" opacity="0"><rect x="300" y="20" width="360" height="52" fill="#2440FF"/><text x="480" y="55" font-size="26" text-anchor="middle" letter-spacing="2">SAME SPOT ✓</text></g>
+  <text x="940" y="630" font-size="18" text-anchor="end" letter-spacing="3" style="fill:#8C93A3">ILLUSTRATIVE</text></svg>`;}
+
+/* ---------- build ---------- */
+window.setup=(tl)=>{
+  TL=tl;
+  for(const s of tl.scenes){
+    const el=div($s,"sc",""),o={s,el};
+    if(!s.clip){ if(s.photo){o.ph=div(el,"ph",`background-image:url('${s.photo.src}');background-position:${s.photo.focus||"50% 50%"}`);div(el,"tint","");}
+      else{div(el,"bd","");if(s.backdrop)div(el,"bdimg",`background-image:url('${s.backdrop.src}');opacity:${s.backdrop.op??1}`);} }
+    if(s.freeze&&s.freeze.area&&!s.photo&&!s.backdrop)div(el,"bdimg",`background-image:url('${s.freeze.img}');opacity:.9`); // fill around a framed freeze
+    if(s.freeze){const f=s.freeze,[ax,ay,aw,ah]=f.area||[0,0,1080,1920];o.fz=div(el,"fz",`left:${ax}px;top:${ay}px;width:${aw}px;height:${ah}px`,`<img src="${f.img}" width="${f.w}" height="${f.h}">`);o.img=o.fz.firstChild;}
+    // legibility shades top + bottom (keep faces/numbers in the middle clear)
+    div(el,"shade",`top:0;height:${s.shadeTop??560}px;background:linear-gradient(rgba(7,8,12,.86),rgba(7,8,12,.55) 55%,transparent)`);
+    div(el,"shade",`bottom:0;height:${s.shadeBottom??760}px;background:linear-gradient(transparent,rgba(7,8,12,.7) 40%,rgba(7,8,12,.92))`);
+    if(s.diagram){const d=s.diagram;o.dg=div(el,"dg",`top:${d.y??560}px`,d.type==="spot"?spotSvg():traceSvg(d));}
+    if(s.host){const h=s.host,hh=h.h||900,ww=hh*(h.ar||.8);
+      o.slab=div(el,"slab",`${h.side==="left"?"left":"right"}:${h.side==="left"?-60:-60}px;width:${ww*.62}px;height:${hh*.62}px;opacity:.92`);
+      o.host=div(el,"host",`${h.side==="left"?"left":"right"}:${h.x??-30}px;height:${hh}px`,`<img src="${h.src}">`);}
+    (s.rings||[]).forEach((r,i)=>{(o.rings=o.rings||[]).push({r,ring:div(el,"ring",""),lab:r.label?div(el,"rl","",r.label):null});});
+    if(s.head){const h=s.head,sz=h.size||120;o.hd=div(el,"hd"+(h.sky?" sky":""),`top:${h.y??250}px;text-align:${h.align||"left"}`,(h.kicker?`<div class="k">${h.kicker}</div>`:"")+h.lines.map(l=>`<span class="l"><span style="font-size:${sz}px">${l}</span></span>`).join(""));
+      o.lines=[...o.hd.querySelectorAll(".l>span")];cue("tick",s.t0+.18);}
+    if(s.chip)o.chip=div(el,"chip",`left:64px;top:${s.chipY??190}px`,s.chip);
+    if(s.say){const words=s.say.split(/\s+/).filter(Boolean),a=s.t0+.12,b=s.t1-.22,wt=words.map(w=>w.length+2),tot=wt.reduce((x,y)=>x+y,0);
+      let acc=0;o.words=words.map((w,i)=>{const t=a+(b-a)*acc/tot;acc+=wt[i];return{w,t};});
+      // chunks of ≤3 words, broken after punctuation
+      o.chunks=[];let cur=[];o.words.forEach((w,i)=>{cur.push(i);if(cur.length===3||/[.,?!:]$/.test(w.w)){o.chunks.push(cur);cur=[];}});if(cur.length)o.chunks.push(cur);
+      o.cap=div(el,"cap",`top:${s.capY??1300}px;${s.capStyle||""}`);}
+    if(s.i>0)cue("knock",s.t0,.9);
+    S.push(o);
+  }
+  div($s,"top","",`${markSvg(86)}<span>${tl.handle}</span>`);
+  div($s,"grain","");
+  // preload every image so no frame is captured before its photo has decoded
+  const urls=[...new Set([...document.querySelectorAll("img")].map(i=>i.src).concat([...document.querySelectorAll(".ph,.bdimg")].map(d=>(d.style.backgroundImage.match(/url\(["']?(.*?)["']?\)/)||[])[1]).filter(Boolean)))];
+  return Promise.all(urls.map(u=>new Promise(r=>{const im=new Image();im.onload=im.onerror=()=>im.decode?im.decode().then(r,r):r();im.src=u;}))).then(()=>Promise.all([...document.querySelectorAll("img")].map(i=>i.decode().catch(()=>0))));
+};
+
+function freezeAt(o,u){
+  const f=o.s.freeze,[ax,ay,aw,ah]=f.area||[0,0,1080,1920],keys=f.keys||[{t:0,rect:[0,0,f.w,f.h]}];
+  let r=keys[0].rect;for(let i=0;i<keys.length-1;i++){const k0=keys[i],k1=keys[i+1];if(u>=k0.t){const e=ioC(P(u,k0.t,k1.t));r=k0.rect.map((v,j)=>v+(k1.rect[j]-v)*e);}}
+  if(u>=keys[keys.length-1].t)r=keys[keys.length-1].rect;
+  const sc=Math.max(aw/r[2],ah/r[3]);
+  let L=aw/2-(r[0]+r[2]/2)*sc,T=ah/2-(r[1]+r[3]/2)*sc;
+  L=cl(L,aw-f.w*sc,0);T=cl(T,ah-f.h*sc,0);
+  o.img.style.transform=`translate(${L}px,${T}px) scale(${sc})`;
+  return (x,y)=>[ax+L+x*sc,ay+T+y*sc,sc];
+}
+
+window.render=(t)=>{
+  for(const o of S){const s=o.s,on=t>=s.t0&&(t<s.t1||(s===TL.scenes[TL.scenes.length-1]&&t<=TL.dur));o.el.style.display=on?"block":"none";if(!on)continue;
+    const u=t-s.t0;
+    if(o.ph){const z=1.04+.05*u/s.dur;o.ph.style.transform=`scale(${z})`;}
+    let map=null;if(o.fz)map=freezeAt(o,u);
+    if(o.rings)for(const {r,ring,lab} of o.rings){const k=P(u,r.at,r.at+.35),vis=u>=r.at&&(r.until==null||u<r.until);ring.style.display=vis?"block":"none";if(lab)lab.style.display=vis?"block":"none";if(!vis||!map)continue;
+      const [x,y,sc]=map(r.x,r.y),R=(r.r*sc)*(0.6+.4*oB(k));ring.style.cssText+=`;left:${x-R}px;top:${y-R}px;width:${2*R}px;height:${2*R}px;opacity:${k}`;
+      if(lab){const side=r.labelSide||"below";lab.style.left=(side==="left"?x-R-lab.offsetWidth-16:side==="right"?x+R+16:x-lab.offsetWidth/2)+"px";lab.style.top=(side==="below"?y+R+16:side==="above"?y-R-60:y-24)+"px";lab.style.opacity=P(u,r.at+.15,r.at+.4);}}
+    if(o.lines)o.lines.forEach((l,i)=>{const k=oC(P(u,.06+i*.09,.46+i*.09));l.style.transform=`translateY(${(1-k)*105}%)`;});
+    if(o.chip){const k=oC(P(u,0,.3));o.chip.style.opacity=k;o.chip.style.transform=`translateX(${(1-k)*-40}px)`;}
+    if(o.host){const h=s.host,k=oC(P(u,h.in??.05,(h.in??.05)+.5)),dx=(h.side==="left"?-1:1)*(1-k)*160;o.host.style.transform=`translateX(${dx}px)`;o.host.style.opacity=k;o.slab.style.transform=`skewX(-12deg) translateX(${dx*1.4}px)`;}
+    if(o.dg){const d=s.diagram,g=o.dg;
+      if(d.type==="spot"){const trk=g.querySelector(".trk"),L=trk.getTotalLength?1:1;trk.style.strokeDashoffset=1-oC(P(u,0,.7));
+        const pl=trk.getTotalLength(),pt=f=>trk.getPointAtLength(((f%1)+1)%1*pl);
+        const m=ioC(P(u,d.merge??1.9,(d.merge??1.9)+.8)),fa=.10+(.36-.10)*m,fb=.62+(.36-.62)*m;
+        const A=pt(fa),B=pt(fb);g.querySelector(".ca").setAttribute("transform",`translate(${A.x},${A.y})`);g.querySelector(".cb").setAttribute("transform",`translate(${B.x},${B.y})`);
+        const lk=g.querySelector(".link");lk.setAttribute("x1",A.x);lk.setAttribute("y1",A.y);lk.setAttribute("x2",B.x);lk.setAttribute("y2",B.y);
+        const l1=P(u,.6,.9)*(1-P(u,(d.merge??1.9)-.1,(d.merge??1.9)+.2));lk.setAttribute("opacity",l1);g.querySelector(".lab1").setAttribute("opacity",l1);
+        g.querySelector(".lab2").setAttribute("opacity",P(u,(d.merge??1.9)+.7,(d.merge??1.9)+1));
+        const op=Math.max(.001,P(u,.3,.6));g.querySelector(".ca").setAttribute("opacity",op);g.querySelector(".cb").setAttribute("opacity",op);
+      } else {const dr=d.drawn?1:oC(P(u,.05,1.1));g.querySelector(".la").style.strokeDashoffset=1-dr;g.querySelector(".lb").style.strokeDashoffset=1-dr;
+        g.querySelector(".cur").setAttribute("opacity",d.mode==="cursor"?P(u,1.2,1.5):0);
+        g.querySelector(".band").setAttribute("opacity",d.mode==="split"?.9*P(u,.4,.9):0);
+        [0,1,2].forEach(i=>g.querySelector(".m"+i).setAttribute("opacity",d.mode==="split"?P(u,(d.marks||[.7,1.5,2.3])[i],(d.marks||[.7,1.5,2.3])[i]+.25):0));}}
+    if(o.cap){let ai=-1;o.words.forEach((w,i)=>{if(t>=w.t)ai=i;});
+      const ch=o.chunks.find(c=>c.includes(ai))||o.chunks[0];
+      o.cap.innerHTML=ch.map(i=>{const w=o.words[i],vis=t>=w.t;return `<b class="${i===ai?"on":""}" style="opacity:${vis?1:0};transform:scale(${vis?(0.92+.08*oC(P(t,w.t,w.t+.12))):.9})">${w.w}</b>`;}).join(" ");}
+  }
+};
+</script></body></html>
